@@ -1,0 +1,44 @@
+<template>
+  <div if:true={products} class="container">
+    <div class="glider-contain" if:true={isLoaded}>
+      <div class="glider">
+        <template for:each={products} for:item="product">
+          <c-dao-product-card
+            key={product.ProductName}
+            product={product}
+            ontoggle={handleToggle}
+          ></c-dao-product-card>
+        </template>
+      </div>
+
+      <button aria-label="Previous" class="glider-prev">
+        <omnistudio-icon
+          class="nds-m-right_small"
+          alternative-text="Previous"
+          title="Previous"
+          icon-name="utility:back"
+          size="small"
+        >
+        </omnistudio-icon>
+      </button>
+      <button aria-label="Next" class="glider-next">
+        <omnistudio-icon
+          class="nds-m-right_small"
+          alternative-text="Next"
+          title="Next"
+          icon-name="utility:forward"
+          size="small"
+          fill="var(--theme-primary)"
+        >
+        </omnistudio-icon>
+      </button>
+      <div role="tablist" class="dots"></div>
+    </div>
+
+    <p if:true={showValidation} class="dao-required-message nds-has-error">
+      <span class="nds-form-element__help nds-p-vertical_small"
+        >Error: Please select at least one product above to continue.</span
+      >
+    </p>
+  </div>
+</template>

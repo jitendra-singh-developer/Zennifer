@@ -1,0 +1,21 @@
+.block-container {
+
+}
+
+.block-label-container {
+  border-bottom: 1px solid rgb(201, 201, 201);
+  background-color: rgb(243, 243, 243);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.block-label {
+  color: var(--theme-brand);
+  font-weight: bold;
+}
+
+.block-number {
+  color: var(--theme-brand);
+  font-weight: bold;
+}

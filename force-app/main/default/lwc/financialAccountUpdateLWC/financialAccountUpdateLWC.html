@@ -1,0 +1,13 @@
+<template>
+    <template if:true={isLoading}>
+        <div class="custom-toast">
+            <div class="slds-notify slds-notify_toast slds-theme_info" role="alert">
+                <span class="slds-assistive-text">Loading</span>
+                <div class="slds-notify__content">
+                    <div class="slds-spinner slds-spinner_brand slds-spinner_medium"></div>
+                    <span class="slds-text-heading_small">Retrieving Balances</span>
+                </div>
+            </div>
+        </div>
+    </template>
+</template>

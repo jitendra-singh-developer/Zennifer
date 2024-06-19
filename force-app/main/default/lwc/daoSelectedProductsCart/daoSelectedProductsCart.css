@@ -1,0 +1,87 @@
+.dao-selected-product {
+  color: #000;
+  font-weight: bold;
+  font-size: 13px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.dao-empty-product-state {
+  text-align: center;
+  font-size: 13px;
+  padding: 16px;
+  color: #c4c4c4;
+}
+
+.dao-selected-products-container {
+  position: sticky;
+  top: 20px;
+  border-radius: .5rem;
+  border: 2px solid var(--theme-primary);
+  background: var(--theme-primary-text);
+  pointer-events: all;
+}
+
+.dao-selected-products-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bold;
+  color: var(--theme-primary-text);
+  background: var(--theme-primary);
+  padding: 16px;
+  border-top-right-radius: .3rem;
+  border-top-left-radius: .3rem;
+}
+
+.dao-product-count {
+  color: #000;
+  background: #fff;
+  width: 20px;
+  min-width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.dao-sticky-container {
+  height: 100%;
+  pointer-events: none;
+}
+
+li {
+  border-bottom: 1px solid #ccc;
+}
+
+li:last-child {
+  border: none;
+}
+
+.dao-product-name {
+  flex: 1;
+}
+
+@media (max-width: 1023px) {
+  .dao-sticky-container {
+    position: absolute;
+    top: -20px;
+    right: 0;
+    left: 0;
+    z-index: 2;
+  }
+
+  .dao-selected-products-container {
+    top: 0;
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .dao-selected-products-header {
+    border-radius: 0;
+  }
+
+  .dao-empty-cart {
+    display: none;
+  }
+}

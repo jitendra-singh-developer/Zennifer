@@ -1,0 +1,28 @@
+.dao-card {
+  background: var(--theme-secondary);
+  border-radius: 20px;
+  color: var(--theme-secondary-text);
+}
+
+.dao-card-header {
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 26px;
+  border-bottom: 3px solid var(--theme-primary);
+}
+
+.dao-card-option {
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 26px;
+}
+
+@media (max-width: 768px) {
+  .dao-card-header {
+    width: 100%;
+  }
+
+  .dao-getting-started-option:not(:last-child) {
+    border-bottom: 3px solid var(--theme-primary);
+  }
+}

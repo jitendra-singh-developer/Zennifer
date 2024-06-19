@@ -1,0 +1,31 @@
+.jsutify-content-end .slds-grid.slds-wrap {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header-icon {
+    justify-content: flex-start;
+}
+
+.banking-customer-summary-headshot {
+    margin-right: 0;
+    width: 64px;
+}
+
+.banking-customer-summary-action {
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+    margin-left: auto;
+}
+
+.banking-customer-summary-action .slds-action_item {
+    display: flex;
+    align-items: center;
+}
+
+.banking-customer-summary-headshot .slds-avatar {
+    height: 100%;
+}
+
+.banking-customer-summary-kyc-icon {
+    width: 30px;
+}

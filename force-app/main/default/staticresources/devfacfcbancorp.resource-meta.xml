@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StaticResource xmlns="http://soap.sforce.com/2006/04/metadata">
+    <cacheControl>Private</cacheControl>
+    <contentType>application/x-x509-ca-cert</contentType>
+    <description>Public Key (.pem) file required to perform RSA encryption on sensitive values for the Core Banking API integration (QA).</description>
+</StaticResource>

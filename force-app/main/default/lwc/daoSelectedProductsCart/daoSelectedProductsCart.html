@@ -1,0 +1,91 @@
+<template>
+  <div class={stickyContainerClass}>
+    <div class="dao-selected-products-container">
+      <div class="dao-selected-products-header">
+        <div>
+          <omnistudio-icon
+            class="slds-m-right_small"
+            alternative-text="Shopping Cart"
+            title="Shopping Cart"
+            icon-name="utility:cart"
+            color="#fff"
+            size="small"
+          >
+          </omnistudio-icon>
+          <span>Products Selected </span>
+        </div>
+
+        <div class="dao-product-count slds-m-left_small">{count}</div>
+      </div>
+      <ul>
+        <template for:each={selectedProducts} for:item="product">
+          <li class="dao-selected-product" key={product.productId}>
+            <omnistudio-button
+              class="slds-m-right_small"
+              onclick={deselectProduct}
+              data-id={product.productId}
+              data-code={product.productCode}
+              data-name={product.productName}
+              variant="icon"
+              icon-name="utility:delete"
+              theme="slds"
+              title="Remove"
+              color="var(--theme-primary)"
+              disabled={isDisabled}
+            ></omnistudio-button>
+            <p class="dao-product-name">{product.productName}</p>
+
+
+            <!-- <div class="quantity-container">
+              <select onchange={increaseQuantity}
+                data-id={product.productId}
+                data-code={product.productCode}
+                data-name={product.productName}
+                data-quantity={product.quantity}>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div> -->
+            <!--<c-dao-product-cart-quantity-combobox></c-dao-product-cart-quantity-combobox>-->
+            <div class="quantity-container">
+              <omnistudio-button
+                variant="icon"
+                icon-name="utility:dash"
+                theme="slds"
+                title="Decrease quantity"
+                onclick={decreaseQuantity}
+                data-id={product.productId}
+                data-code={product.productCode}
+                data-name={product.productName}
+                data-quantity={product.quantity}
+                disabled={isDisabled}
+              ></omnistudio-button>
+              <span class="quantity slds-p-horizontal_x-small"
+                >{product.quantity}</span
+              >
+              <omnistudio-button
+                variant="icon"
+                icon-name="utility:add"
+                theme="slds"
+                title="Increase quantity"
+                onclick={increaseQuantity}
+                data-id={product.productId}
+                data-code={product.productCode}
+                data-name={product.productName}
+                data-quantity={product.quantity}
+                disabled={isDisabled}
+              ></omnistudio-button>
+            </div>
+          </li>
+        </template>
+        <li class="dao-empty-product-state" if:false={hasProducts}>
+          Your cart is empty
+        </li>
+      </ul>
+    </div>
+    <div></div>
+  </div>
+</template>

@@ -1,0 +1,23 @@
+<template>
+  <div if:true={isComplete}>
+    <h1>Success</h1>
+    <p>You have successfully signed the document.</p>
+    <br />
+    <p>
+      You may receive a confirmation email with a link to the signed document.
+    </p>
+    <br />
+
+    <!-- <p>You can also click View PDF to view and save a copy of the document.</p> -->
+    <!-- <br/> -->
+
+    <p>Click Close to exit this window.</p>
+  </div>
+  <div if:true={isError}>
+    <h1>Error</h1>
+    <p>An error occurred while signed the document.</p>
+    <br />
+
+    <p>Click Close to exit this window and try launching again.</p>
+  </div>
+</template>

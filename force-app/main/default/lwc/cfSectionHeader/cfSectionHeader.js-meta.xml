@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>SectionHeader</masterLabel>
+    <runtimeNamespace>omnistudio</runtimeNamespace>
+    <targets>
+      <target>lightning__RecordPage</target>
+        </targets>
+      <targetConfigs>
+    <targetConfig  targets="lightning__RecordPage"><property  name="cfIcon" type="String" label="Icon" default="custom:custom18" required="true" placeholder="custom:custom18"></property><property  name="cfIconClass" type="String" label="Icon Class" default="slds-icon_container slds-icon-standard-avatar" placeholder="slds-icon_container slds-icon-standard-avatar" required="true"></property><property  name="cfHeading" type="String" label="Heading" default="Heading Text" required="true" placeholder="Heading Text"></property></targetConfig>
+    </targetConfigs></LightningComponentBundle>

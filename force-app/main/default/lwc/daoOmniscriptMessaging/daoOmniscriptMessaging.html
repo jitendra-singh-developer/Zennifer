@@ -1,0 +1,26 @@
+<template>
+  <div if:true={showValidation}>
+    <div if:false={_isDesignMode}>
+      <label if:true={_showLabel}>
+        <span>{_propSetMap.label}</span>
+      </label>
+      <div if:true={messageText} class={wrapperClass}>
+        <div class="slds-media__figure">
+          <span class="slds-icon_container">
+            <omnistudio-icon
+              theme={_theme}
+              icon-name={iconName}
+              variant={iconVariant}
+            ></omnistudio-icon>
+          </span>
+        </div>
+        <div class="slds-media__body">
+          <p role="alert" class={textClass}>{messageText}</p>
+        </div>
+      </div>
+    </div>
+    <span if:true={_isDesignMode} class="slds-text-font_monospace">
+      &lt;{_elementId} /&gt;</span
+    >
+  </div>
+</template>

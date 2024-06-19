@@ -1,0 +1,71 @@
+<template>
+            <div class="nds-grid nds-wrap nds-is-relative ">
+            <div style="position: fixed;z-index: 999999;top: 0;right: 0;">
+  <omnistudio-toast class="flexcard-toast-element" theme="nds" title="" message="" styletype=""> </omnistudio-toast>
+</div>
+            <div if:true={showLoader} class="nds-is-absolute vloc-loader_override" style="height: 100%; width: 100%; min-height:50px; background: transparent; z-index: 99;">
+  <div>
+   <omnistudio-spinner
+      variant="brand"
+      alternative-text="Loading content..."
+      size="small"
+      theme="nds"
+      ></omnistudio-spinner>
+  </div>
+</div>
+            <template if:false={hasPermission}>
+              You don't have required permissions to view this card.
+            </template>
+            <template if:true={hasPermission}>
+              <template if:true={hasRecords}>
+                        <template for:each={_records} for:item="record" for:index="rindex">
+                            <omnistudio-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state nds-size_12-of-12"  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="nds-grid nds-wrap nds-card nds-p-around_x-small nds-m-bottom_x-small" style="">
+          <div data-style-id="state0element0" class="nds-col   slds-text-link_reset  nds-p-around_x-small nds-size_12-of-12  " data-rindex={rindex} style="" >
+    <omnistudio-block data-style-id="state0element0_child"  card={card}  record={record}  label="\{FinancialAccountName} ({FinancialAccountNumber}) : {Product}"  collapsible="true"  collapsed-by-default="false"  action='\{"label":"Action","iconName":"standard-default","eventType":"onclick","actionList":[{"key":"1707350927850-dfuncl5uj","label":"View","draggable":false,"isOpen":true,"card":"{card}","stateAction":{"id":"flex-action-1707352433719","type":"Custom","displayName":"Action","vlocityIcon":"standard-default","targetType":"Record","openUrlIn":"New Tab/Window","Record":{"targetName":"Account_Product_Financial_Account__c","targetAction":"view","targetId":"{APFAID}"}},"actionIndex":0}],"showSpinner":"false"}'  extraclass=" nds-text-link_reset"  theme="nds"  onclick={executeAction} data-element-label="block0" data-action-key="state0element0" onkeydown={executeActionWithKeyboard} tabindex="0"><div class="nds-grid nds-wrap">
+          <div data-style-id="state0element0block_element0" class="nds-col   nds-size_2-of-12  " data-rindex={rindex} style="" ><omnistudio-output-field data-style-id="state0element0block_element0_child"   card={card}  record={record}  placeholder="output"  type="currency"  field-name="ACHDebitExposureLimit"  label="ACH Debit Exposure Limit"  locale="en-US"  currency="USD"  styles='\{"label":{"textAlign":"left"}}'  theme="nds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1" class="nds-col   nds-size_2-of-12  " data-rindex={rindex} style="" ><omnistudio-output-field data-style-id="state0element0block_element1_child"   card={card}  record={record}  placeholder="output"  type="currency"  field-name="ACHCreditExposureLimit"  label="ACH Credit Exposure Limit"  locale="en-US"  currency="USD"  styles='\{"label":{"textAlign":"left"}}'  theme="nds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element2" class="nds-col   nds-size_2-of-12  " data-rindex={rindex} style="" ><omnistudio-output-field data-style-id="state0element0block_element2_child"   card={card}  record={record}  placeholder="output"  type="currency"  field-name="MobileDepositLimit"  label="Mobile Deposit Limit"  locale="en-US"  currency="USD"  styles='\{"label":{"textAlign":"left","textDecoration":"#3A6D9D"}}'  theme="nds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element3" class="nds-col  nds-theme_default  nds-large-size_2-of-12 nds-medium-size_2-of-12 nds-small-size_2-of-12 nds-size_2-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element3_child"   card={card}  record={record}  placeholder="output"  type="currency"  field-name="RDCLimit"  label="RDC Limit"  locale="en-US"  currency="USD"  styles='\{"label":{"textAlign":"left"}}'  theme="nds"  ></omnistudio-output-field>
+      </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element1" class="nds-col   nds-size_12-of-12 " data-rindex={rindex} style="" ><omnistudio-flex-datatable data-style-id="state0element1_child"   card={card}  record={record}  issearchavailable="false"  issortavailable="true"  records={records}  columns='\[{"fieldName":"Name","label":"Name","searchable":false,"sortable":true,"type":"text"},{"fieldName":"BOCCompanyId","label":"BOCCompanyId","searchable":false,"sortable":true,"type":"text"},{"fieldName":"Company ID","label":"Company ID","searchable":false,"sortable":true,"type":"text"}]'  theme="nds"  ></omnistudio-flex-datatable>
+      </div><div data-style-id="state0element2" class="nds-col   nds-size_12-of-12 " data-rindex={rindex} style="" ><omnistudio-flex-datatable data-style-id="state0element2_child"   card={card}  record={record}  issearchavailable="false"  issortavailable="true"  cell-level-edit="true"  pagelimit="3"  group-order="asc"  columns='\[]'  records={records}  theme="nds"  ></omnistudio-flex-datatable>
+      </div>
+        </div>
+      </omnistudio-flex-card-state>
+                        </template>
+                      </template>
+                      <template if:false={hasRecords}>
+                            <omnistudio-flex-card-state  record={record} data-statue="false"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state nds-size_12-of-12"  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="nds-grid nds-wrap nds-card nds-p-around_x-small nds-m-bottom_x-small" style="">
+          <div data-style-id="state0element0" class="nds-col   slds-text-link_reset  nds-p-around_x-small nds-size_12-of-12  " data-rindex={rindex} style="" >
+    <omnistudio-block data-style-id="state0element0_child"  card={card}  record={record}  label="\{FinancialAccountName} ({FinancialAccountNumber}) : {Product}"  collapsible="true"  collapsed-by-default="false"  action='\{"label":"Action","iconName":"standard-default","eventType":"onclick","actionList":[{"key":"1707350927850-dfuncl5uj","label":"View","draggable":false,"isOpen":true,"card":"{card}","stateAction":{"id":"flex-action-1707352433719","type":"Custom","displayName":"Action","vlocityIcon":"standard-default","targetType":"Record","openUrlIn":"New Tab/Window","Record":{"targetName":"Account_Product_Financial_Account__c","targetAction":"view","targetId":"{APFAID}"}},"actionIndex":0}],"showSpinner":"false"}'  extraclass=" nds-text-link_reset"  theme="nds"  onclick={executeAction} data-element-label="block0" data-action-key="state0element0" onkeydown={executeActionWithKeyboard} tabindex="0"><div class="nds-grid nds-wrap">
+          <div data-style-id="state0element0block_element0" class="nds-col   nds-size_2-of-12  " data-rindex={rindex} style="" ><omnistudio-output-field data-style-id="state0element0block_element0_child"   card={card}  record={record}  placeholder="output"  type="currency"  field-name="ACHDebitExposureLimit"  label="ACH Debit Exposure Limit"  locale="en-US"  currency="USD"  styles='\{"label":{"textAlign":"left"}}'  theme="nds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1" class="nds-col   nds-size_2-of-12  " data-rindex={rindex} style="" ><omnistudio-output-field data-style-id="state0element0block_element1_child"   card={card}  record={record}  placeholder="output"  type="currency"  field-name="ACHCreditExposureLimit"  label="ACH Credit Exposure Limit"  locale="en-US"  currency="USD"  styles='\{"label":{"textAlign":"left"}}'  theme="nds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element2" class="nds-col   nds-size_2-of-12  " data-rindex={rindex} style="" ><omnistudio-output-field data-style-id="state0element0block_element2_child"   card={card}  record={record}  placeholder="output"  type="currency"  field-name="MobileDepositLimit"  label="Mobile Deposit Limit"  locale="en-US"  currency="USD"  styles='\{"label":{"textAlign":"left","textDecoration":"#3A6D9D"}}'  theme="nds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element3" class="nds-col  nds-theme_default  nds-large-size_2-of-12 nds-medium-size_2-of-12 nds-small-size_2-of-12 nds-size_2-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element3_child"   card={card}  record={record}  placeholder="output"  type="currency"  field-name="RDCLimit"  label="RDC Limit"  locale="en-US"  currency="USD"  styles='\{"label":{"textAlign":"left"}}'  theme="nds"  ></omnistudio-output-field>
+      </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element1" class="nds-col   nds-size_12-of-12 " data-rindex={rindex} style="" ><omnistudio-flex-datatable data-style-id="state0element1_child"   card={card}  record={record}  issearchavailable="false"  issortavailable="true"  records={records}  columns='\[{"fieldName":"Name","label":"Name","searchable":false,"sortable":true,"type":"text"},{"fieldName":"BOCCompanyId","label":"BOCCompanyId","searchable":false,"sortable":true,"type":"text"},{"fieldName":"Company ID","label":"Company ID","searchable":false,"sortable":true,"type":"text"}]'  theme="nds"  ></omnistudio-flex-datatable>
+      </div><div data-style-id="state0element2" class="nds-col   nds-size_12-of-12 " data-rindex={rindex} style="" ><omnistudio-flex-datatable data-style-id="state0element2_child"   card={card}  record={record}  issearchavailable="false"  issortavailable="true"  cell-level-edit="true"  pagelimit="3"  group-order="asc"  columns='\[]'  records={records}  theme="nds"  ></omnistudio-flex-datatable>
+      </div>
+        </div>
+      </omnistudio-flex-card-state>
+                      </template>
+            </template>
+            <template if:true={hasError}>
+            {error}
+            </template>
+            
+      <omnistudio-action action-wrapperclass="slds-hide" re-render-flyout class="action-trigger slds-col" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+      
+      </omnistudio-action>
+  
+            <omnistudio-action class="execute-action" re-render-flyout action-wrapperclass="slds-hide" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+            
+            </omnistudio-action>
+            </div>
+          </template>

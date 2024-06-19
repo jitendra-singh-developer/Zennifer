@@ -1,0 +1,113 @@
+<!--
+  @description       : 
+  @author            : SUMEDH WASNIK
+  @group             : GERENT
+  @last modified on  : 01-10-2024
+  @last modified by  : SUMEDH WASNIK
+  Modifications Log
+  Ver   Date         Author          Modification
+  1.0   01-10-2024   SUMEDH WASNIK   Initial Version
+-->
+<template>
+  <p if:true={showValidation} class="dao-required-message nds-has-error">
+    <span class="nds-form-element__help nds-p-vertical_small"
+      >Error: Please select at least one product above to continue.</span
+    >
+  </p>
+  <div class="slds-is-relative container" style={maxWidth}>
+    <div if:true={showProducts}>
+      <template for:each={_products} for:item="product">
+      
+        <div if:true={product} class={product.slideClass} key={product.Name} >
+          <div class="cardContainer">
+            <div class="nds-text-align_center nds-m-bottom_medium dao-card-header">
+              <p class="dao-product-name nds-m-bottom_large">{product.ProductName}</p>
+              <p class="dao-product-amount">{product.SubtitleValue}</p>
+              <p class="dao-product-fee-label">{product.SubtitleLabel}</p>
+            </div>
+        
+            <ul>
+              <li class="dao-product-feature" if:true={product.Benefit1}>
+                <lightning-icon
+                  class="dao-bullet-point slds-m-right_x-small"
+                  icon-name="utility:chevronright"
+                  alternative-text="Bullet point"
+                  title="Bullet point"
+                  size="x-small"
+                ></lightning-icon>
+                {product.Benefit1}
+              </li>
+              <li class="dao-product-feature" if:true={product.Benefit2}>
+                <lightning-icon
+                  class="dao-bullet-point slds-m-right_x-small"
+                  icon-name="utility:chevronright"
+                  alternative-text="Bullet point"
+                  title="Bullet point"
+                  size="x-small"
+                ></lightning-icon>
+                {product.Benefit2}
+              </li>
+              <li class="dao-product-feature" if:true={product.Benefit3}>
+                <lightning-icon
+                  class="dao-bullet-point slds-m-right_x-small"
+                  icon-name="utility:chevronright"
+                  alternative-text="Bullet point"
+                  title="Bullet point"
+                  size="x-small"
+                ></lightning-icon>
+                {product.Benefit3}
+              </li>
+              <li class="dao-product-feature" if:true={product.Benefit4}>
+                <lightning-icon
+                  class="dao-bullet-point slds-m-right_x-small"
+                  icon-name="utility:chevronright"
+                  alternative-text="Bullet point"
+                  title="Bullet point"
+                  size="x-small"
+                ></lightning-icon>
+                {product.Benefit4}
+              </li>
+            </ul>
+        
+            <omnistudio-button
+              class="dao-product-toggle-button nds-m-top_medium"
+              theme="nds"
+              variant={product.buttonVariant}
+              label={product.buttonLabel}
+              onclick={handleToggle}
+              icon-name={product.buttonIcon}
+              icon-fill="#fff"
+              access-key={product.Id}
+            >
+            </omnistudio-button>
+        
+            <div
+              class="dao-popular-product slds-p-top_xxx-small slds-p-bottom_xx-small"
+              if:true={product.isMostPopular}
+            >
+              <p>
+                <small>MOST POPULAR</small>
+              </p>
+            </div>
+          </div>
+  
+        </div>   
+        
+      </template>
+    </div>
+
+    <a if:false={hideNavigationButtons} class="prev" onclick={slideBackward}>&#10094;</a>
+    <a if:false={hideNavigationButtons} class="next" onclick={slideForward}>&#10095;</a>
+    
+  </div>
+  <p if:true={showValidation} class="dao-required-message nds-has-error">
+    <span class="nds-form-element__help nds-p-vertical_small"
+      >Error: Please select at least one product above to continue.</span
+    >
+  </p>
+  <div if:false={hideNavigationDots} class="slds-text-align_center slds-var-p-around_medium">
+    <template for:each={products} for:item="slide">
+      <span key={slide.index} class={slide.dotClass} data-id={slide.index} onclick={showSlide}></span>
+    </template>
+  </div>
+</template>

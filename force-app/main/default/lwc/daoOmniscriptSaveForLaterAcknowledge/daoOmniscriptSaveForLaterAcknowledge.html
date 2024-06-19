@@ -1,0 +1,81 @@
+<template>
+  <!-- <template if:true={auto}>
+    <div class="nds-grid nds-wrap nds-gutters nds-p-horizontal_medium">
+      <div
+        class="copy-container nds-is-absolute nds-z_-1"
+        lwc:dom="manual"
+      ></div>
+      <div class="nds-col nds-size_12-of-12 nds-medium-size_2-of-12"></div>
+      <div
+        class="nds-col nds-size_12-of-12 nds-medium-size_8-of-12 slds-text-align_center"
+      >
+        <div class="nds-text-body_small">
+          To resume, please click or bookmark the following link
+          <button
+            class="nds-button nds-text-link"
+            onclick={copyLinkToClipboard}
+          >
+            Copy Link
+          </button>
+          &nbsp;or&nbsp;
+          <a href={emailLink} target="_blank" rel="noopener">Email Me</a>
+        </div>
+      </div>
+    </div>
+  </template> -->
+  <template if:false={auto}>
+    <div class="nds-grid nds-wrap nds-gutters nds-p-horizontal_medium">
+      <div class="nds-col nds-size_12-of-12 nds-medium-size_2-of-12"></div>
+      <div class="nds-col nds-size_12-of-12 nds-medium-size_8-of-12">
+        <div class="nds-card omniscript-save-for-later">
+          <div
+            class="copy-container nds-is-absolute nds-z_-1"
+            lwc:dom="manual"
+          ></div>
+          <div class="nds-card__header nds-grid">
+            <header
+              class="nds-media nds-media_center nds-has-flexi-truncate slds-grid"
+            >
+              <div class="nds-media__figure dao-check-icon">
+                <omnistudio-icon
+                  alternative-text="Ok"
+                  icon-name="action:approval"
+                  color="#fff"
+                  size="small"
+                >
+                </omnistudio-icon>
+              </div>
+              <div class="nds-media__body">
+                <h2 class="nds-card__header-title">
+                  <span class="nds-text-heading_large"
+                    >Your Application is saved for later</span
+                  >
+                </h2>
+              </div>
+            </header>
+          </div>
+          <div class="nds-card__body nds-card__body_inner">
+            <div>
+              <label
+                >To resume, please click or bookmark the following link</label
+              >:
+              <div class="nds-m-vertical_medium nds-break-word">
+                <a href={resumeLink} target="_blank">{resumeLink}</a>
+              </div>
+              <button
+                class="nds-button nds-button_neutral"
+                onclick={copyLinkToClipboard}
+              >
+                Copy Link
+              </button>
+              <button class="nds-button nds-button_neutral" onclick={openEmail}>
+                Email Me
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nds-col nds-size_12-of-12 nds-medium-size_2-of-12"></div>
+    </div>
+  </template>
+</template>

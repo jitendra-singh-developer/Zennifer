@@ -1,0 +1,38 @@
+.apply-button button{
+    width: 100%;
+}
+
+.disable-link a {
+    text-decoration: none;
+    cursor: default;
+}
+
+.SearchButton button{
+  width:100%;
+}
+
+.SearchButton svg{
+  height: 16px;
+  width: 16px;
+  color: #404040;
+}
+
+.SearchButton .slds-not-selected {
+  width:100%;
+}
+
+.SearchButton .slds-is-selected-clicked {
+   background-color: #F3F3F3;
+   color: #404040;
+   border: 0px !important;
+   border-radius: 7px 7px 0px 0px;
+   width: 100%;
+}
+
+.SearchButton .slds-is-selected {
+   background-color: #F3F3F3;
+   color: #404040;
+   border: 0px !important;
+   border-radius: 7px 7px 0px 0px;
+   width: 100%;
+}

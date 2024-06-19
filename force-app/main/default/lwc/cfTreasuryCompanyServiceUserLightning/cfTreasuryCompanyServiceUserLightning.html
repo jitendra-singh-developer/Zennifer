@@ -1,0 +1,79 @@
+<template>
+            <div class="slds-grid slds-wrap slds-is-relative ">
+            <div style="position: fixed;z-index: 999999;top: 0;right: 0;">
+  <omnistudio-toast class="flexcard-toast-element" theme="slds" title="" message="" styletype=""> </omnistudio-toast>
+</div>
+            <div if:true={showLoader} class="slds-is-absolute vloc-loader_override" style="height: 100%; width: 100%; min-height:50px; background: transparent; z-index: 99;">
+  <div>
+   <omnistudio-spinner
+      variant="brand"
+      alternative-text="Loading content..."
+      size="medium"
+      theme="slds"
+      ></omnistudio-spinner>
+  </div>
+</div>
+            <template if:false={hasPermission}>
+              You don't have required permissions to view this card.
+            </template>
+            <template if:true={hasPermission}>
+              <template if:true={hasRecords}>
+                      <omnistudio-flex-card-state   data-statue="true"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-theme_default slds-card  " style="background-color:#f2f2f2;      
+         slds-table slds-table_cell-buffer slds-table_header-hidden slds-table_bordered">
+          <div data-style-id="state0element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><omnistudio-flex-datatable data-style-id="state0element0_child"   card={card}  record={record}  issearchavailable="false"  issortavailable="true"  records={records}  columns='\[]'  theme="slds"  ></omnistudio-flex-datatable>
+      </div><div data-style-id="state0element1" class="slds-col  slds-p-top_small slds-p-left_small  slds-size_1-of-12  " data-rindex={rindex} style="      
+         max-width: fit-content;" ><omnistudio-flex-icon data-style-id="state0element1_child"   card={card}  record={record}  icon-type="Salesforce SVG"  icon-name="standard:user"  size="small"  extraclass="slds-icon_container slds-icon-standard-user "  variant="inverse"  imgsrc=""  theme="slds"  ></omnistudio-flex-icon>
+      </div><div data-style-id="state0element2" class="slds-col  slds-p-left_small slds-p-top_small  slds-size_11-of-12  " data-rindex={rindex} style="      
+         font-weight:700;
+flex:1;" ><omnistudio-output-field data-style-id="state0element2_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-heading_small%22%3EService%20Users%20%7BCount%7D%7BNumberOfUsers%7D%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element3" class="slds-col   slds-p-bottom_x-large  slds-size_12-of-12  " data-rindex={rindex} style="      
+         font-weight:700;
+flex:1;" ><omnistudio-output-field data-style-id="state0element3_child"   card={card}  record={record}  merge-field=""  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element4" class="slds-col  slds-border_top slds-border_bottom boc-flexcard-datatable slds-size_12-of-12  " data-rindex={rindex} style="background-color:#f2f2f2;     border-top: #cccccc 1px solid;border-bottom: #cccccc 1px solid; 
+      min-height:auto; max-height:auto;  " ><omnistudio-flex-datatable data-style-id="state0element4_child"   card={card}  record={record}  issearchavailable="false"  issortavailable="true"  cell-level-edit="false"  pagelimit="3"  group-order="asc"  styles='\{"cellMargin":[],"cellPadding":[],"headFontWeight":"700","tableBorderType":[],"cellBorderType":"border_top","cellBorderWidth":"","tableBorderWidth":"1","headBgColor":"#f2f2f2"}'  pagesize="3"  sort-across-groups="false"  extraclass=""  columns='\[{"fieldName":"Space","label":"","searchable":"false","sortable":"true","visible":"true","type":"text"},{"fieldName":"Name","label":"Name","searchable":true,"sortable":true,"visible":"true","type":"text"},{"fieldName":"Username","label":"Username","searchable":true,"sortable":true,"visible":"true","type":"text"},{"fieldName":"Role","label":"Role","searchable":true,"sortable":true,"visible":"true","type":"text"},{"fieldName":"Status","label":"Status","searchable":true,"sortable":true,"visible":"true","type":"text"},{"fieldName":"Email","label":"Email","searchable":true,"sortable":true,"visible":"true","type":"email"},{"fieldName":"Phone","label":"Phone","searchable":true,"sortable":true,"type":"text","format":"M/D/YYYY","visible":"true"},{"fieldName":"LastLogin","label":"Last Login","searchable":true,"sortable":true,"type":"date","format":"M/D/YYYY"}]'  records={records}  theme="slds"  ></omnistudio-flex-datatable>
+      </div><div data-style-id="state0element5" class="slds-col  slds-text-align_center slds-border_bottom slds-p-top_x-small  slds-size_12-of-12  " data-rindex={rindex} style="background-color:#FFFFFF;     border-bottom: #cccccc 1px solid; 
+    border-radius:4px;     " ><omnistudio-flex-action data-style-id="state0element5_child"  tracking-obj={_childCardTrackingObj}  class= "state0element5_child flexActionElement" 
+        data-action-element-class="state0element5_child" data-action-key="state0element5" onexecuteaction={performAction} data-show-spinner="false"
+        data-element-label="viewallbutton"   state-obj={record}  card={card}  record={record}  label="View All"  icon-name="standard:default"  action-list='\[{"stateAction":{"id":"flex-action-1708529135710","type":"OmniScript","openUrlIn":"New Tab/Window","layoutType":"lightning","omniType":{"Name":"ViewAll/Button/English","Id":"0jN8H0000004Hp4UAE","isLwcOs":true},"isLwcOS":true,"tabLabel":"Service Users","tabIcon":"standard:user"},"key":"1708528733746-743263iky","label":"Action open Omniscript View All","draggable":true,"isOpen":true,"actionIndex":0,"contextId":""}]'  display-as-button="false"  hide-action-icon="true"  flyout-details='\{}'  aria-label="View All"  button-variant="neutral"  disabled=""  icon-only="false"  styles='\{"label":{"color":"#5679BF"}}'  icon-color="#5679BF"  theme="slds"  ></omnistudio-flex-action>
+      </div>
+        </div>
+      </omnistudio-flex-card-state>
+                </template>
+                <template if:false={hasRecords}>
+                      <omnistudio-flex-card-state   data-statue="false"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-theme_default slds-card  " style="background-color:#f2f2f2;      
+         slds-table slds-table_cell-buffer slds-table_header-hidden slds-table_bordered">
+          <div data-style-id="state0element0" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><omnistudio-flex-datatable data-style-id="state0element0_child"   card={card}  record={record}  issearchavailable="false"  issortavailable="true"  records={records}  columns='\[]'  theme="slds"  ></omnistudio-flex-datatable>
+      </div><div data-style-id="state0element1" class="slds-col  slds-p-top_small slds-p-left_small  slds-size_1-of-12  " data-rindex={rindex} style="      
+         max-width: fit-content;" ><omnistudio-flex-icon data-style-id="state0element1_child"   card={card}  record={record}  icon-type="Salesforce SVG"  icon-name="standard:user"  size="small"  extraclass="slds-icon_container slds-icon-standard-user "  variant="inverse"  imgsrc=""  theme="slds"  ></omnistudio-flex-icon>
+      </div><div data-style-id="state0element2" class="slds-col  slds-p-left_small slds-p-top_small  slds-size_11-of-12  " data-rindex={rindex} style="      
+         font-weight:700;
+flex:1;" ><omnistudio-output-field data-style-id="state0element2_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-heading_small%22%3EService%20Users%20%7BCount%7D%7BNumberOfUsers%7D%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element3" class="slds-col   slds-p-bottom_x-large  slds-size_12-of-12  " data-rindex={rindex} style="      
+         font-weight:700;
+flex:1;" ><omnistudio-output-field data-style-id="state0element3_child"   card={card}  record={record}  merge-field=""  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element4" class="slds-col  slds-border_top slds-border_bottom boc-flexcard-datatable slds-size_12-of-12  " data-rindex={rindex} style="background-color:#f2f2f2;     border-top: #cccccc 1px solid;border-bottom: #cccccc 1px solid; 
+      min-height:auto; max-height:auto;  " ><omnistudio-flex-datatable data-style-id="state0element4_child"   card={card}  record={record}  issearchavailable="false"  issortavailable="true"  cell-level-edit="false"  pagelimit="3"  group-order="asc"  styles='\{"cellMargin":[],"cellPadding":[],"headFontWeight":"700","tableBorderType":[],"cellBorderType":"border_top","cellBorderWidth":"","tableBorderWidth":"1","headBgColor":"#f2f2f2"}'  pagesize="3"  sort-across-groups="false"  extraclass=""  columns='\[{"fieldName":"Space","label":"","searchable":"false","sortable":"true","visible":"true","type":"text"},{"fieldName":"Name","label":"Name","searchable":true,"sortable":true,"visible":"true","type":"text"},{"fieldName":"Username","label":"Username","searchable":true,"sortable":true,"visible":"true","type":"text"},{"fieldName":"Role","label":"Role","searchable":true,"sortable":true,"visible":"true","type":"text"},{"fieldName":"Status","label":"Status","searchable":true,"sortable":true,"visible":"true","type":"text"},{"fieldName":"Email","label":"Email","searchable":true,"sortable":true,"visible":"true","type":"email"},{"fieldName":"Phone","label":"Phone","searchable":true,"sortable":true,"type":"text","format":"M/D/YYYY","visible":"true"},{"fieldName":"LastLogin","label":"Last Login","searchable":true,"sortable":true,"type":"date","format":"M/D/YYYY"}]'  records={records}  theme="slds"  ></omnistudio-flex-datatable>
+      </div><div data-style-id="state0element5" class="slds-col  slds-text-align_center slds-border_bottom slds-p-top_x-small  slds-size_12-of-12  " data-rindex={rindex} style="background-color:#FFFFFF;     border-bottom: #cccccc 1px solid; 
+    border-radius:4px;     " ><omnistudio-flex-action data-style-id="state0element5_child"  tracking-obj={_childCardTrackingObj}  class= "state0element5_child flexActionElement" 
+        data-action-element-class="state0element5_child" data-action-key="state0element5" onexecuteaction={performAction} data-show-spinner="false"
+        data-element-label="viewallbutton"   state-obj={record}  card={card}  record={record}  label="View All"  icon-name="standard:default"  action-list='\[{"stateAction":{"id":"flex-action-1708529135710","type":"OmniScript","openUrlIn":"New Tab/Window","layoutType":"lightning","omniType":{"Name":"ViewAll/Button/English","Id":"0jN8H0000004Hp4UAE","isLwcOs":true},"isLwcOS":true,"tabLabel":"Service Users","tabIcon":"standard:user"},"key":"1708528733746-743263iky","label":"Action open Omniscript View All","draggable":true,"isOpen":true,"actionIndex":0,"contextId":""}]'  display-as-button="false"  hide-action-icon="true"  flyout-details='\{}'  aria-label="View All"  button-variant="neutral"  disabled=""  icon-only="false"  styles='\{"label":{"color":"#5679BF"}}'  icon-color="#5679BF"  theme="slds"  ></omnistudio-flex-action>
+      </div>
+        </div>
+      </omnistudio-flex-card-state>
+                </template>
+            </template>
+            <template if:true={hasError}>
+            {error}
+            </template>
+            
+      <omnistudio-action action-wrapperclass="slds-hide" re-render-flyout class="action-trigger slds-col" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+      
+      </omnistudio-action>
+  
+            <omnistudio-action class="execute-action" re-render-flyout action-wrapperclass="slds-hide" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+            
+            </omnistudio-action>
+            </div>
+          </template>

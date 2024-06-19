@@ -1,0 +1,111 @@
+<template>
+            <div class="nds-grid nds-wrap nds-is-relative containersize">
+            <div style="position: fixed;z-index: 999999;top: 0;right: 0;">
+  <omnistudio-toast class="flexcard-toast-element" theme="nds" title="" message="" styletype=""> </omnistudio-toast>
+</div>
+            <div if:true={showLoader} class="nds-is-absolute vloc-loader_override" style="height: 100%; width: 100%; min-height:50px; background: transparent; z-index: 99;">
+  <div>
+   <omnistudio-spinner
+      variant="brand"
+      alternative-text="Loading content..."
+      size="small"
+      theme="nds"
+      ></omnistudio-spinner>
+  </div>
+</div>
+            <template if:false={hasPermission}>
+              You don't have required permissions to view this card.
+            </template>
+            <template if:true={hasPermission}>
+              <template if:true={hasRecords}>
+                      <omnistudio-flex-card-state   data-statue="true"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state nds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="nds-grid nds-wrap nds-card nds-p-top_small nds-m-bottom_x-small " style="      
+         ">
+          <div data-style-id="state0element0" class="nds-col   nds-border_bottom nds-p-bottom_small  nds-size_12-of-12  " data-rindex={rindex} style="     border-bottom: #cccccc 2px solid; 
+         font-size:17px;" >
+    <omnistudio-block data-style-id="state0element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="nds"  ><div class="nds-grid nds-wrap">
+          <div data-style-id="state0element0block_element0" class="nds-col    nds-size_6-of-12  " data-rindex={rindex} style="      
+         " >
+    <omnistudio-block data-style-id="state0element0block_element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="nds"  ><div class="nds-grid nds-wrap">
+          <div data-style-id="state0element0block_element0block_element0" class="nds-col   nds-p-left_x-small nds-m-bottom_small  nds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element0block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%3E%3Cspan%20style=%22text-decoration:%20underline;%20color:%20#3598db;%22%3E%3Cspan%20style=%22font-size:%2018pt;%22%3EAll%20Available%20Transactions%3C/span%3E%3C/span%3E%3C/div%3E"  theme="nds"  ></omnistudio-output-field>
+      </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element0block_element1" class="nds-col   slds-text-link_reset  nds-border_top nds-border_right nds-border_bottom nds-border_left nds-p-around_xx-small nds-m-right_xx-small  nds-size_2-of-12  " data-rindex={rindex} style="     border-top: #cccccc 2px solid;border-right: #cccccc 2px solid;border-bottom: #cccccc 2px solid;border-left: #cccccc 2px solid; 
+    border-radius:5px;     " >
+    <omnistudio-block data-style-id="state0element0block_element1_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  action='\{"label":"Action","iconName":"standard-default","eventType":"onclick","actionList":[{"key":"1700671661777-9fnkuxbk5","label":"ReloadFlexCard","draggable":false,"isOpen":true,"card":"{card}","stateAction":{"id":"flex-action-1700671661807","type":"cardAction","displayName":"Action","vlocityIcon":"standard-default","targetType":"Web Page","openUrlIn":"Current Window","Web Page":{"targetName":"/apex"},"eventName":"reload"},"actionIndex":0}],"showSpinner":"true"}'  extraclass=" nds-text-link_reset"  theme="nds"  onclick={executeAction} data-element-label="refreshbuttonblock" data-action-key="state0element0block_element1" onkeydown={executeActionWithKeyboard} tabindex="0"><div class="nds-grid nds-wrap">
+          <div data-style-id="state0element0block_element1block_element0" class="nds-col   nds-size_2-of-12  " data-rindex={rindex} style="" ><omnistudio-flex-icon data-style-id="state0element0block_element1block_element0_child"   card={card}  record={record}  icon-type="Salesforce SVG"  icon-name="action:refresh"  size="medium"  extraclass="slds-icon_container slds-icon-action-refresh slds-icon_container--circle"  variant="inverse"  imgsrc=""  theme="nds"  ></omnistudio-flex-icon>
+      </div><div data-style-id="state0element0block_element1block_element1" class="nds-col  nds-p-left_x-small nds-m-top_xxx-small  nds-size_10-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element1block_element1_child"   card={card}  record={record}  merge-field="%3Cdiv%3ERefresh%3C/div%3E"  theme="nds"  ></omnistudio-output-field>
+      </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element0block_element2" class="nds-col   slds-text-link_reset  nds-border_top nds-border_right nds-border_bottom nds-border_left nds-p-around_xx-small nds-m-left_xx-small  nds-size_3-of-12  " data-rindex={rindex} style="     border-top: #cccccc 2px solid;border-right: #cccccc 2px solid;border-bottom: #cccccc 2px solid;border-left: #cccccc 2px solid; 
+    border-radius:5px;     " >
+    <omnistudio-block data-style-id="state0element0block_element2_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  action='\{"label":"Action","iconName":"standard-default","eventType":"onclick","actionList":[{"key":"1700671875129-3xrddgjl7","label":"Invoke Add Transaction OmniScript","draggable":false,"isOpen":true,"card":"{card}","stateAction":{"id":"flex-action-1706717328508","type":"OmniScript","displayName":"Action","vlocityIcon":"standard-default","openUrlIn":"New Tab/Window","layoutType":"newport","omniType":{"Name":"Case/AddDisputedTransactions/English","Id":"0jN780000004GZPEA2","isLwcOs":true},"isLwcOS":true,"tabLabel":"Add Transactions"},"actionIndex":0,"contextId":"\\{recordId}"}],"showSpinner":"false"}'  extraclass=" nds-text-link_reset"  theme="nds"  onclick={executeAction} data-element-label="addtransactionblockblock2" data-action-key="state0element0block_element2" onkeydown={executeActionWithKeyboard} tabindex="0"><div class="nds-grid nds-wrap">
+          <div data-style-id="state0element0block_element2block_element0" class="nds-col   nds-size_2-of-12  " data-rindex={rindex} style="" ><omnistudio-flex-icon data-style-id="state0element0block_element2block_element0_child"   card={card}  record={record}  icon-type="Salesforce SVG"  icon-name="standard:product_item_transaction"  size="medium"  extraclass="slds-icon_container slds-icon-standard-product-item-transaction "  variant="inverse"  imgsrc=""  theme="nds"  ></omnistudio-flex-icon>
+      </div><div data-style-id="state0element0block_element2block_element1" class="nds-col  nds-p-left_x-small nds-m-top_xxx-small  nds-size_10-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element2block_element1_child"   card={card}  record={record}  merge-field="%3Cdiv%3EAdd%20Transaction%20To%20Case%3C/div%3E"  theme="nds"  ></omnistudio-output-field>
+      </div>
+        </div></omnistudio-block>
+    </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element1" class="nds-col  nds-p-around_small nds-m-top_medium  nds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-flex-datatable data-style-id="state0element1_child"   card={card}  record={record}  issearchavailable="true"  issortavailable="true"  cell-level-edit="false"  pagelimit="5"  group-order="asc"  tablename="DisputedTransactions"  pagesize="20"  specialcharactersort="true"  styles='\{"cellMargin":[],"cellPadding":[{"type":"around","size":"xxx-small","label":"around:xxx-small"}],"headFontWeight":"600"}'  draggable="false"  columns='\[{"fieldName":"Id","label":"Id","searchable":"false","sortable":"false","type":"text","editable":"false","userSelectable":"true","visible":"false"},{"fieldName":"FinancialAccountName","label":"Financial Account Name","searchable":true,"sortable":true,"type":"text","editable":"false","userSelectable":"true","visible":"true"},{"fieldName":"Name","label":"Name","searchable":true,"sortable":true,"type":"text","editable":"false","userSelectable":"true","visible":"true"},{"fieldName":"TransactionDescription","label":"Transaction Description","searchable":"false","sortable":true,"visible":"false","type":"textarea","editable":"false","userSelectable":"true"},{"fieldName":"Transaction_Amount__c","label":"Transaction Amount","searchable":"false","sortable":true,"type":"currency","editable":"false","userSelectable":"true","visible":"true"},{"fieldName":"TransactionType","label":"Transaction Type","searchable":true,"sortable":true,"visible":"true","type":"text","editable":"false","userSelectable":"true"}]'  records={records}  theme="nds"  ></omnistudio-flex-datatable>
+      </div>
+        </div>
+      </omnistudio-flex-card-state>
+                </template>
+                <template if:false={hasRecords}>
+                      <omnistudio-flex-card-state   data-statue="false"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state nds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="nds-grid nds-wrap nds-card nds-p-top_small nds-m-bottom_x-small " style="      
+         ">
+          <div data-style-id="state0element0" class="nds-col   nds-border_bottom nds-p-bottom_small  nds-size_12-of-12  " data-rindex={rindex} style="     border-bottom: #cccccc 2px solid; 
+         font-size:17px;" >
+    <omnistudio-block data-style-id="state0element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="nds"  ><div class="nds-grid nds-wrap">
+          <div data-style-id="state0element0block_element0" class="nds-col    nds-size_6-of-12  " data-rindex={rindex} style="      
+         " >
+    <omnistudio-block data-style-id="state0element0block_element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="nds"  ><div class="nds-grid nds-wrap">
+          <div data-style-id="state0element0block_element0block_element0" class="nds-col   nds-p-left_x-small nds-m-bottom_small  nds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element0block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%3E%3Cspan%20style=%22text-decoration:%20underline;%20color:%20#3598db;%22%3E%3Cspan%20style=%22font-size:%2018pt;%22%3EAll%20Available%20Transactions%3C/span%3E%3C/span%3E%3C/div%3E"  theme="nds"  ></omnistudio-output-field>
+      </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element0block_element1" class="nds-col   slds-text-link_reset  nds-border_top nds-border_right nds-border_bottom nds-border_left nds-p-around_xx-small nds-m-right_xx-small  nds-size_2-of-12  " data-rindex={rindex} style="     border-top: #cccccc 2px solid;border-right: #cccccc 2px solid;border-bottom: #cccccc 2px solid;border-left: #cccccc 2px solid; 
+    border-radius:5px;     " >
+    <omnistudio-block data-style-id="state0element0block_element1_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  action='\{"label":"Action","iconName":"standard-default","eventType":"onclick","actionList":[{"key":"1700671661777-9fnkuxbk5","label":"ReloadFlexCard","draggable":false,"isOpen":true,"card":"{card}","stateAction":{"id":"flex-action-1700671661807","type":"cardAction","displayName":"Action","vlocityIcon":"standard-default","targetType":"Web Page","openUrlIn":"Current Window","Web Page":{"targetName":"/apex"},"eventName":"reload"},"actionIndex":0}],"showSpinner":"true"}'  extraclass=" nds-text-link_reset"  theme="nds"  onclick={executeAction} data-element-label="refreshbuttonblock" data-action-key="state0element0block_element1" onkeydown={executeActionWithKeyboard} tabindex="0"><div class="nds-grid nds-wrap">
+          <div data-style-id="state0element0block_element1block_element0" class="nds-col   nds-size_2-of-12  " data-rindex={rindex} style="" ><omnistudio-flex-icon data-style-id="state0element0block_element1block_element0_child"   card={card}  record={record}  icon-type="Salesforce SVG"  icon-name="action:refresh"  size="medium"  extraclass="slds-icon_container slds-icon-action-refresh slds-icon_container--circle"  variant="inverse"  imgsrc=""  theme="nds"  ></omnistudio-flex-icon>
+      </div><div data-style-id="state0element0block_element1block_element1" class="nds-col  nds-p-left_x-small nds-m-top_xxx-small  nds-size_10-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element1block_element1_child"   card={card}  record={record}  merge-field="%3Cdiv%3ERefresh%3C/div%3E"  theme="nds"  ></omnistudio-output-field>
+      </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element0block_element2" class="nds-col   slds-text-link_reset  nds-border_top nds-border_right nds-border_bottom nds-border_left nds-p-around_xx-small nds-m-left_xx-small  nds-size_3-of-12  " data-rindex={rindex} style="     border-top: #cccccc 2px solid;border-right: #cccccc 2px solid;border-bottom: #cccccc 2px solid;border-left: #cccccc 2px solid; 
+    border-radius:5px;     " >
+    <omnistudio-block data-style-id="state0element0block_element2_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  action='\{"label":"Action","iconName":"standard-default","eventType":"onclick","actionList":[{"key":"1700671875129-3xrddgjl7","label":"Invoke Add Transaction OmniScript","draggable":false,"isOpen":true,"card":"{card}","stateAction":{"id":"flex-action-1706717328508","type":"OmniScript","displayName":"Action","vlocityIcon":"standard-default","openUrlIn":"New Tab/Window","layoutType":"newport","omniType":{"Name":"Case/AddDisputedTransactions/English","Id":"0jN780000004GZPEA2","isLwcOs":true},"isLwcOS":true,"tabLabel":"Add Transactions"},"actionIndex":0,"contextId":"\\{recordId}"}],"showSpinner":"false"}'  extraclass=" nds-text-link_reset"  theme="nds"  onclick={executeAction} data-element-label="addtransactionblockblock2" data-action-key="state0element0block_element2" onkeydown={executeActionWithKeyboard} tabindex="0"><div class="nds-grid nds-wrap">
+          <div data-style-id="state0element0block_element2block_element0" class="nds-col   nds-size_2-of-12  " data-rindex={rindex} style="" ><omnistudio-flex-icon data-style-id="state0element0block_element2block_element0_child"   card={card}  record={record}  icon-type="Salesforce SVG"  icon-name="standard:product_item_transaction"  size="medium"  extraclass="slds-icon_container slds-icon-standard-product-item-transaction "  variant="inverse"  imgsrc=""  theme="nds"  ></omnistudio-flex-icon>
+      </div><div data-style-id="state0element0block_element2block_element1" class="nds-col  nds-p-left_x-small nds-m-top_xxx-small  nds-size_10-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element2block_element1_child"   card={card}  record={record}  merge-field="%3Cdiv%3EAdd%20Transaction%20To%20Case%3C/div%3E"  theme="nds"  ></omnistudio-output-field>
+      </div>
+        </div></omnistudio-block>
+    </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element1" class="nds-col  nds-p-around_small nds-m-top_medium  nds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-flex-datatable data-style-id="state0element1_child"   card={card}  record={record}  issearchavailable="true"  issortavailable="true"  cell-level-edit="false"  pagelimit="5"  group-order="asc"  tablename="DisputedTransactions"  pagesize="20"  specialcharactersort="true"  styles='\{"cellMargin":[],"cellPadding":[{"type":"around","size":"xxx-small","label":"around:xxx-small"}],"headFontWeight":"600"}'  draggable="false"  columns='\[{"fieldName":"Id","label":"Id","searchable":"false","sortable":"false","type":"text","editable":"false","userSelectable":"true","visible":"false"},{"fieldName":"FinancialAccountName","label":"Financial Account Name","searchable":true,"sortable":true,"type":"text","editable":"false","userSelectable":"true","visible":"true"},{"fieldName":"Name","label":"Name","searchable":true,"sortable":true,"type":"text","editable":"false","userSelectable":"true","visible":"true"},{"fieldName":"TransactionDescription","label":"Transaction Description","searchable":"false","sortable":true,"visible":"false","type":"textarea","editable":"false","userSelectable":"true"},{"fieldName":"Transaction_Amount__c","label":"Transaction Amount","searchable":"false","sortable":true,"type":"currency","editable":"false","userSelectable":"true","visible":"true"},{"fieldName":"TransactionType","label":"Transaction Type","searchable":true,"sortable":true,"visible":"true","type":"text","editable":"false","userSelectable":"true"}]'  records={records}  theme="nds"  ></omnistudio-flex-datatable>
+      </div>
+        </div>
+      </omnistudio-flex-card-state>
+                </template>
+            </template>
+            <template if:true={hasError}>
+            {error}
+            </template>
+            
+      <omnistudio-action action-wrapperclass="slds-hide" re-render-flyout class="action-trigger slds-col" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+      <div slot="flyout" class="listener1action0 " if:true={action.listener1action0}><omnistudio-custom-lwc-wrapper element-name="c-disputed-transactions-update-english" property='\{"prefill":"{\"omniscriptEmbeddedSource\":\"flyout\",\"DisputedTransactionId\":\"{action.result.Id}\",\" ContextId\":\"{Id}\"}"}' records={records} record-id={recordId} record={record}  card={card}  action={action.listener1action0} >
+     <c-disputed-transactions-update-english   layout='newport'    ></c-disputed-transactions-update-english>
+    </omnistudio-custom-lwc-wrapper></div>
+      </omnistudio-action>
+  
+            <omnistudio-action class="execute-action" re-render-flyout action-wrapperclass="slds-hide" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+            
+            </omnistudio-action>
+            </div>
+          </template>

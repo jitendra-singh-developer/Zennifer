@@ -1,0 +1,97 @@
+<template>
+            <div class="slds-grid slds-wrap slds-is-relative containersize">
+            <div style="position: fixed;z-index: 999999;top: 0;right: 0;">
+  <omnistudio-toast class="flexcard-toast-element" theme="slds" title="" message="" styletype=""> </omnistudio-toast>
+</div>
+            <div if:true={showLoader} class="slds-is-absolute vloc-loader_override" style="height: 100%; width: 100%; min-height:50px; background: transparent; z-index: 99;">
+  <div>
+   <omnistudio-spinner
+      variant="brand"
+      alternative-text="Loading content..."
+      size="medium"
+      theme="slds"
+      ></omnistudio-spinner>
+  </div>
+</div>
+            <template if:false={hasPermission}>
+              You don't have required permissions to view this card.
+            </template>
+            <template if:true={hasPermission}>
+              <template if:true={hasRecords}>
+                        <template for:each={_records} for:item="record" for:index="rindex">
+                            <omnistudio-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-text-align_center " style="      
+         ">
+          <div data-style-id="state0element0" class="slds-col   slds-text-align_center  slds-size_12-of-12  " data-rindex={rindex} style="background-color:#0176D3;      
+         " >
+    <omnistudio-block data-style-id="state0element0_child"  card={card}  record={record}  label=""  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0" class="slds-col   slds-text-link_reset  slds-text-align_center slds-border_right slds-p-around_xx-small open-insights-button slds-size_6-of-12  " data-rindex={rindex} style="background-color:#0176D3;     border-right: #fff 1px solid; 
+    border-radius:0;     " >
+    <omnistudio-block data-style-id="state0element0block_element0_child"  card={card}  record={record}  label=""  collapsible="false"  collapsed-by-default="false"  action='\{"label":"Action","iconName":"standard-default","eventType":"onclick","actionList":[{"key":"1697806704068-gugxab6p5","label":"DisplayOpenDetails","draggable":false,"isOpen":true,"card":"{card}","stateAction":{"id":"flex-action-1697813657055","type":"Flyout","displayName":"Action","vlocityIcon":"standard-default","openUrlIn":"Current Window","flyoutType":"childCard","openFlyoutIn":"Modal","channelName":"close_modal","cardName":"BankingCustomerOpenInsightsRelatedRecords","flyoutLwc":"BankingCustomerOpenInsightsRelatedRecords","cardNode":"{record.openRecords}","hasExtraParams":false,"property":{"recordId":"{recordId}","objectApiName":"{objectApiName}","parentAttribute":{},"parentMergefields":"{card}","cardNode":"{record.openRecords}","parentRecord":"{record}","records":"{_records}"}},"actionIndex":0}],"showSpinner":"false"}'  extraclass=" slds-text-link_reset"  theme="slds"  onclick={executeAction} data-element-label="opendetails" data-action-key="state0element0block_element0" onkeydown={executeActionWithKeyboard} tabindex="0"><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0block_element0" class="slds-col  slds-text-align_center  slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element0block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-align_center%22%3E%3Cspan%20style=%22font-size:%2012pt;%20color:%20#ffffff;%22%3E%3Cstrong%3EOpen%20%7Bnodename%7Ds%3C/strong%3E%3C/span%3E%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element0block_element1" class="slds-col  slds-p-top_xx-small  slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element0block_element1_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-align_center%22%3E%3Cspan%20style=%22color:%20#ffffff;%20font-size:%2012pt;%22%3E%3Cstrong%3E%7BtotalOpen%7D%3C/strong%3E%3C/span%3E%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element0block_element1" class="slds-col   slds-text-link_reset  slds-border_left slds-p-around_xx-small open-insights-button slds-size_6-of-12  " data-rindex={rindex} style="background-color:#0176D3;     border-left: #fff 1px solid; 
+         " >
+    <omnistudio-block data-style-id="state0element0block_element1_child"  card={card}  record={record}  label=""  collapsible="false"  collapsed-by-default="false"  action='\{"label":"Action","iconName":"standard-default","eventType":"onclick","actionList":[{"key":"1697806704068-gugxab6p5","label":"DisplayClosedDetails","draggable":false,"isOpen":true,"card":"{card}","stateAction":{"id":"flex-action-1697813673035","type":"Flyout","displayName":"Action","vlocityIcon":"standard-default","openUrlIn":"Current Window","flyoutType":"childCard","openFlyoutIn":"Modal","channelName":"close_modal","cardName":"BankingCustomerOpenInsightsRelatedRecords","flyoutLwc":"BankingCustomerOpenInsightsRelatedRecords","cardNode":"{record.closedRecords}","property":{"recordId":"{recordId}","objectApiName":"{objectApiName}","parentAttribute":{},"parentMergefields":"{card}","cardNode":"{record.closedRecords}","parentRecord":"{record}","records":"{_records}"}},"actionIndex":0}],"showSpinner":"false"}'  extraclass=" slds-text-link_reset"  theme="slds"  onclick={executeAction} data-element-label="closeddetails" data-action-key="state0element0block_element1" onkeydown={executeActionWithKeyboard} tabindex="0"><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element1block_element0" class="slds-col   slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element1block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-align_center%22%3E%3Cspan%20style=%22font-size:%2012pt;%20color:%20#ffffff;%22%3E%3Cstrong%3EClosed%20%7Bnodename%7Ds%3C/strong%3E%3C/span%3E%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element1" class="slds-col  slds-p-top_xx-small  slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element1block_element1_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-align_center%22%3E%3Cspan%20style=%22color:%20#ffffff;%20font-size:%2012pt;%22%3E%3Cstrong%3E%7BtotalClosed%7D%3C/strong%3E%3C/span%3E%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div>
+        </div></omnistudio-block>
+    </div>
+        </div></omnistudio-block>
+    </div>
+        </div>
+      </omnistudio-flex-card-state>
+                        </template>
+                      </template>
+                      <template if:false={hasRecords}>
+                            <omnistudio-flex-card-state  record={record} data-statue="false"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-text-align_center " style="      
+         ">
+          <div data-style-id="state0element0" class="slds-col   slds-text-align_center  slds-size_12-of-12  " data-rindex={rindex} style="background-color:#0176D3;      
+         " >
+    <omnistudio-block data-style-id="state0element0_child"  card={card}  record={record}  label=""  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0" class="slds-col   slds-text-link_reset  slds-text-align_center slds-border_right slds-p-around_xx-small open-insights-button slds-size_6-of-12  " data-rindex={rindex} style="background-color:#0176D3;     border-right: #fff 1px solid; 
+    border-radius:0;     " >
+    <omnistudio-block data-style-id="state0element0block_element0_child"  card={card}  record={record}  label=""  collapsible="false"  collapsed-by-default="false"  action='\{"label":"Action","iconName":"standard-default","eventType":"onclick","actionList":[{"key":"1697806704068-gugxab6p5","label":"DisplayOpenDetails","draggable":false,"isOpen":true,"card":"{card}","stateAction":{"id":"flex-action-1697813657055","type":"Flyout","displayName":"Action","vlocityIcon":"standard-default","openUrlIn":"Current Window","flyoutType":"childCard","openFlyoutIn":"Modal","channelName":"close_modal","cardName":"BankingCustomerOpenInsightsRelatedRecords","flyoutLwc":"BankingCustomerOpenInsightsRelatedRecords","cardNode":"{record.openRecords}","hasExtraParams":false,"property":{"recordId":"{recordId}","objectApiName":"{objectApiName}","parentAttribute":{},"parentMergefields":"{card}","cardNode":"{record.openRecords}","parentRecord":"{record}","records":"{_records}"}},"actionIndex":0}],"showSpinner":"false"}'  extraclass=" slds-text-link_reset"  theme="slds"  onclick={executeAction} data-element-label="opendetails" data-action-key="state0element0block_element0" onkeydown={executeActionWithKeyboard} tabindex="0"><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0block_element0" class="slds-col  slds-text-align_center  slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element0block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-align_center%22%3E%3Cspan%20style=%22font-size:%2012pt;%20color:%20#ffffff;%22%3E%3Cstrong%3EOpen%20%7Bnodename%7Ds%3C/strong%3E%3C/span%3E%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element0block_element1" class="slds-col  slds-p-top_xx-small  slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element0block_element1_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-align_center%22%3E%3Cspan%20style=%22color:%20#ffffff;%20font-size:%2012pt;%22%3E%3Cstrong%3E%7BtotalOpen%7D%3C/strong%3E%3C/span%3E%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element0block_element1" class="slds-col   slds-text-link_reset  slds-border_left slds-p-around_xx-small open-insights-button slds-size_6-of-12  " data-rindex={rindex} style="background-color:#0176D3;     border-left: #fff 1px solid; 
+         " >
+    <omnistudio-block data-style-id="state0element0block_element1_child"  card={card}  record={record}  label=""  collapsible="false"  collapsed-by-default="false"  action='\{"label":"Action","iconName":"standard-default","eventType":"onclick","actionList":[{"key":"1697806704068-gugxab6p5","label":"DisplayClosedDetails","draggable":false,"isOpen":true,"card":"{card}","stateAction":{"id":"flex-action-1697813673035","type":"Flyout","displayName":"Action","vlocityIcon":"standard-default","openUrlIn":"Current Window","flyoutType":"childCard","openFlyoutIn":"Modal","channelName":"close_modal","cardName":"BankingCustomerOpenInsightsRelatedRecords","flyoutLwc":"BankingCustomerOpenInsightsRelatedRecords","cardNode":"{record.closedRecords}","property":{"recordId":"{recordId}","objectApiName":"{objectApiName}","parentAttribute":{},"parentMergefields":"{card}","cardNode":"{record.closedRecords}","parentRecord":"{record}","records":"{_records}"}},"actionIndex":0}],"showSpinner":"false"}'  extraclass=" slds-text-link_reset"  theme="slds"  onclick={executeAction} data-element-label="closeddetails" data-action-key="state0element0block_element1" onkeydown={executeActionWithKeyboard} tabindex="0"><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element1block_element0" class="slds-col   slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element1block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-align_center%22%3E%3Cspan%20style=%22font-size:%2012pt;%20color:%20#ffffff;%22%3E%3Cstrong%3EClosed%20%7Bnodename%7Ds%3C/strong%3E%3C/span%3E%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element1" class="slds-col  slds-p-top_xx-small  slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element1block_element1_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-align_center%22%3E%3Cspan%20style=%22color:%20#ffffff;%20font-size:%2012pt;%22%3E%3Cstrong%3E%7BtotalClosed%7D%3C/strong%3E%3C/span%3E%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div>
+        </div></omnistudio-block>
+    </div>
+        </div></omnistudio-block>
+    </div>
+        </div>
+      </omnistudio-flex-card-state>
+                      </template>
+            </template>
+            <template if:true={hasError}>
+            {error}
+            </template>
+            
+      <omnistudio-action action-wrapperclass="slds-hide" re-render-flyout class="action-trigger slds-col" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+      
+      </omnistudio-action>
+  
+            <omnistudio-action class="execute-action" re-render-flyout action-wrapperclass="slds-hide" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+            <div slot="flyout" class="opendetailsaction0 " if:true={action.opendetailsaction0}> <c-cf-banking-customer-open-insights-related-records data-style-id="state0element0block_element0_child"  card-node="\{record.openRecords}"  parent-record={record}  records={_records}  parent-mergefields={card}  record-id={recordId}  object-api-name={objectApiName}  parent-attribute='\{}'  ></c-cf-banking-customer-open-insights-related-records></div><div slot="flyout" class="closeddetailsaction0 " if:true={action.closeddetailsaction0}> <c-cf-banking-customer-open-insights-related-records data-style-id="state0element0block_element1_child"  card-node="\{record.closedRecords}"  parent-record={record}  records={_records}  parent-mergefields={card}  record-id={recordId}  object-api-name={objectApiName}  parent-attribute='\{}'  ></c-cf-banking-customer-open-insights-related-records></div>
+            </omnistudio-action>
+            </div>
+          </template>

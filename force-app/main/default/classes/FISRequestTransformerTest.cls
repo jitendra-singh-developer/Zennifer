@@ -1,0 +1,28 @@
+@isTest
+private class FISRequestTransformerTest {
+
+    private static final String MOCK_REQUEST_BODY_CREATE_CUSTOMER = '{"organizationCustomers":[{"customerReferenceId":"SalesforceID1","CIOpenOrgNmeAddrLneCde01":"N","CIOpenOrgNmeAddrLne01":"ZennTest #1","CIOpenOrgNmeAddrLneCde02":"S","CIOpenOrgNmeAddrLne02":"1234 Test Ignore","CIOpenOrgNmeAddrLneCde03":"C","CIOpenOrgNmeAddrLne03":"Miami FL 33433","CIOpenOrgCtryCde":"USA","CIOpenOrgBusSinceDte":"2024-04-20","CIOpenOrgPIncorpState":"CA","CIOpenOrgPrmyPhNbr":"1112223333","CIOpenOrgScndyPhNbr":"2222223333","CIOpenOrgMobilePhNbr":"3332223333","CIOpenOrgCustTaxCde":"F","CIOpenOrgCustTaxNbr":"131221101","CIOpenOrgAddrOvrideInd":"Y","CIOpenOrgNAICSCde":926110,"CIOpenOrgTypOfBusCde":"001","CIOpenOrgNbrEmpl":"001","CIOpenOrgMiscDemoCde1":"100200","CIOpenOrgMiscDemoCde2":"100200","CIOpenOrgMiscDemoCde3":"ZENNIFY","CIOpenOrgMiscDemoCde4":"FSC","CIOpenOrgMiscDemoCde5":"API","CIOpenOrgBrnchNbr":7035,"CIOpenOrgCstCntrNbrr":7018,"CIOpenOrgPrmyOffcrNbr":876,"CIOpenOrgScndyOffcrNbr":10999}],"individualCustomers":[{"customerReferenceId":"SalesforceID2","CIOpenIndNmeAddrLneCde01":"N","CIOpenIndNmeAddrLne01":"Zenn TestOwner1","CIOpenIndNmeAddrLneCde02":"S","CIOpenIndNmeAddrLne02":"1234 Fake Ln.","CIOpenIndNmeAddrLneCde03":"C","CIOpenIndNmeAddrLne03":"Miami FL 33433","CIOpenIndCtryCde":"USA","CIOpenIndBirthdate":"1960-01-01","CIOpenIndPrmyPhNbr":"1111111111","CIOpenIndScndyPhNbr":"1112221111","CIOpenIndMobilePhNbr":"1113331111","CIOpenIndCustTaxCde":"S","CIOpenIndCustTaxNbr":"111221321","CIOpenIndPrmyID":"Test123","CIOpenIndPIDTyp1":"001","CIOpenIndPIDNbr1":"D30021031122","CIOpenIndPIDIssEnt1":"DMV","CIOpenIndPIDIssLoc1":"Main branch","CIOpenIndPIDIssDte1":"2000-10-10","CIOpenIndPIDExpDte1":"2030-10-11","CIOpenIndCitizenshipCde":"Y","CIOpenIndCustEmploymentSchool":"Trailhead","CIOpenIndCustEmploymentDte":"2024-04-01","CIOpenIndOccpnCde":"011","CIOpenIndNAICS":922160,"CIOpenIndNAStandardizationOvride":"Y","CIOpenIndBrnchNbr":7035,"CIOpenIndCstCntrNbr":7018,"CIOpenIndPrmyOffcrNbr":876,"CIOpenIndScndyOffcrNbr":10999},{"customerReferenceId":"SalesforceID3","CIOpenIndNmeAddrLneCde01":"N","CIOpenIndNmeAddrLne01":"Zenn TestOwner2","CIOpenIndNmeAddrLneCde02":"S","CIOpenIndNmeAddrLne02":"456 Not Real Dr.","CIOpenIndNmeAddrLneCde03":"C","CIOpenIndNmeAddrLne03":"Sacramento CA 95833","CIOpenIndCtryCde":"USA","CIOpenIndBirthdate":"1980-02-02","CIOpenIndPrmyPhNbr":"2221111111","CIOpenIndScndyPhNbr":"2222221111","CIOpenIndMobilePhNbr":"2223331111","CIOpenIndCustTaxCde":"S","CIOpenIndCustTaxNbr":"111722331","CIOpenIndPrmyID":"DLTest001","CIOpenIndPIDTyp1":"002","CIOpenIndPIDNbr1":"ABC100222","CIOpenIndPIDIssEnt1":"Florida","CIOpenIndPIDIssLoc1":"Flora Branch","CIOpenIndPIDIssDte1":"2015-05-01","CIOpenIndPIDExpDte1":"2025-06-02","CIOpenIndCitizenshipCde":"Y","CIOpenIndCustEmploymentSchool":"UC Fake","CIOpenIndCustEmploymentDte":"2024-05-01","CIOpenIndOccpnCde":"007","CIOpenIndNAICS":928110,"CIOpenIndNAStandardizationOvride":"Y","CIOpenIndBrnchNbr":7035,"CIOpenIndCstCntrNbr":7018,"CIOpenIndPrmyOffcrNbr":876,"CIOpenIndScndyOffcrNbr":10999}],"customerToCustomerRelationships":[{"customerReferenceId":"SalesforceID1","relatedCustomerReferenceId":"SalesforceID2","CICustToCustAddDelInd":"A","CICustToCustE1toE2Cde":71,"CICustToCustE2toE1Cde":68,"CICustToCustPriBeneOwnr":"C","CICustToCustPriBeneTitle":"CEO"},{"customerReferenceId":"SalesforceID1","relatedCustomerReferenceId":"SalesforceID3","CICustToCustAddDelInd":"A","CICustToCustE1toE2Cde":70,"CICustToCustE2toE1Cde":67,"CICustToCustPriBeneOwnr":"O","CICustToCustPriPercentOwner":50}],"emailMaintenance":[{"customerReferenceId":"SalesforceID1","CustEmailMaintAddDelInd":"A","CustEmailMaintResnCde":"PRI","CustEmailMaintEmailAddr":"testbusiness1@fake.com"},{"customerReferenceId":"SalesforceID2","CustEmailMaintAddDelInd":"A","CustEmailMaintResnCde":"PRI","CustEmailMaintEmailAddr":"testbusowner1@fake.com"},{"customerReferenceId":"SalesforceID3","CustEmailMaintAddDelInd":"A","CustEmailMaintResnCde":"PRI","CustEmailMaintEmailAddr":"testbusowner2@fake.com"}],"customerDueDiligence":[{"customerReferenceId":"SalesforceID1","CustDueDiligenceCmpltDte":"2024-04-24","CustDueDiligenceInfoObtnBy":"FSC ZENN","CustDueDiligenceSrcOfFunds":"Sandbox","CustDueDiligenceDescBus":"Test Business","CustDueDiligenceUsrDefFldLbl21":"Test label"}]}';
+
+    @isTest
+    static void testTransformCustomerReferenceIds() {
+        // Prepare mock input data
+        Map<String, Object> inputMap = (Map<String, Object>)JSON.deserializeUntyped(MOCK_REQUEST_BODY_CREATE_CUSTOMER);
+        Map<String, Object> outputMap = new Map<String, Object>();
+        Map<String, Object> options = new Map<String, Object>();
+        
+        Test.startTest();
+        // Invoke the method
+        Boolean result = new FISRequestTransformer().invokeMethod('customerReferenceId', inputMap, outputMap, options);
+        Test.stopTest();
+        
+        // Assert the result
+        System.assertEquals(true, result, 'The method should return true.');
+        System.debug('OUTPUT: '+JSON.serialize(outputMap));
+        // Assert that transformation occurred
+        List<Object> orgCustList = (List<Object>)outputMap.get('organizationCustomers');
+        System.assertNotEquals(null, orgCustList, 'Missing original list: organizationCustomers');
+        System.assertNotEquals(0, orgCustList.size(), 'Missing record from original list: organizationCustomers');
+        Map<String,Object> orgCustData = (Map<String,Object> )orgCustList[0];
+        System.assertEquals('1', orgCustData.get('customerReferenceId'), 'customerReferenceId on first organizationCustomers should be "1"');
+    }
+}

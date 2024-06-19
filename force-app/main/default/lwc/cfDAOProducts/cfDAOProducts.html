@@ -1,0 +1,119 @@
+<template>
+            <div class="nds-grid nds-wrap nds-is-relative ">
+            <div style="position: fixed;z-index: 999999;top: 0;right: 0;">
+  <omnistudio-toast class="flexcard-toast-element" theme="nds" title="" message="" styletype=""> </omnistudio-toast>
+</div>
+            <div if:true={showLoader} class="nds-is-absolute vloc-loader_override" style="height: 100%; width: 100%; min-height:50px; background: transparent; z-index: 99;">
+  <div>
+   <omnistudio-spinner
+      variant="brand"
+      alternative-text="Loading content..."
+      size="small"
+      theme="nds"
+      ></omnistudio-spinner>
+  </div>
+</div>
+            <template if:false={hasPermission}>
+              You don't have required permissions to view this card.
+            </template>
+            <template if:true={hasPermission}>
+              <template if:true={hasRecords}>
+                        <template for:each={_records} for:item="record" for:index="rindex">
+                            <omnistudio-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state nds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="nds-grid nds-wrap " style="      
+         ">
+          <div data-style-id="state0element0" class="nds-col   nds-m-bottom_xx-large  nds-size_12-of-12  " data-rindex={rindex} style="background-color:#FAC6BE;      
+    border-radius:20px;     overflow: hidden; background: var(--theme-secondary);" >
+    <omnistudio-block data-style-id="state0element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="nds"  ><div class="nds-grid nds-wrap">
+          <div data-style-id="state0element0block_element0" class="nds-col    nds-p-around_xx-large  nds-large-size_6-of-12 nds-medium-size_6-of-12 nds-small-size_12-of-12 nds-size_12-of-12  " data-rindex={rindex} style="      
+     height:100%;    align-self: center;" >
+    <omnistudio-block data-style-id="state0element0block_element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="nds"  ><div class="nds-grid nds-wrap">
+          <div data-style-id="state0element0block_element0block_element0" class="nds-col  nds-m-bottom_xx-large  nds-size_12-of-12  " data-rindex={rindex} style="      
+        color:#60190F; color: var(--theme-secondary-text);" ><omnistudio-output-field data-style-id="state0element0block_element0block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22nds-text-heading_large%22%3EFor%20Personal%3C/div%3E"  theme="nds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element0block_element1" class="nds-col   nds-size_12-of-12 " data-rindex={rindex} style="" ><omnistudio-flex-action data-style-id="state0element0block_element0block_element1_child"  tracking-obj={_childCardTrackingObj}  class= "state0element0block_element0block_element1_child flexActionElement" 
+        data-action-element-class="state0element0block_element0block_element1_child" data-action-key="state0element0block_element0block_element1" onexecuteaction={performAction} data-show-spinner="false"
+        data-element-label="consumerapplycta"   state-obj={record}  card={card}  record={record}  label="Select Products & Apply"  icon-name="utility:forward"  action-list='\[{"stateAction":{"id":"flex-action-1686925772238","type":"Custom","targetType":"Community Named Page","openUrlIn":"Current Window","Community Named Page":{"targetName":"ConsumerProductSelector__c"}},"key":"1686925760813-fxh8q2810","label":"Action","draggable":true,"isOpen":true,"actionIndex":0}]'  hide-action-icon="true"  display-as-button="true"  button-variant="brand"  icon-size="x-small"  icon-color="#fff"  icon-only="false"  flyout-details='\{}'  theme="nds"  ></omnistudio-flex-action>
+      </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element0block_element1" class="nds-col  dao-product-card-image nds-size_6-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-flex-img data-style-id="state0element0block_element1_child"   card={card}  record={record}  size=""  extraclass="nds-align_absolute-center"  state-img='\{"imgsrc":"/resource/DAOConsumerImg","alternativeText":"Image description"}'  theme="nds"  ></omnistudio-flex-img>
+      </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element1" class="nds-col   nds-m-bottom_xx-large  nds-size_12-of-12  " data-rindex={rindex} style="background-color:#FAC6BE;      
+    border-radius:20px;     overflow: hidden; background: var(--theme-secondary);" >
+    <omnistudio-block data-style-id="state0element1_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="nds"  ><div class="nds-grid nds-wrap">
+          <div data-style-id="state0element1block_element0" class="nds-col    nds-p-around_xx-large  nds-large-size_6-of-12 nds-medium-size_6-of-12 nds-small-size_12-of-12 nds-size_12-of-12  " data-rindex={rindex} style="      
+     height:100%;    align-self: center;" >
+    <omnistudio-block data-style-id="state0element1block_element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="nds"  ><div class="nds-grid nds-wrap">
+          <div data-style-id="state0element1block_element0block_element0" class="nds-col  nds-m-bottom_xx-large  nds-size_12-of-12  " data-rindex={rindex} style="      
+        color:#60190F; color: var(--theme-secondary-text);" ><omnistudio-output-field data-style-id="state0element1block_element0block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22nds-text-heading_large%22%3EFor%20Commercial/Business%3C/div%3E"  theme="nds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element1block_element0block_element1" class="nds-col   nds-size_12-of-12 " data-rindex={rindex} style="" ><omnistudio-flex-action data-style-id="state0element1block_element0block_element1_child"  tracking-obj={_childCardTrackingObj}  class= "state0element1block_element0block_element1_child flexActionElement" 
+        data-action-element-class="state0element1block_element0block_element1_child" data-action-key="state0element1block_element0block_element1" onexecuteaction={performAction} data-show-spinner="false"
+        data-element-label="commercialapplycta"   state-obj={record}  card={card}  record={record}  label="Select Products & Apply"  icon-name="utility:forward"  action-list='\[{"stateAction":{"id":"flex-action-1691072718461","type":"Custom","targetType":"Community Named Page","openUrlIn":"Current Window","Community Named Page":{"targetName":"CommercialProductSelector__c"}},"key":"1686925760813-fxh8q2810","label":"Action","draggable":false,"isOpen":true,"actionIndex":0}]'  hide-action-icon="true"  display-as-button="true"  button-variant="brand"  icon-size="x-small"  icon-color="#fff"  icon-only="false"  flyout-details='\{}'  theme="nds"  ></omnistudio-flex-action>
+      </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element1block_element1" class="nds-col  dao-product-card-image nds-size_6-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-flex-img data-style-id="state0element1block_element1_child"   card={card}  record={record}  size=""  extraclass="nds-align_absolute-center"  state-img='\{"imgsrc":"/resource/DAOCommercialImg","alternativeText":"Image description"}'  theme="nds"  ></omnistudio-flex-img>
+      </div>
+        </div></omnistudio-block>
+    </div>
+        </div>
+      </omnistudio-flex-card-state>
+                        </template>
+                      </template>
+                      <template if:false={hasRecords}>
+                            <omnistudio-flex-card-state  record={record} data-statue="false"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state nds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="nds-grid nds-wrap " style="      
+         ">
+          <div data-style-id="state0element0" class="nds-col   nds-m-bottom_xx-large  nds-size_12-of-12  " data-rindex={rindex} style="background-color:#FAC6BE;      
+    border-radius:20px;     overflow: hidden; background: var(--theme-secondary);" >
+    <omnistudio-block data-style-id="state0element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="nds"  ><div class="nds-grid nds-wrap">
+          <div data-style-id="state0element0block_element0" class="nds-col    nds-p-around_xx-large  nds-large-size_6-of-12 nds-medium-size_6-of-12 nds-small-size_12-of-12 nds-size_12-of-12  " data-rindex={rindex} style="      
+     height:100%;    align-self: center;" >
+    <omnistudio-block data-style-id="state0element0block_element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="nds"  ><div class="nds-grid nds-wrap">
+          <div data-style-id="state0element0block_element0block_element0" class="nds-col  nds-m-bottom_xx-large  nds-size_12-of-12  " data-rindex={rindex} style="      
+        color:#60190F; color: var(--theme-secondary-text);" ><omnistudio-output-field data-style-id="state0element0block_element0block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22nds-text-heading_large%22%3EFor%20Personal%3C/div%3E"  theme="nds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element0block_element1" class="nds-col   nds-size_12-of-12 " data-rindex={rindex} style="" ><omnistudio-flex-action data-style-id="state0element0block_element0block_element1_child"  tracking-obj={_childCardTrackingObj}  class= "state0element0block_element0block_element1_child flexActionElement" 
+        data-action-element-class="state0element0block_element0block_element1_child" data-action-key="state0element0block_element0block_element1" onexecuteaction={performAction} data-show-spinner="false"
+        data-element-label="consumerapplycta"   state-obj={record}  card={card}  record={record}  label="Select Products & Apply"  icon-name="utility:forward"  action-list='\[{"stateAction":{"id":"flex-action-1686925772238","type":"Custom","targetType":"Community Named Page","openUrlIn":"Current Window","Community Named Page":{"targetName":"ConsumerProductSelector__c"}},"key":"1686925760813-fxh8q2810","label":"Action","draggable":true,"isOpen":true,"actionIndex":0}]'  hide-action-icon="true"  display-as-button="true"  button-variant="brand"  icon-size="x-small"  icon-color="#fff"  icon-only="false"  flyout-details='\{}'  theme="nds"  ></omnistudio-flex-action>
+      </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element0block_element1" class="nds-col  dao-product-card-image nds-size_6-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-flex-img data-style-id="state0element0block_element1_child"   card={card}  record={record}  size=""  extraclass="nds-align_absolute-center"  state-img='\{"imgsrc":"/resource/DAOConsumerImg","alternativeText":"Image description"}'  theme="nds"  ></omnistudio-flex-img>
+      </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element1" class="nds-col   nds-m-bottom_xx-large  nds-size_12-of-12  " data-rindex={rindex} style="background-color:#FAC6BE;      
+    border-radius:20px;     overflow: hidden; background: var(--theme-secondary);" >
+    <omnistudio-block data-style-id="state0element1_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="nds"  ><div class="nds-grid nds-wrap">
+          <div data-style-id="state0element1block_element0" class="nds-col    nds-p-around_xx-large  nds-large-size_6-of-12 nds-medium-size_6-of-12 nds-small-size_12-of-12 nds-size_12-of-12  " data-rindex={rindex} style="      
+     height:100%;    align-self: center;" >
+    <omnistudio-block data-style-id="state0element1block_element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="nds"  ><div class="nds-grid nds-wrap">
+          <div data-style-id="state0element1block_element0block_element0" class="nds-col  nds-m-bottom_xx-large  nds-size_12-of-12  " data-rindex={rindex} style="      
+        color:#60190F; color: var(--theme-secondary-text);" ><omnistudio-output-field data-style-id="state0element1block_element0block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22nds-text-heading_large%22%3EFor%20Commercial/Business%3C/div%3E"  theme="nds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element1block_element0block_element1" class="nds-col   nds-size_12-of-12 " data-rindex={rindex} style="" ><omnistudio-flex-action data-style-id="state0element1block_element0block_element1_child"  tracking-obj={_childCardTrackingObj}  class= "state0element1block_element0block_element1_child flexActionElement" 
+        data-action-element-class="state0element1block_element0block_element1_child" data-action-key="state0element1block_element0block_element1" onexecuteaction={performAction} data-show-spinner="false"
+        data-element-label="commercialapplycta"   state-obj={record}  card={card}  record={record}  label="Select Products & Apply"  icon-name="utility:forward"  action-list='\[{"stateAction":{"id":"flex-action-1691072718461","type":"Custom","targetType":"Community Named Page","openUrlIn":"Current Window","Community Named Page":{"targetName":"CommercialProductSelector__c"}},"key":"1686925760813-fxh8q2810","label":"Action","draggable":false,"isOpen":true,"actionIndex":0}]'  hide-action-icon="true"  display-as-button="true"  button-variant="brand"  icon-size="x-small"  icon-color="#fff"  icon-only="false"  flyout-details='\{}'  theme="nds"  ></omnistudio-flex-action>
+      </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element1block_element1" class="nds-col  dao-product-card-image nds-size_6-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-flex-img data-style-id="state0element1block_element1_child"   card={card}  record={record}  size=""  extraclass="nds-align_absolute-center"  state-img='\{"imgsrc":"/resource/DAOCommercialImg","alternativeText":"Image description"}'  theme="nds"  ></omnistudio-flex-img>
+      </div>
+        </div></omnistudio-block>
+    </div>
+        </div>
+      </omnistudio-flex-card-state>
+                      </template>
+            </template>
+            <template if:true={hasError}>
+            {error}
+            </template>
+            
+      <omnistudio-action action-wrapperclass="slds-hide" re-render-flyout class="action-trigger slds-col" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+      
+      </omnistudio-action>
+  
+            <omnistudio-action class="execute-action" re-render-flyout action-wrapperclass="slds-hide" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+            
+            </omnistudio-action>
+            </div>
+          </template>

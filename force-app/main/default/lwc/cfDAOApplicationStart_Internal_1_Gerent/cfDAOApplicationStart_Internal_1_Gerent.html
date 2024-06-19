@@ -1,0 +1,141 @@
+<template>
+            <div class="slds-grid slds-wrap slds-is-relative ">
+            <div style="position: fixed;z-index: 999999;top: 0;right: 0;">
+  <omnistudio-toast class="flexcard-toast-element" theme="slds" title="" message="" styletype=""> </omnistudio-toast>
+</div>
+            <div if:true={showLoader} class="slds-is-absolute vloc-loader_override" style="height: 100%; width: 100%; min-height:50px; background: transparent; z-index: 99;">
+  <div>
+   <omnistudio-spinner
+      variant="brand"
+      alternative-text="Loading content..."
+      size="medium"
+      theme="slds"
+      ></omnistudio-spinner>
+  </div>
+</div>
+            <template if:false={hasPermission}>
+              You don't have required permissions to view this card.
+            </template>
+            <template if:true={hasPermission}>
+              <template if:true={hasRecords}>
+                      <omnistudio-flex-card-state   data-statue="true"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap " style="      
+         ">
+          <div data-style-id="state0element0" class="slds-col    slds-size_12-of-12  " data-rindex={rindex} style="      
+         " >
+    <omnistudio-block data-style-id="state0element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0" class="slds-col  slds-text-align_center slds-card slds-border_top slds-border_right slds-border_bottom slds-border_left slds-p-around_xx-small slds-m-bottom_small slds-m-top_small  slds-size_12-of-12  " data-rindex={rindex} style="     border-top: #cccccc 2px solid;border-right: #cccccc 2px solid;border-bottom: #cccccc 2px solid;border-left: #cccccc 2px solid; 
+    border-radius:10px;     " ><omnistudio-output-field data-style-id="state0element0block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-align_center%22%3E%3Cspan%20style=%22font-size:%2024pt;%22%3E%3Cstrong%3ESelect%20the%20type%20of%20account%20for%20opening%3C/strong%3E%3C/span%3E%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1" class="slds-col   slds-p-around_x-small slds-size_12-of-12 " data-rindex={rindex} style="" >
+    <omnistudio-block data-style-id="state0element0block_element1_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element1block_element0" class="slds-col   slds-size_1-of-12  " data-rindex={rindex} style="" ><omnistudio-output-field data-style-id="state0element0block_element1block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%3E&nbsp;%20&nbsp;%20&nbsp;%20&nbsp;%20&nbsp;&nbsp;%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element1" class="slds-col   slds-theme_default slds-card slds-border_top slds-border_right slds-border_bottom slds-border_left slds-m-around_x-small  slds-size_5-of-12  " data-rindex={rindex} style="background-color:#FAC6BE;     border-top: #cccccc 1px solid;border-right: #cccccc 1px solid;border-bottom: #cccccc 1px solid;border-left: #cccccc 1px solid; 
+    border-radius:10px;     overflow: hidden; background: var(--theme-secondary);" >
+    <omnistudio-block data-style-id="state0element0block_element1block_element1_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element1block_element1block_element0" class="slds-col    slds-p-around_xx-large  slds-large-size_6-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12  " data-rindex={rindex} style="      
+     height:100%;    align-self: center;" >
+    <omnistudio-block data-style-id="state0element0block_element1block_element1block_element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element1block_element1block_element0block_element0" class="slds-col  slds-m-bottom_xx-large  slds-size_12-of-12  " data-rindex={rindex} style="      
+        color:#60190F; color: var(--theme-secondary-text);" ><omnistudio-output-field data-style-id="state0element0block_element1block_element1block_element0block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-heading_large%22%3EPersonal%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element1block_element0block_element1" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><omnistudio-flex-action data-style-id="state0element0block_element1block_element1block_element0block_element1_child"  tracking-obj={_childCardTrackingObj}  class= "state0element0block_element1block_element1block_element0block_element1_child flexActionElement" 
+        data-action-element-class="state0element0block_element1block_element1block_element0block_element1_child" data-action-key="state0element0block_element1block_element1block_element0block_element1" onexecuteaction={performAction} data-show-spinner="false"
+        data-element-label="commercialapplycta"   state-obj={record}  card={card}  record={record}  label="Start Application"  icon-name="utility:forward"  action-list='\[{"stateAction":{"id":"flex-action-1701691729464","type":"DataAction","targetType":"Community Named Page","openUrlIn":"Current Window","Community Named Page":{"targetName":"BusinessApplicationStart__c"},"message":"{\"type\":\"IntegrationProcedures\",\"value\":{\"dsDelay\":\"\",\"ipMethod\":\"DAO_ApplicationCreate_Internal\",\"vlocityAsync\":false,\"inputMap\":{\"RecordTypeName\":\"Business\"},\"resultVar\":\"\"},\"orderBy\":{\"name\":\"\",\"isReverse\":\"\"},\"contextVariables\":[]}","eventName":"updatedatasource","responseNode":""},"key":"1686925760813-fxh8q2810","label":"CreatePersonalApplication","draggable":true,"isOpen":true,"actionIndex":0},{"key":"1701689526616-95msimj23","label":"NavigateToPersonalApplication","draggable":true,"isOpen":true,"card":"{card}","stateAction":{"id":"flex-action-1701691719021","type":"Custom","displayName":"Action","vlocityIcon":"standard-default","targetType":"Record","openUrlIn":"New Tab/Window","Record":{"targetId":"{action.ApplicationId}","targetAction":"view","targetName":"Application_FINS__c"}},"actionIndex":1}]'  hide-action-icon="true"  display-as-button="true"  button-variant="brand"  icon-size="x-small"  icon-color="#fff"  icon-only="false"  flyout-details='\{}'  styles='\{"label":{"textAlign":""}}'  theme="slds"  ></omnistudio-flex-action>
+      </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element0block_element1block_element1block_element1" class="slds-col  dao-product-card-image slds-size_6-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-flex-img data-style-id="state0element0block_element1block_element1block_element1_child"   card={card}  record={record}  size=""  extraclass="slds-align_absolute-center"  state-img='\{"imgsrc":"/resource/DAOConsumerImg","alternativeText":"Image description"}'  theme="slds"  ></omnistudio-flex-img>
+      </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element0block_element1block_element2" class="slds-col   slds-theme_default slds-card slds-border_top slds-border_right slds-border_bottom slds-border_left slds-m-around_x-small  slds-size_5-of-12  " data-rindex={rindex} style="     border-top: #cccccc 1px solid;border-right: #cccccc 1px solid;border-bottom: #cccccc 1px solid;border-left: #cccccc 1px solid; 
+    border-radius:10px;     overflow: hidden; background: var(--theme-secondary);" >
+    <omnistudio-block data-style-id="state0element0block_element1block_element2_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element1block_element2block_element0" class="slds-col    slds-p-around_xx-large  slds-large-size_6-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12  " data-rindex={rindex} style="      
+     height:100%;    align-self: center;" >
+    <omnistudio-block data-style-id="state0element0block_element1block_element2block_element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element1block_element2block_element0block_element0" class="slds-col  slds-m-bottom_xx-large  slds-size_12-of-12  " data-rindex={rindex} style="      
+        color:#60190F; color: var(--theme-secondary-text);" ><omnistudio-output-field data-style-id="state0element0block_element1block_element2block_element0block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-heading_large%22%3EBusiness%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element2block_element0block_element1" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><omnistudio-flex-action data-style-id="state0element0block_element1block_element2block_element0block_element1_child"  tracking-obj={_childCardTrackingObj}  class= "state0element0block_element1block_element2block_element0block_element1_child flexActionElement" 
+        data-action-element-class="state0element0block_element1block_element2block_element0block_element1_child" data-action-key="state0element0block_element1block_element2block_element0block_element1" onexecuteaction={performAction} data-show-spinner="false"
+        data-element-label="commercialapplycta"   state-obj={record}  card={card}  record={record}  label="Start Application"  icon-name="utility:forward"  action-list='\[{"stateAction":{"id":"flex-action-1701693111040","type":"cardAction","openUrlIn":"Current Window","message":"{\"type\":\"IntegrationProcedures\",\"value\":{\"dsDelay\":\"\",\"ipMethod\":\"DAO_ApplicationCreate_Internal\",\"vlocityAsync\":false,\"inputMap\":{\"RecordTypeName\":\"Business\"}},\"orderBy\":{\"name\":\"\",\"isReverse\":\"\"},\"contextVariables\":[]}","eventName":"updatedatasource"},"key":"1686925760813-fxh8q2810","label":"CreateBusinessApplication","draggable":true,"isOpen":true,"actionIndex":0},{"key":"1701692667806-cjju0foua","label":"UpdateSessionVAR","draggable":true,"isOpen":true,"card":"{card}","stateAction":{"id":"flex-action-1701693114159","type":"cardAction","displayName":"Action","vlocityIcon":"standard-default","targetType":"Web Page","openUrlIn":"Current Window","Web Page":{"targetName":"/apex"},"eventName":"setValues","fieldValues":[{"fieldName":"Session.BusinessApplicationId","fieldValue":"{ApplicationId}"}]},"actionIndex":1},{"key":"1701693243905-6mikmbyqh","label":"navAction","draggable":true,"isOpen":true,"card":"{card}","stateAction":{"id":"flex-action-1701693279929","type":"Custom","displayName":"Action","vlocityIcon":"standard-default","targetType":"Record","openUrlIn":"Current Window","Record":{"targetName":"Application_FINS__c","targetAction":"view","targetId":"{ApplicationId}"}},"actionIndex":2}]'  hide-action-icon="true"  display-as-button="true"  button-variant="brand"  icon-size="x-small"  icon-color="#fff"  icon-only="false"  flyout-details='\{}'  styles='\{"label":{"textAlign":""}}'  theme="slds"  ></omnistudio-flex-action>
+      </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element0block_element1block_element2block_element1" class="slds-col  dao-product-card-image slds-size_6-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-flex-img data-style-id="state0element0block_element1block_element2block_element1_child"   card={card}  record={record}  size=""  extraclass="slds-align_absolute-center"  state-img='\{"imgsrc":"/resource/DAOCommercialImg","alternativeText":"Image description"}'  theme="slds"  ></omnistudio-flex-img>
+      </div>
+        </div></omnistudio-block>
+    </div>
+        </div></omnistudio-block>
+    </div>
+        </div></omnistudio-block>
+    </div>
+        </div>
+      </omnistudio-flex-card-state>
+                </template>
+                <template if:false={hasRecords}>
+                      <omnistudio-flex-card-state   data-statue="false"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap " style="      
+         ">
+          <div data-style-id="state0element0" class="slds-col    slds-size_12-of-12  " data-rindex={rindex} style="      
+         " >
+    <omnistudio-block data-style-id="state0element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0" class="slds-col  slds-text-align_center slds-card slds-border_top slds-border_right slds-border_bottom slds-border_left slds-p-around_xx-small slds-m-bottom_small slds-m-top_small  slds-size_12-of-12  " data-rindex={rindex} style="     border-top: #cccccc 2px solid;border-right: #cccccc 2px solid;border-bottom: #cccccc 2px solid;border-left: #cccccc 2px solid; 
+    border-radius:10px;     " ><omnistudio-output-field data-style-id="state0element0block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-align_center%22%3E%3Cspan%20style=%22font-size:%2024pt;%22%3E%3Cstrong%3ESelect%20the%20type%20of%20account%20for%20opening%3C/strong%3E%3C/span%3E%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1" class="slds-col   slds-p-around_x-small slds-size_12-of-12 " data-rindex={rindex} style="" >
+    <omnistudio-block data-style-id="state0element0block_element1_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element1block_element0" class="slds-col   slds-size_1-of-12  " data-rindex={rindex} style="" ><omnistudio-output-field data-style-id="state0element0block_element1block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%3E&nbsp;%20&nbsp;%20&nbsp;%20&nbsp;%20&nbsp;&nbsp;%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element1" class="slds-col   slds-theme_default slds-card slds-border_top slds-border_right slds-border_bottom slds-border_left slds-m-around_x-small  slds-size_5-of-12  " data-rindex={rindex} style="background-color:#FAC6BE;     border-top: #cccccc 1px solid;border-right: #cccccc 1px solid;border-bottom: #cccccc 1px solid;border-left: #cccccc 1px solid; 
+    border-radius:10px;     overflow: hidden; background: var(--theme-secondary);" >
+    <omnistudio-block data-style-id="state0element0block_element1block_element1_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element1block_element1block_element0" class="slds-col    slds-p-around_xx-large  slds-large-size_6-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12  " data-rindex={rindex} style="      
+     height:100%;    align-self: center;" >
+    <omnistudio-block data-style-id="state0element0block_element1block_element1block_element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element1block_element1block_element0block_element0" class="slds-col  slds-m-bottom_xx-large  slds-size_12-of-12  " data-rindex={rindex} style="      
+        color:#60190F; color: var(--theme-secondary-text);" ><omnistudio-output-field data-style-id="state0element0block_element1block_element1block_element0block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-heading_large%22%3EPersonal%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element1block_element0block_element1" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><omnistudio-flex-action data-style-id="state0element0block_element1block_element1block_element0block_element1_child"  tracking-obj={_childCardTrackingObj}  class= "state0element0block_element1block_element1block_element0block_element1_child flexActionElement" 
+        data-action-element-class="state0element0block_element1block_element1block_element0block_element1_child" data-action-key="state0element0block_element1block_element1block_element0block_element1" onexecuteaction={performAction} data-show-spinner="false"
+        data-element-label="commercialapplycta"   state-obj={record}  card={card}  record={record}  label="Start Application"  icon-name="utility:forward"  action-list='\[{"stateAction":{"id":"flex-action-1701691729464","type":"DataAction","targetType":"Community Named Page","openUrlIn":"Current Window","Community Named Page":{"targetName":"BusinessApplicationStart__c"},"message":"{\"type\":\"IntegrationProcedures\",\"value\":{\"dsDelay\":\"\",\"ipMethod\":\"DAO_ApplicationCreate_Internal\",\"vlocityAsync\":false,\"inputMap\":{\"RecordTypeName\":\"Business\"},\"resultVar\":\"\"},\"orderBy\":{\"name\":\"\",\"isReverse\":\"\"},\"contextVariables\":[]}","eventName":"updatedatasource","responseNode":""},"key":"1686925760813-fxh8q2810","label":"CreatePersonalApplication","draggable":true,"isOpen":true,"actionIndex":0},{"key":"1701689526616-95msimj23","label":"NavigateToPersonalApplication","draggable":true,"isOpen":true,"card":"{card}","stateAction":{"id":"flex-action-1701691719021","type":"Custom","displayName":"Action","vlocityIcon":"standard-default","targetType":"Record","openUrlIn":"New Tab/Window","Record":{"targetId":"{action.ApplicationId}","targetAction":"view","targetName":"Application_FINS__c"}},"actionIndex":1}]'  hide-action-icon="true"  display-as-button="true"  button-variant="brand"  icon-size="x-small"  icon-color="#fff"  icon-only="false"  flyout-details='\{}'  styles='\{"label":{"textAlign":""}}'  theme="slds"  ></omnistudio-flex-action>
+      </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element0block_element1block_element1block_element1" class="slds-col  dao-product-card-image slds-size_6-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-flex-img data-style-id="state0element0block_element1block_element1block_element1_child"   card={card}  record={record}  size=""  extraclass="slds-align_absolute-center"  state-img='\{"imgsrc":"/resource/DAOConsumerImg","alternativeText":"Image description"}'  theme="slds"  ></omnistudio-flex-img>
+      </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element0block_element1block_element2" class="slds-col   slds-theme_default slds-card slds-border_top slds-border_right slds-border_bottom slds-border_left slds-m-around_x-small  slds-size_5-of-12  " data-rindex={rindex} style="     border-top: #cccccc 1px solid;border-right: #cccccc 1px solid;border-bottom: #cccccc 1px solid;border-left: #cccccc 1px solid; 
+    border-radius:10px;     overflow: hidden; background: var(--theme-secondary);" >
+    <omnistudio-block data-style-id="state0element0block_element1block_element2_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element1block_element2block_element0" class="slds-col    slds-p-around_xx-large  slds-large-size_6-of-12 slds-medium-size_6-of-12 slds-small-size_12-of-12 slds-size_12-of-12  " data-rindex={rindex} style="      
+     height:100%;    align-self: center;" >
+    <omnistudio-block data-style-id="state0element0block_element1block_element2block_element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element1block_element2block_element0block_element0" class="slds-col  slds-m-bottom_xx-large  slds-size_12-of-12  " data-rindex={rindex} style="      
+        color:#60190F; color: var(--theme-secondary-text);" ><omnistudio-output-field data-style-id="state0element0block_element1block_element2block_element0block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-heading_large%22%3EBusiness%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1block_element2block_element0block_element1" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><omnistudio-flex-action data-style-id="state0element0block_element1block_element2block_element0block_element1_child"  tracking-obj={_childCardTrackingObj}  class= "state0element0block_element1block_element2block_element0block_element1_child flexActionElement" 
+        data-action-element-class="state0element0block_element1block_element2block_element0block_element1_child" data-action-key="state0element0block_element1block_element2block_element0block_element1" onexecuteaction={performAction} data-show-spinner="false"
+        data-element-label="commercialapplycta"   state-obj={record}  card={card}  record={record}  label="Start Application"  icon-name="utility:forward"  action-list='\[{"stateAction":{"id":"flex-action-1701693111040","type":"cardAction","openUrlIn":"Current Window","message":"{\"type\":\"IntegrationProcedures\",\"value\":{\"dsDelay\":\"\",\"ipMethod\":\"DAO_ApplicationCreate_Internal\",\"vlocityAsync\":false,\"inputMap\":{\"RecordTypeName\":\"Business\"}},\"orderBy\":{\"name\":\"\",\"isReverse\":\"\"},\"contextVariables\":[]}","eventName":"updatedatasource"},"key":"1686925760813-fxh8q2810","label":"CreateBusinessApplication","draggable":true,"isOpen":true,"actionIndex":0},{"key":"1701692667806-cjju0foua","label":"UpdateSessionVAR","draggable":true,"isOpen":true,"card":"{card}","stateAction":{"id":"flex-action-1701693114159","type":"cardAction","displayName":"Action","vlocityIcon":"standard-default","targetType":"Web Page","openUrlIn":"Current Window","Web Page":{"targetName":"/apex"},"eventName":"setValues","fieldValues":[{"fieldName":"Session.BusinessApplicationId","fieldValue":"{ApplicationId}"}]},"actionIndex":1},{"key":"1701693243905-6mikmbyqh","label":"navAction","draggable":true,"isOpen":true,"card":"{card}","stateAction":{"id":"flex-action-1701693279929","type":"Custom","displayName":"Action","vlocityIcon":"standard-default","targetType":"Record","openUrlIn":"Current Window","Record":{"targetName":"Application_FINS__c","targetAction":"view","targetId":"{ApplicationId}"}},"actionIndex":2}]'  hide-action-icon="true"  display-as-button="true"  button-variant="brand"  icon-size="x-small"  icon-color="#fff"  icon-only="false"  flyout-details='\{}'  styles='\{"label":{"textAlign":""}}'  theme="slds"  ></omnistudio-flex-action>
+      </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element0block_element1block_element2block_element1" class="slds-col  dao-product-card-image slds-size_6-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-flex-img data-style-id="state0element0block_element1block_element2block_element1_child"   card={card}  record={record}  size=""  extraclass="slds-align_absolute-center"  state-img='\{"imgsrc":"/resource/DAOCommercialImg","alternativeText":"Image description"}'  theme="slds"  ></omnistudio-flex-img>
+      </div>
+        </div></omnistudio-block>
+    </div>
+        </div></omnistudio-block>
+    </div>
+        </div></omnistudio-block>
+    </div>
+        </div>
+      </omnistudio-flex-card-state>
+                </template>
+            </template>
+            <template if:true={hasError}>
+            {error}
+            </template>
+            
+      <omnistudio-action action-wrapperclass="slds-hide" re-render-flyout class="action-trigger slds-col" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+      
+      </omnistudio-action>
+  
+            <omnistudio-action class="execute-action" re-render-flyout action-wrapperclass="slds-hide" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+            
+            </omnistudio-action>
+            </div>
+          </template>

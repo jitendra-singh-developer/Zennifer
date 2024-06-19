@@ -1,0 +1,81 @@
+<template>
+            <div class="slds-grid slds-wrap slds-is-relative containersize">
+            <div style="position: fixed;z-index: 999999;top: 0;right: 0;">
+  <omnistudio-toast class="flexcard-toast-element" theme="slds" title="" message="" styletype=""> </omnistudio-toast>
+</div>
+            <div if:true={showLoader} class="slds-is-absolute vloc-loader_override" style="height: 100%; width: 100%; min-height:50px; background: transparent; z-index: 99;">
+  <div>
+   <omnistudio-spinner
+      variant="brand"
+      alternative-text="Loading content..."
+      size="medium"
+      theme="slds"
+      ></omnistudio-spinner>
+  </div>
+</div>
+            <template if:false={hasPermission}>
+              You don't have required permissions to view this card.
+            </template>
+            <template if:true={hasPermission}>
+              <template if:true={hasRecords}>
+                        <template for:each={_records} for:item="record" for:index="rindex">
+                            <omnistudio-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-vertical_medium " style="      
+         ">
+          <div data-style-id="state0element0" class="slds-col   slds-border_top slds-border_right slds-border_bottom slds-border_left  slds-size_12-of-12  " data-rindex={rindex} style="     border-top: #747474 1px solid;border-right: #747474 1px solid;border-bottom: #747474 1px solid;border-left: #747474 1px solid; 
+    border-radius:4px;     " >
+    <omnistudio-block data-style-id="state0element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0" class="slds-col  slds-border_bottom slds-p-around_small  slds-size_12-of-12  " data-rindex={rindex} style="background-color:#f3f3f3;     border-bottom: #747474 1px solid; 
+        color:#444444; font-size: 16px;
+border-top-left-radius: 4px;
+border-top-right-radius: 4px;" ><omnistudio-output-field data-style-id="state0element0block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%3ERead%20to%20Client%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1" class="slds-col  slds-p-horizontal_small slds-p-vertical_medium  slds-size_12-of-12  condition-element" data-rindex={rindex} style="      
+         "  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-0","field":"Parent.SubType","operator":"==","value":"ATM Fraud","type":"custom","hasMergeField":false},{"id":"state-new-condition-9","field":"Parent.SubType","operator":"==","value":"POS Fraud","type":"custom","hasMergeField":false,"logicalOperator":"||"}]}' ><omnistudio-output-field data-style-id="state0element0block_element1_child"   card={card}  record={record}  merge-field="%3Cdiv%3EIf%20another%20person%20used%20the%20Debit/ATM%20card%20to%20make%20transaction%20without%20your%20knowledge,%20or%20permission,%20the%20card%20must%20be%20canceled%20to%20prevent%20additional%20fraud%20from%20occurring.%3C/div%3E"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-0","field":"Parent.SubType","operator":"==","value":"ATM Fraud","type":"custom","hasMergeField":false},{"id":"state-new-condition-9","field":"Parent.SubType","operator":"==","value":"POS Fraud","type":"custom","hasMergeField":false,"logicalOperator":"||"}]}'  data-preload-conditional-element="false"  theme="slds"  if:true={record._flex.state0element0block_element1_child}></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element2" class="slds-col  slds-p-horizontal_small slds-p-vertical_medium  slds-size_12-of-12  condition-element" data-rindex={rindex} style="      
+         "  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-28","field":"Parent.SubType","operator":"==","value":"ATM Dispute","type":"custom","hasMergeField":false},{"id":"state-new-condition-37","field":"Parent.SubType","operator":"==","value":"ATM Fraud","type":"custom","hasMergeField":false,"logicalOperator":"||"},{"id":"state-new-condition-41","field":"Parent.SubType","operator":"==","value":"POS Fraud","type":"custom","hasMergeField":false,"logicalOperator":"||"}]}' ><omnistudio-output-field data-style-id="state0element0block_element2_child"   card={card}  record={record}  merge-field="%3Cdiv%3EYour%20dispute%20has%20been%20submitted%20for%20processing.%20You%20will%20receive%20information%20from%20us%20by%20mail%20no%20later%20than%2045%20days%20from%20today%20for%20consumers%20and%20120%20days%20for%20business,%20unless%20we%20contact%20you%20for%20additional%20information.%3C/div%3E"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-28","field":"Parent.SubType","operator":"==","value":"ATM Dispute","type":"custom","hasMergeField":false},{"id":"state-new-condition-37","field":"Parent.SubType","operator":"==","value":"ATM Fraud","type":"custom","hasMergeField":false,"logicalOperator":"||"},{"id":"state-new-condition-41","field":"Parent.SubType","operator":"==","value":"POS Fraud","type":"custom","hasMergeField":false,"logicalOperator":"||"}]}'  data-preload-conditional-element="false"  theme="slds"  if:true={record._flex.state0element0block_element2_child}></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element3" class="slds-col  slds-p-horizontal_small slds-p-vertical_medium  slds-size_12-of-12  condition-element" data-rindex={rindex} style="      
+         "  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-67","field":"Parent.Type","operator":"==","value":"Zelle","type":"custom","hasMergeField":false}]}' ><omnistudio-output-field data-style-id="state0element0block_element3_child"   card={card}  record={record}  merge-field="%3Cdiv%3EYour%20dispute%20has%20been%20submitted%20for%20processing.%20You%20will%20receive%20information%20from%20us%20by%20mail%20no%20later%20than%2090%20days%20from%20today%20for%20consumers%20and%20120%20days%20for%20business,%20unless%20we%20contact%20you%20for%20additional%20information.%3C/div%3E"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-67","field":"Parent.Type","operator":"==","value":"Zelle","type":"custom","hasMergeField":false}]}'  data-preload-conditional-element="false"  theme="slds"  if:true={record._flex.state0element0block_element3_child}></omnistudio-output-field>
+      </div>
+        </div></omnistudio-block>
+    </div>
+        </div>
+      </omnistudio-flex-card-state>
+                        </template>
+                      </template>
+                      <template if:false={hasRecords}>
+                            <omnistudio-flex-card-state  record={record} data-statue="false"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-p-vertical_medium " style="      
+         ">
+          <div data-style-id="state0element0" class="slds-col   slds-border_top slds-border_right slds-border_bottom slds-border_left  slds-size_12-of-12  " data-rindex={rindex} style="     border-top: #747474 1px solid;border-right: #747474 1px solid;border-bottom: #747474 1px solid;border-left: #747474 1px solid; 
+    border-radius:4px;     " >
+    <omnistudio-block data-style-id="state0element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0" class="slds-col  slds-border_bottom slds-p-around_small  slds-size_12-of-12  " data-rindex={rindex} style="background-color:#f3f3f3;     border-bottom: #747474 1px solid; 
+        color:#444444; font-size: 16px;
+border-top-left-radius: 4px;
+border-top-right-radius: 4px;" ><omnistudio-output-field data-style-id="state0element0block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%3ERead%20to%20Client%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1" class="slds-col  slds-p-horizontal_small slds-p-vertical_medium  slds-size_12-of-12  condition-element" data-rindex={rindex} style="      
+         "  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-0","field":"Parent.SubType","operator":"==","value":"ATM Fraud","type":"custom","hasMergeField":false},{"id":"state-new-condition-9","field":"Parent.SubType","operator":"==","value":"POS Fraud","type":"custom","hasMergeField":false,"logicalOperator":"||"}]}' ><omnistudio-output-field data-style-id="state0element0block_element1_child"   card={card}  record={record}  merge-field="%3Cdiv%3EIf%20another%20person%20used%20the%20Debit/ATM%20card%20to%20make%20transaction%20without%20your%20knowledge,%20or%20permission,%20the%20card%20must%20be%20canceled%20to%20prevent%20additional%20fraud%20from%20occurring.%3C/div%3E"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-0","field":"Parent.SubType","operator":"==","value":"ATM Fraud","type":"custom","hasMergeField":false},{"id":"state-new-condition-9","field":"Parent.SubType","operator":"==","value":"POS Fraud","type":"custom","hasMergeField":false,"logicalOperator":"||"}]}'  data-preload-conditional-element="false"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element2" class="slds-col  slds-p-horizontal_small slds-p-vertical_medium  slds-size_12-of-12  condition-element" data-rindex={rindex} style="      
+         "  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-28","field":"Parent.SubType","operator":"==","value":"ATM Dispute","type":"custom","hasMergeField":false},{"id":"state-new-condition-37","field":"Parent.SubType","operator":"==","value":"ATM Fraud","type":"custom","hasMergeField":false,"logicalOperator":"||"},{"id":"state-new-condition-41","field":"Parent.SubType","operator":"==","value":"POS Fraud","type":"custom","hasMergeField":false,"logicalOperator":"||"}]}' ><omnistudio-output-field data-style-id="state0element0block_element2_child"   card={card}  record={record}  merge-field="%3Cdiv%3EYour%20dispute%20has%20been%20submitted%20for%20processing.%20You%20will%20receive%20information%20from%20us%20by%20mail%20no%20later%20than%2045%20days%20from%20today%20for%20consumers%20and%20120%20days%20for%20business,%20unless%20we%20contact%20you%20for%20additional%20information.%3C/div%3E"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-28","field":"Parent.SubType","operator":"==","value":"ATM Dispute","type":"custom","hasMergeField":false},{"id":"state-new-condition-37","field":"Parent.SubType","operator":"==","value":"ATM Fraud","type":"custom","hasMergeField":false,"logicalOperator":"||"},{"id":"state-new-condition-41","field":"Parent.SubType","operator":"==","value":"POS Fraud","type":"custom","hasMergeField":false,"logicalOperator":"||"}]}'  data-preload-conditional-element="false"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element3" class="slds-col  slds-p-horizontal_small slds-p-vertical_medium  slds-size_12-of-12  condition-element" data-rindex={rindex} style="      
+         "  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-67","field":"Parent.Type","operator":"==","value":"Zelle","type":"custom","hasMergeField":false}]}' ><omnistudio-output-field data-style-id="state0element0block_element3_child"   card={card}  record={record}  merge-field="%3Cdiv%3EYour%20dispute%20has%20been%20submitted%20for%20processing.%20You%20will%20receive%20information%20from%20us%20by%20mail%20no%20later%20than%2090%20days%20from%20today%20for%20consumers%20and%20120%20days%20for%20business,%20unless%20we%20contact%20you%20for%20additional%20information.%3C/div%3E"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-67","field":"Parent.Type","operator":"==","value":"Zelle","type":"custom","hasMergeField":false}]}'  data-preload-conditional-element="false"  theme="slds"  ></omnistudio-output-field>
+      </div>
+        </div></omnistudio-block>
+    </div>
+        </div>
+      </omnistudio-flex-card-state>
+                      </template>
+            </template>
+            <template if:true={hasError}>
+            {error}
+            </template>
+            
+      <omnistudio-action action-wrapperclass="slds-hide" re-render-flyout class="action-trigger slds-col" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+      
+      </omnistudio-action>
+  
+            <omnistudio-action class="execute-action" re-render-flyout action-wrapperclass="slds-hide" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+            
+            </omnistudio-action>
+            </div>
+          </template>

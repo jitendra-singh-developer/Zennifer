@@ -1,0 +1,9 @@
+<template>
+  <div class="slds-m-bottom_medium" if:true={accountsCreated}>
+    <template for:each={accountsCreated} for:item="account">
+      <div class="slds-text-align_center" key={account.Name}>
+        <p class="dao-account">{account.Name} {account.Number}</p>
+      </div>
+    </template>
+  </div>
+</template>

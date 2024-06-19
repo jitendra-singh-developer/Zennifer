@@ -1,0 +1,71 @@
+<template>
+            <div class="slds-grid slds-wrap slds-is-relative ">
+            <div style="position: fixed;z-index: 999999;top: 0;right: 0;">
+  <omnistudio-toast class="flexcard-toast-element" theme="slds" title="" message="" styletype=""> </omnistudio-toast>
+</div>
+            <div if:true={showLoader} class="slds-is-absolute vloc-loader_override" style="height: 100%; width: 100%; min-height:50px; background: transparent; z-index: 99;">
+  <div>
+   <omnistudio-spinner
+      variant="brand"
+      alternative-text="Loading content..."
+      size="medium"
+      theme="slds"
+      ></omnistudio-spinner>
+  </div>
+</div>
+            <template if:false={hasPermission}>
+              You don't have required permissions to view this card.
+            </template>
+            <template if:true={hasPermission}>
+              <template if:true={hasRecords}>
+                      <omnistudio-flex-card-state   data-statue="true"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap " style="      
+         ">
+          <div data-style-id="state0element0" class="slds-col     slds-size_2-of-12  " data-rindex={rindex} style="      
+         " >
+    <omnistudio-block data-style-id="state0element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0" class="slds-col  slds-text-align_center slds-p-around_xx-small  slds-size_12-of-12  " data-rindex={rindex} style="background-color:#0176D3;      
+    border-radius:4px;     font-size:17.9px; font-weight:600;" ><omnistudio-flex-action data-style-id="state0element0block_element0_child"  tracking-obj={_childCardTrackingObj}  class= "state0element0block_element0_child flexActionElement" 
+        data-action-element-class="state0element0block_element0_child" data-action-key="state0element0block_element0" onexecuteaction={performAction} data-show-spinner="false"
+        data-element-label="invokeos"   state-obj={record}  card={card}  record={record}  label="Add Transactions"  icon-name="utility-add"  action-list='\[{"stateAction":{"id":"flex-action-1700578362449","type":"Flyout","openUrlIn":"Current Window","flyoutType":"OmniScripts","openFlyoutIn":"Modal","channelName":"close_modal","layoutType":"lightning","osName":"Case/AddDisputedTransactions/English","flyoutLwc":"case-add-disputed-transactions-english","hasExtraParams":true,"flyoutParams":{"ContextId":"{recordId}"}},"key":"1700574794619-18ndl8hpm","label":"InvokeOs","draggable":false,"isOpen":true,"actionIndex":0,"reRenderFlyout":true,"preloadFlyout":false}]'  hide-action-icon="false"  display-as-button="false"  button-variant="brand"  styles='\{"label":{"textAlign":"","color":"#FFFFFF","fontSize":""}}'  icon-size="small"  flyout-details='\{"openFlyoutIn":"Modal"}'  flyout-channel="close_modal"  re-render-flyout="true"  preload-flyout="false"  icon-color="#FFFFFF"  theme="slds"  ><div slot="modalflyout" class="invokeosaction0 " ><omnistudio-custom-lwc-wrapper element-name="c-case-add-disputed-transactions-english" property='\{"prefill":"{\"omniscriptEmbeddedSource\":\"flyout\",\"ContextId\":\"{recordId}\"}"}' records={records} record-id={recordId} record={record}  card={card}  action={modalAction.invokeosaction0} >
+     <c-case-add-disputed-transactions-english   layout='lightning'    ></c-case-add-disputed-transactions-english>
+    </omnistudio-custom-lwc-wrapper></div></omnistudio-flex-action>
+      </div>
+        </div></omnistudio-block>
+    </div>
+        </div>
+      </omnistudio-flex-card-state>
+                </template>
+                <template if:false={hasRecords}>
+                      <omnistudio-flex-card-state   data-statue="false"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap " style="      
+         ">
+          <div data-style-id="state0element0" class="slds-col     slds-size_2-of-12  " data-rindex={rindex} style="      
+         " >
+    <omnistudio-block data-style-id="state0element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0" class="slds-col  slds-text-align_center slds-p-around_xx-small  slds-size_12-of-12  " data-rindex={rindex} style="background-color:#0176D3;      
+    border-radius:4px;     font-size:17.9px; font-weight:600;" ><omnistudio-flex-action data-style-id="state0element0block_element0_child"  tracking-obj={_childCardTrackingObj}  class= "state0element0block_element0_child flexActionElement" 
+        data-action-element-class="state0element0block_element0_child" data-action-key="state0element0block_element0" onexecuteaction={performAction} data-show-spinner="false"
+        data-element-label="invokeos"   state-obj={record}  card={card}  record={record}  label="Add Transactions"  icon-name="utility-add"  action-list='\[{"stateAction":{"id":"flex-action-1700578362449","type":"Flyout","openUrlIn":"Current Window","flyoutType":"OmniScripts","openFlyoutIn":"Modal","channelName":"close_modal","layoutType":"lightning","osName":"Case/AddDisputedTransactions/English","flyoutLwc":"case-add-disputed-transactions-english","hasExtraParams":true,"flyoutParams":{"ContextId":"{recordId}"}},"key":"1700574794619-18ndl8hpm","label":"InvokeOs","draggable":false,"isOpen":true,"actionIndex":0,"reRenderFlyout":true,"preloadFlyout":false}]'  hide-action-icon="false"  display-as-button="false"  button-variant="brand"  styles='\{"label":{"textAlign":"","color":"#FFFFFF","fontSize":""}}'  icon-size="small"  flyout-details='\{"openFlyoutIn":"Modal"}'  flyout-channel="close_modal"  re-render-flyout="true"  preload-flyout="false"  icon-color="#FFFFFF"  theme="slds"  ><div slot="modalflyout" class="invokeosaction0 " ><omnistudio-custom-lwc-wrapper element-name="c-case-add-disputed-transactions-english" property='\{"prefill":"{\"omniscriptEmbeddedSource\":\"flyout\",\"ContextId\":\"{recordId}\"}"}' records={records} record-id={recordId} record={record}  card={card}  action={modalAction.invokeosaction0} >
+     <c-case-add-disputed-transactions-english   layout='lightning'    ></c-case-add-disputed-transactions-english>
+    </omnistudio-custom-lwc-wrapper></div></omnistudio-flex-action>
+      </div>
+        </div></omnistudio-block>
+    </div>
+        </div>
+      </omnistudio-flex-card-state>
+                </template>
+            </template>
+            <template if:true={hasError}>
+            {error}
+            </template>
+            
+      <omnistudio-action action-wrapperclass="slds-hide" re-render-flyout class="action-trigger slds-col" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+      
+      </omnistudio-action>
+  
+            <omnistudio-action class="execute-action" re-render-flyout action-wrapperclass="slds-hide" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+            
+            </omnistudio-action>
+            </div>
+          </template>

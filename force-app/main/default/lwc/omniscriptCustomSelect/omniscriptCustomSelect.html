@@ -1,0 +1,16 @@
+<template>
+		<lightning-combobox label="Record Type" options={recordtypeOptions} value={recordTypeId} onchange={handleRecordTypeChange}></lightning-combobox>
+		<div if:true={recordTypeId}>
+				<lightning-record-edit-form object-api-name="Case"  record-type-id={recordTypeId} onload={onLoad}>
+					<lightning-layout>
+						<lightning-layout-item size="6">
+							<lightning-input-field field-name="Type" onchange={handleTypeChange}></lightning-input-field>		
+						</lightning-layout-item>
+						<lightning-layout-item size="6">
+							<lightning-input-field field-name="Case_Subtype__c" onchange={handleSubTypeChange}></lightning-input-field>		
+						</lightning-layout-item>
+					</lightning-layout>
+				</lightning-record-edit-form>
+		</div>
+		<div if:false={recordTypeId}></div>
+</template>

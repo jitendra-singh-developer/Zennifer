@@ -1,0 +1,73 @@
+<template>
+            <div class="nds-grid nds-wrap nds-is-relative ">
+            <div style="position: fixed;z-index: 999999;top: 0;right: 0;">
+  <omnistudio-toast class="flexcard-toast-element" theme="nds" title="" message="" styletype=""> </omnistudio-toast>
+</div>
+            <div if:true={showLoader} class="nds-is-absolute vloc-loader_override" style="height: 100%; width: 100%; min-height:50px; background: transparent; z-index: 99;">
+  <div>
+   <omnistudio-spinner
+      variant="brand"
+      alternative-text="Loading content..."
+      size="small"
+      theme="nds"
+      ></omnistudio-spinner>
+  </div>
+</div>
+            <template if:false={hasPermission}>
+              You don't have required permissions to view this card.
+            </template>
+            <template if:true={hasPermission}>
+              <template if:true={hasRecords}>
+                        <template for:each={_records} for:item="record" for:index="rindex">
+                            <omnistudio-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state nds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="nds-grid nds-wrap nds-p-horizontal_xx-large dao-home-banner" style="background-color:#EF3E24; background-image:url(./sfsites/c/resource/DAOHomeBanner); background-repeat:no-repeat; background-size:auto; background-position:right center;  
+     height:157px;  max-height:157px; color:#fff; background: var(--theme-primary);
+display: flex;
+align-items: center;">
+          <div data-style-id="state0element0" class="nds-col   nds-p-around_x-small  nds-size_12-of-12  " data-rindex={rindex} style="      
+         max-width: 1300px; margin: 0 auto;" >
+    <omnistudio-block data-style-id="state0element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="nds"  ><div class="nds-grid nds-wrap">
+          <div data-style-id="state0element0block_element0" class="nds-col  nds-text-align_left  nds-size_12-of-12  " data-rindex={rindex} style="      
+         color: var(--theme-primary-text);" ><omnistudio-output-field data-style-id="state0element0block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22nds-text-heading_large%22%3EWelcome%3C/div%3E"  theme="nds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1" class="nds-col  nds-text-align_left  nds-size_12-of-12  " data-rindex={rindex} style="      
+         color: var(--theme-primary-text);" ><omnistudio-output-field data-style-id="state0element0block_element1_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22nds-text-heading_medium%22%3EDeposit%20Account%20Opening%3C/div%3E"  theme="nds"  ></omnistudio-output-field>
+      </div>
+        </div></omnistudio-block>
+    </div>
+        </div>
+      </omnistudio-flex-card-state>
+                        </template>
+                      </template>
+                      <template if:false={hasRecords}>
+                            <omnistudio-flex-card-state  record={record} data-statue="false"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state nds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="nds-grid nds-wrap nds-p-horizontal_xx-large dao-home-banner" style="background-color:#EF3E24; background-image:url(./sfsites/c/resource/DAOHomeBanner); background-repeat:no-repeat; background-size:auto; background-position:right center;  
+     height:157px;  max-height:157px; color:#fff; background: var(--theme-primary);
+display: flex;
+align-items: center;">
+          <div data-style-id="state0element0" class="nds-col   nds-p-around_x-small  nds-size_12-of-12  " data-rindex={rindex} style="      
+         max-width: 1300px; margin: 0 auto;" >
+    <omnistudio-block data-style-id="state0element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="nds"  ><div class="nds-grid nds-wrap">
+          <div data-style-id="state0element0block_element0" class="nds-col  nds-text-align_left  nds-size_12-of-12  " data-rindex={rindex} style="      
+         color: var(--theme-primary-text);" ><omnistudio-output-field data-style-id="state0element0block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22nds-text-heading_large%22%3EWelcome%3C/div%3E"  theme="nds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element1" class="nds-col  nds-text-align_left  nds-size_12-of-12  " data-rindex={rindex} style="      
+         color: var(--theme-primary-text);" ><omnistudio-output-field data-style-id="state0element0block_element1_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22nds-text-heading_medium%22%3EDeposit%20Account%20Opening%3C/div%3E"  theme="nds"  ></omnistudio-output-field>
+      </div>
+        </div></omnistudio-block>
+    </div>
+        </div>
+      </omnistudio-flex-card-state>
+                      </template>
+            </template>
+            <template if:true={hasError}>
+            {error}
+            </template>
+            
+      <omnistudio-action action-wrapperclass="slds-hide" re-render-flyout class="action-trigger slds-col" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+      
+      </omnistudio-action>
+  
+            <omnistudio-action class="execute-action" re-render-flyout action-wrapperclass="slds-hide" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+            
+            </omnistudio-action>
+            </div>
+          </template>

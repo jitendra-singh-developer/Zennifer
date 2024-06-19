@@ -1,0 +1,119 @@
+<template>
+            <div class="slds-grid slds-wrap slds-is-relative containersize">
+            <div style="position: fixed;z-index: 999999;top: 0;right: 0;">
+  <omnistudio-toast class="flexcard-toast-element" theme="slds" title="" message="" styletype=""> </omnistudio-toast>
+</div>
+            <div if:true={showLoader} class="slds-is-absolute vloc-loader_override" style="height: 100%; width: 100%; min-height:50px; background: transparent; z-index: 99;">
+  <div>
+   <omnistudio-spinner
+      variant="brand"
+      alternative-text="Loading content..."
+      size="medium"
+      theme="slds"
+      ></omnistudio-spinner>
+  </div>
+</div>
+            <template if:false={hasPermission}>
+              You don't have required permissions to view this card.
+            </template>
+            <template if:true={hasPermission}>
+              <template if:true={hasRecords}>
+                        <template for:each={_records} for:item="record" for:index="rindex">
+                            <omnistudio-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-m-bottom_x-small " style="      
+         ">
+          <div data-style-id="state0element0" class="slds-col   slds-theme_default slds-card slds-border_top slds-border_right slds-border_bottom slds-border_left  slds-size_12-of-12  " data-rindex={rindex} style="     border-top: #cccccc 1px solid;border-right: #cccccc 1px solid;border-bottom: #cccccc 1px solid;border-left: #cccccc 1px solid; 
+    border-radius:10px;     " >
+    <omnistudio-block data-style-id="state0element0_child"  card={card}  record={record}  label="\{HeaderValue}"  collapsible="false"  collapsed-by-default="false"  styles='\{"label":{"fontSize":"18px"}}'  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0" class="slds-col   slds-border_bottom slds-p-around_x-small  slds-size_12-of-12  " data-rindex={rindex} style="     border-bottom: #cccccc 2px solid; 
+         " >
+    <omnistudio-block data-style-id="state0element0block_element0_child"  card={card}  record={record}  label=""  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0block_element0" class="slds-col   slds-p-around_x-small slds-size_12-of-12  " data-rindex={rindex} style="" >
+    <omnistudio-block data-style-id="state0element0block_element0block_element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0block_element0block_element0" class="slds-col   slds-size_6-of-12  " data-rindex={rindex} style="" ><omnistudio-output-field data-style-id="state0element0block_element0block_element0block_element0_child"   card={card}  record={record}  placeholder="output"  field-name="FinancialAccountName"  label="FinancialAccountName"  type="text"  styles='\{"label":{"textAlign":"","fontSize":"18px"},"value":{"fontSize":"14px","textDecoration":""}}'  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element0block_element0block_element1" class="slds-col   slds-size_6-of-12  " data-rindex={rindex} style="" ><omnistudio-output-field data-style-id="state0element0block_element0block_element0block_element1_child"   card={card}  record={record}  placeholder="output"  field-name="AccountType"  label="AccountType"  type="text"  styles='\{"label":{"fontSize":"18px"},"value":{"fontSize":"14px"}}'  theme="slds"  ></omnistudio-output-field>
+      </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element0block_element0block_element1" class="slds-col   slds-p-around_x-small slds-size_12-of-12 " data-rindex={rindex} style="" >
+    <omnistudio-block data-style-id="state0element0block_element0block_element1_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0block_element1block_element0" class="slds-col  slds-p-right_small slds-m-bottom_xx-small  slds-size_6-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-base-input-element data-style-id="state0element0block_element0block_element1block_element0_child"   card={card}  record={record}  type="date"  property-obj='\{"label":"Start Date","format":"yyyy-MM-dd","outputFormat":"yyyy-MM-dd","name":"SearchBlock-Date-0","fieldBinding":"{StartDate}","required":true,"value":"{StartDate}","max":"{MaxLimitDate}"}'  styles='\{"label":{"fontSize":"16px"}}'  theme="slds"  ></omnistudio-base-input-element>
+      </div><div data-style-id="state0element0block_element0block_element1block_element1" class="slds-col  slds-p-right_small slds-m-bottom_xx-small  slds-size_6-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-base-input-element data-style-id="state0element0block_element0block_element1block_element1_child"   card={card}  record={record}  type="date"  property-obj='\{"label":"End Date","format":"yyyy-MM-dd","outputFormat":"yyyy-MM-dd","name":"SearchBlock-Date-1","fieldBinding":"{EndDate}","required":true,"value":"{EndDate}","max":"{MaxLimitDate}"}'  styles='\{"label":{"fontSize":"16px"}}'  theme="slds"  ></omnistudio-base-input-element>
+      </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element0block_element0block_element2" class="slds-col   slds-p-around_x-small slds-size_12-of-12 " data-rindex={rindex} style="" >
+    <omnistudio-block data-style-id="state0element0block_element0block_element2_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0block_element2block_element0" class="slds-col  slds-theme_default slds-text-align_center slds-p-bottom_x-small  slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-flex-action data-style-id="state0element0block_element0block_element2block_element0_child"  tracking-obj={_childCardTrackingObj}  class= "state0element0block_element0block_element2block_element0_child flexActionElement" 
+        data-action-element-class="state0element0block_element0block_element2block_element0_child" data-action-key="state0element0block_element0block_element2block_element0" onexecuteaction={performAction} data-show-spinner="true"
+        data-element-label="searchblockgettransactionbutton"   state-obj={record}  card={card}  record={record}  label="Get Transactions"  icon-name="standard-default"  action-list='\[{"stateAction":{"id":"flex-action-1703084816687","type":"cardAction","targetType":"Web Page","openUrlIn":"Current Window","Web Page":{"targetName":"/apex"},"eventName":"updatedatasource","message":"{\"type\":\"IntegrationProcedures\",\"value\":{\"dsDelay\":\"\",\"resultVar\":\"[&#39;DefaultValues&#39;]\",\"ipMethod\":\"FinancialAccounts_GetTransactions\",\"vlocityAsync\":false,\"inputMap\":{\"StartDateInp\":\"{StartDate}\",\"EndDateInp\":\"{EndDate}\",\"LimitInp\":\"{Limit}\",\"AccountType\":\"{AccountType}\",\"AccountSourceId\":\"{SourceSystemId}\",\"FinancialAccountName\":\"{FinancialAccountName}\",\"FinancialAcccountId\":\"{FinancialAcccountId}\"},\"jsonMap\":\"{\\\"EndDate\\\":\\\"{EndDate}\\\",\\\"StartDate\\\":\\\"{StartDate}\\\",\\\"AccountType\\\":\\\"{AccountType}\\\",\\\"FinancialAcccountId\\\":\\\"{FinancialAcccountId}\\\",\\\"Limit\\\":\\\"{Limit}\\\",\\\"SourceSystemId\\\":\\\"{SourceSystemId}\\\",\\\"FinancialAccountName\\\":\\\"{FinancialAccountName}\\\"}\"},\"orderBy\":{\"name\":\"\",\"isReverse\":\"\"},\"contextVariables\":[{\"name\":\"EndDate\",\"val\":\"2023-12-19\",\"id\":3},{\"name\":\"StartDate\",\"val\":\"2023-12-18\",\"id\":5},{\"name\":\"AccountType\",\"val\":\"DDA\",\"id\":7},{\"name\":\"FinancialAcccountId\",\"val\":\"a7Q78000000KeEWEA0\",\"id\":15},{\"name\":\"Limit\",\"val\":\"100\",\"id\":15},{\"name\":\"SourceSystemId\",\"val\":\"2030416483\",\"id\":12},{\"name\":\"FinancialAccountName\",\"val\":\"Pat T Checking 2\",\"id\":12}]}"},"key":"1702282974211-nzsi7cj2h","label":"Action","draggable":true,"isOpen":true,"actionIndex":0}]'  display-as-button="true"  button-variant="brand"  hide-action-icon="true"  styles='\{"label":{"textAlign":"center","fontSize":"18px"}}'  flyout-details='\{}'  theme="slds"  ></omnistudio-flex-action>
+      </div>
+        </div></omnistudio-block>
+    </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element0block_element1" class="slds-col  slds-p-around_small  slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><c-cf-show-transactions data-style-id="state0element0block_element1_child"  tracking-obj={_childCardTrackingObj}  is-inside-parent={insideParent} parent-uniquekey={uniqueKey}  card-node="\{record.FinancialAccountTransactions}"  parent-record={record}  records={_records}  parent-mergefields={card}  record-id={recordId}  is-child-card-tracking-enabled="false"  object-api-name={objectApiName}  theme="slds"   onupdateparent={updateParentData}></c-cf-show-transactions>
+    </div>
+        </div></omnistudio-block>
+    </div>
+        </div>
+      </omnistudio-flex-card-state>
+                        </template>
+                      </template>
+                      <template if:false={hasRecords}>
+                            <omnistudio-flex-card-state  record={record} data-statue="false"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-m-bottom_x-small " style="      
+         ">
+          <div data-style-id="state0element0" class="slds-col   slds-theme_default slds-card slds-border_top slds-border_right slds-border_bottom slds-border_left  slds-size_12-of-12  " data-rindex={rindex} style="     border-top: #cccccc 1px solid;border-right: #cccccc 1px solid;border-bottom: #cccccc 1px solid;border-left: #cccccc 1px solid; 
+    border-radius:10px;     " >
+    <omnistudio-block data-style-id="state0element0_child"  card={card}  record={record}  label="\{HeaderValue}"  collapsible="false"  collapsed-by-default="false"  styles='\{"label":{"fontSize":"18px"}}'  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0" class="slds-col   slds-border_bottom slds-p-around_x-small  slds-size_12-of-12  " data-rindex={rindex} style="     border-bottom: #cccccc 2px solid; 
+         " >
+    <omnistudio-block data-style-id="state0element0block_element0_child"  card={card}  record={record}  label=""  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0block_element0" class="slds-col   slds-p-around_x-small slds-size_12-of-12  " data-rindex={rindex} style="" >
+    <omnistudio-block data-style-id="state0element0block_element0block_element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0block_element0block_element0" class="slds-col   slds-size_6-of-12  " data-rindex={rindex} style="" ><omnistudio-output-field data-style-id="state0element0block_element0block_element0block_element0_child"   card={card}  record={record}  placeholder="output"  field-name="FinancialAccountName"  label="FinancialAccountName"  type="text"  styles='\{"label":{"textAlign":"","fontSize":"18px"},"value":{"fontSize":"14px","textDecoration":""}}'  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element0block_element0block_element1" class="slds-col   slds-size_6-of-12  " data-rindex={rindex} style="" ><omnistudio-output-field data-style-id="state0element0block_element0block_element0block_element1_child"   card={card}  record={record}  placeholder="output"  field-name="AccountType"  label="AccountType"  type="text"  styles='\{"label":{"fontSize":"18px"},"value":{"fontSize":"14px"}}'  theme="slds"  ></omnistudio-output-field>
+      </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element0block_element0block_element1" class="slds-col   slds-p-around_x-small slds-size_12-of-12 " data-rindex={rindex} style="" >
+    <omnistudio-block data-style-id="state0element0block_element0block_element1_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0block_element1block_element0" class="slds-col  slds-p-right_small slds-m-bottom_xx-small  slds-size_6-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-base-input-element data-style-id="state0element0block_element0block_element1block_element0_child"   card={card}  record={record}  type="date"  property-obj='\{"label":"Start Date","format":"yyyy-MM-dd","outputFormat":"yyyy-MM-dd","name":"SearchBlock-Date-0","fieldBinding":"{StartDate}","required":true,"value":"{StartDate}","max":"{MaxLimitDate}"}'  styles='\{"label":{"fontSize":"16px"}}'  theme="slds"  ></omnistudio-base-input-element>
+      </div><div data-style-id="state0element0block_element0block_element1block_element1" class="slds-col  slds-p-right_small slds-m-bottom_xx-small  slds-size_6-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-base-input-element data-style-id="state0element0block_element0block_element1block_element1_child"   card={card}  record={record}  type="date"  property-obj='\{"label":"End Date","format":"yyyy-MM-dd","outputFormat":"yyyy-MM-dd","name":"SearchBlock-Date-1","fieldBinding":"{EndDate}","required":true,"value":"{EndDate}","max":"{MaxLimitDate}"}'  styles='\{"label":{"fontSize":"16px"}}'  theme="slds"  ></omnistudio-base-input-element>
+      </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element0block_element0block_element2" class="slds-col   slds-p-around_x-small slds-size_12-of-12 " data-rindex={rindex} style="" >
+    <omnistudio-block data-style-id="state0element0block_element0block_element2_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0block_element2block_element0" class="slds-col  slds-theme_default slds-text-align_center slds-p-bottom_x-small  slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-flex-action data-style-id="state0element0block_element0block_element2block_element0_child"  tracking-obj={_childCardTrackingObj}  class= "state0element0block_element0block_element2block_element0_child flexActionElement" 
+        data-action-element-class="state0element0block_element0block_element2block_element0_child" data-action-key="state0element0block_element0block_element2block_element0" onexecuteaction={performAction} data-show-spinner="true"
+        data-element-label="searchblockgettransactionbutton"   state-obj={record}  card={card}  record={record}  label="Get Transactions"  icon-name="standard-default"  action-list='\[{"stateAction":{"id":"flex-action-1703084816687","type":"cardAction","targetType":"Web Page","openUrlIn":"Current Window","Web Page":{"targetName":"/apex"},"eventName":"updatedatasource","message":"{\"type\":\"IntegrationProcedures\",\"value\":{\"dsDelay\":\"\",\"resultVar\":\"[&#39;DefaultValues&#39;]\",\"ipMethod\":\"FinancialAccounts_GetTransactions\",\"vlocityAsync\":false,\"inputMap\":{\"StartDateInp\":\"{StartDate}\",\"EndDateInp\":\"{EndDate}\",\"LimitInp\":\"{Limit}\",\"AccountType\":\"{AccountType}\",\"AccountSourceId\":\"{SourceSystemId}\",\"FinancialAccountName\":\"{FinancialAccountName}\",\"FinancialAcccountId\":\"{FinancialAcccountId}\"},\"jsonMap\":\"{\\\"EndDate\\\":\\\"{EndDate}\\\",\\\"StartDate\\\":\\\"{StartDate}\\\",\\\"AccountType\\\":\\\"{AccountType}\\\",\\\"FinancialAcccountId\\\":\\\"{FinancialAcccountId}\\\",\\\"Limit\\\":\\\"{Limit}\\\",\\\"SourceSystemId\\\":\\\"{SourceSystemId}\\\",\\\"FinancialAccountName\\\":\\\"{FinancialAccountName}\\\"}\"},\"orderBy\":{\"name\":\"\",\"isReverse\":\"\"},\"contextVariables\":[{\"name\":\"EndDate\",\"val\":\"2023-12-19\",\"id\":3},{\"name\":\"StartDate\",\"val\":\"2023-12-18\",\"id\":5},{\"name\":\"AccountType\",\"val\":\"DDA\",\"id\":7},{\"name\":\"FinancialAcccountId\",\"val\":\"a7Q78000000KeEWEA0\",\"id\":15},{\"name\":\"Limit\",\"val\":\"100\",\"id\":15},{\"name\":\"SourceSystemId\",\"val\":\"2030416483\",\"id\":12},{\"name\":\"FinancialAccountName\",\"val\":\"Pat T Checking 2\",\"id\":12}]}"},"key":"1702282974211-nzsi7cj2h","label":"Action","draggable":true,"isOpen":true,"actionIndex":0}]'  display-as-button="true"  button-variant="brand"  hide-action-icon="true"  styles='\{"label":{"textAlign":"center","fontSize":"18px"}}'  flyout-details='\{}'  theme="slds"  ></omnistudio-flex-action>
+      </div>
+        </div></omnistudio-block>
+    </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element0block_element1" class="slds-col  slds-p-around_small  slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><c-cf-show-transactions data-style-id="state0element0block_element1_child"  tracking-obj={_childCardTrackingObj}  is-inside-parent={insideParent} parent-uniquekey={uniqueKey}  card-node="\{record.FinancialAccountTransactions}"  parent-record={record}  records={_records}  parent-mergefields={card}  record-id={recordId}  is-child-card-tracking-enabled="false"  object-api-name={objectApiName}  theme="slds"   onupdateparent={updateParentData}></c-cf-show-transactions>
+    </div>
+        </div></omnistudio-block>
+    </div>
+        </div>
+      </omnistudio-flex-card-state>
+                      </template>
+            </template>
+            <template if:true={hasError}>
+            {error}
+            </template>
+            
+      <omnistudio-action action-wrapperclass="slds-hide" re-render-flyout class="action-trigger slds-col" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+      
+      </omnistudio-action>
+  
+            <omnistudio-action class="execute-action" re-render-flyout action-wrapperclass="slds-hide" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+            
+            </omnistudio-action>
+            </div>
+          </template>

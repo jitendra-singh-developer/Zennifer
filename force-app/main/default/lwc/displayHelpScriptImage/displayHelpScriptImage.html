@@ -1,0 +1,17 @@
+<template>
+		<lightning-button variant="brand" label="Show Image" onclick={openModal}></lightning-button>
+		<template if:true={showImageModal}>
+			<section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01" class="slds-modal slds-modal_medium slds-fade-in-open">
+        <div class="slds-modal__container">
+        <lightning-button-icon icon-name="action:close" alternative-text="Close" class="slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}></lightning-button-icon>
+        <div class="slds-modal__header">
+        <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Help Text Image</h1>
+        </div>
+        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+						<img src={imageLink}/>
+         </div>
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+		</template>
+</template>

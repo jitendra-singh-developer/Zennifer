@@ -1,0 +1,15 @@
+:root {
+  --theme-form-header-bg: #001B2C;
+  --theme-form-header-text: #00A3E0;
+}
+
+runtime_omnistudio_omniscript-omniscript-step > .nds-medium-size_8-of-12.nds-align_absolute-center,
+omnistudio-omniscript-step > .nds-medium-size_8-of-12.nds-align_absolute-center {
+  width: 100%;
+  max-width: none;
+}
+
+
+.nds-page-header__title.nds-step_label {
+  display: none;
+}

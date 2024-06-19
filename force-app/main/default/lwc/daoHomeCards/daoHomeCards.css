@@ -1,0 +1,43 @@
+.dao-cards-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  max-width: 1200px;
+  margin: 0 auto;
+  column-gap: 40px;
+}
+
+.dao-card {
+  display: grid;
+  text-align: center;
+}
+
+.dao-img {
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.dao-img img {
+  max-height: 135px;
+  border-radius: 20px;
+}
+
+.dao-card-header {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.dao-card-body {
+  text-align: center;
+}
+
+.dao-button-container {
+  align-self: flex-end;
+}
+
+@media (max-width: 768px) {
+  .dao-cards-container {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+}

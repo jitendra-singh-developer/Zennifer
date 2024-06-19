@@ -1,0 +1,56 @@
+<template>
+  <div class="dao-sticky-container">
+    <div class="dao-selected-products-container">
+      <div class="dao-selected-products-header">
+        <div>
+          <omnistudio-icon
+            class="nds-m-right_small"
+            alternative-text="Shopping Cart"
+            title="Shopping Cart"
+            icon-name="utility:cart"
+            color="#fff"
+            size="small"
+          >
+          </omnistudio-icon>
+          <span>Products Selected</span>
+        </div>
+
+        <div class="dao-product-count nds-m-left_small">{count}</div>
+      </div>
+      <div class="dao-selected-products-list">
+        <template if:true={isLoading}>
+          <omnistudio-spinner
+            theme="nds"
+            variant="brand"
+            alternative-text="Loading"
+          ></omnistudio-spinner>
+        </template>
+        <ul>
+          <template for:each={selectedProducts} for:item="product">
+            <li class="dao-selected-product" key={product}>
+              <omnistudio-button
+                class="nds-m-right_small"
+                onclick={deselectProduct}
+                data-name={product.Name}
+                data-id={product.Id}
+                variant="icon"
+                icon-name="utility:delete"
+                theme="nds"
+                title="Remove"
+                disabled={hasOne}
+                icon-fill={deselectButtonFill}
+              ></omnistudio-button>
+              {product.Name}
+            </li>
+          </template>
+          <li class="dao-empty-product-state" if:false={hasProducts}>
+            No products selected yet
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div></div>
+  </div>
+
+  <c-dao-confirm-modal onconfirm={handleDeselectProduct}></c-dao-confirm-modal>
+</template>

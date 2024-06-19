@@ -1,0 +1,12 @@
+<template>
+  <lightning-input-rich-text
+    label={label}
+    label-visible="true"
+    value={richText}
+    required={requiredValue}
+    onchange={handleRichTextChange}
+    placeholder={placeholder}
+    disabled-categories="FORMAT_FONT,FORMAT_TEXT,FORMAT_BODY,ALIGN_TEXT,REMOVE_FORMATTING"
+  ></lightning-input-rich-text>
+</template>
+<!-- formats={richTextFormats} -->

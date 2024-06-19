@@ -1,0 +1,155 @@
+<template>
+            <div class="slds-grid slds-wrap slds-is-relative ">
+            <div style="position: fixed;z-index: 999999;top: 0;right: 0;">
+  <omnistudio-toast class="flexcard-toast-element" theme="slds" title="" message="" styletype=""> </omnistudio-toast>
+</div>
+            <div if:true={showLoader} class="slds-is-absolute vloc-loader_override" style="height: 100%; width: 100%; min-height:50px; background: transparent; z-index: 99;">
+  <div>
+   <omnistudio-spinner
+      variant="brand"
+      alternative-text="Loading content..."
+      size="medium"
+      theme="slds"
+      ></omnistudio-spinner>
+  </div>
+</div>
+            <template if:false={hasPermission}>
+              You don't have required permissions to view this card.
+            </template>
+            <template if:true={hasPermission}>
+              <template if:true={hasRecords}>
+                        <template for:each={_records} for:item="record" for:index="rindex">
+                            <omnistudio-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-m-around_none " style="background-color:#f2f2f2;      
+         ">
+          <div data-style-id="state0element0" class="slds-col   slds-theme_default slds-border_top slds-border_left slds-border_right  slds-size_12-of-12  " data-rindex={rindex} style="background-color:#f2f2f2;     border-top: #cccccc 1px solid;border-left: #cccccc 1px solid;border-right: #cccccc 1px solid; 
+    border-radius:4px;     " >
+    <omnistudio-block data-style-id="state0element0_child"  card={card}  record={record}  label=""  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0" class="slds-col  slds-p-top_small slds-m-left_small  slds-size_1-of-12  " data-rindex={rindex} style="      
+         max-width: fit-content;" ><omnistudio-flex-icon data-style-id="state0element0block_element0_child"   card={card}  record={record}  icon-type="Salesforce SVG"  icon-name="standard:product"  size="small"  extraclass="slds-icon_container slds-icon-standard-product "  variant="inverse"  imgsrc=""  theme="slds"  ></omnistudio-flex-icon>
+      </div><div data-style-id="state0element0block_element1" class="slds-col  slds-p-left_small slds-p-top_small  slds-large-size_11-of-12  slds-medium-size_3-of-12  slds-small-size_3-of-12  slds-size_3-of-12  " data-rindex={rindex} style="      
+         font-weight:700;
+flex:1;" ><omnistudio-output-field data-style-id="state0element0block_element1_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-heading_small%22%3E%7BProduct%7D%20(%7BNumberOfAccounts%7D)%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element2" class="slds-col   slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element2_child"   card={card}  record={record}  merge-field=""  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element3" class="slds-col   slds-p-left_large slds-p-bottom_x-small  slds-size_5-of-12  condition-element" data-rindex={rindex} style="      
+         "  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-0","field":"Product","operator":"==","value":"ACH","type":"custom","hasMergeField":false}]}' >
+    <omnistudio-block data-style-id="state0element0block_element3_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-0","field":"Product","operator":"==","value":"ACH","type":"custom","hasMergeField":false}]}'  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element3block_element0" class="slds-col   slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element3block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-title_caps%22%3EACH%20DEBIT%20EXPOSURE%20LIMIT%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element3block_element1" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><omnistudio-output-field data-style-id="state0element0block_element3block_element1_child"   card={card}  record={record}  placeholder="output"  type="currency"  field-name="ACHDebitExposureLimit"  locale="en-US"  currency="USD"  theme="slds"  ></omnistudio-output-field>
+      </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element0block_element4" class="slds-col   slds-p-left_large slds-p-bottom_x-small  slds-size_5-of-12  condition-element" data-rindex={rindex} style="      
+         "  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-7","field":"Product","operator":"==","value":"ACH","type":"custom","hasMergeField":false}]}' >
+    <omnistudio-block data-style-id="state0element0block_element4_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-7","field":"Product","operator":"==","value":"ACH","type":"custom","hasMergeField":false}]}'  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element4block_element0" class="slds-col   slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element4block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-title_caps%22%3EACH%20CREDIT%20EXPOSURE%20LIMIT%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element4block_element1" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><omnistudio-output-field data-style-id="state0element0block_element4block_element1_child"   card={card}  record={record}  placeholder="output"  type="currency"  field-name="ACHCreditExposureLimit"  locale="en-US"  currency="USD"  theme="slds"  ></omnistudio-output-field>
+      </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element0block_element5" class="slds-col   slds-p-left_large slds-p-bottom_x-small  slds-size_5-of-12  condition-element" data-rindex={rindex} style="      
+         "  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-14","field":"Product","operator":"==","value":"RDC","type":"custom","hasMergeField":false}]}' >
+    <omnistudio-block data-style-id="state0element0block_element5_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-14","field":"Product","operator":"==","value":"RDC","type":"custom","hasMergeField":false}]}'  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element5block_element0" class="slds-col   slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element5block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-title_caps%22%3ERDC%20LIMIT%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element5block_element1" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><omnistudio-output-field data-style-id="state0element0block_element5block_element1_child"   card={card}  record={record}  placeholder="output"  type="currency"  field-name="RDCLimit"  locale="en-US"  currency="USD"  theme="slds"  ></omnistudio-output-field>
+      </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element0block_element6" class="slds-col   slds-p-left_large slds-p-bottom_x-small  slds-size_5-of-12  condition-element" data-rindex={rindex} style="      
+         "  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-21","field":"Product","operator":"==","value":"Mobile Deposit","type":"custom","hasMergeField":false}]}' >
+    <omnistudio-block data-style-id="state0element0block_element6_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-21","field":"Product","operator":"==","value":"Mobile Deposit","type":"custom","hasMergeField":false}]}'  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element6block_element0" class="slds-col   slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element6block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-title_caps%22%3EMOBILE%20DEPOSIT%20LIMIT%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element6block_element1" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><omnistudio-output-field data-style-id="state0element0block_element6block_element1_child"   card={card}  record={record}  placeholder="output"  type="currency"  field-name="MobileDepositLimit"  locale="en-US"  currency="USD"  theme="slds"  ></omnistudio-output-field>
+      </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element0block_element7" class="slds-col  slds-border_top slds-border_bottom  slds-large-size_12-of-12 slds-medium-size_12-of-12 slds-small-size_12-of-12 slds-size_12-of-12  " data-rindex={rindex} style="     border-top: #cccccc 1px solid;border-bottom: #cccccc 1px solid; 
+         " ><c-cf-treasury-company-a-p-f-a-lignting data-style-id="state0element0block_element7_child"  tracking-obj={_childCardTrackingObj}  is-inside-parent={insideParent} parent-uniquekey={uniqueKey}  card-node=""  parent-record={record}  records={_records}  parent-mergefields={card}  record-id={recordId}  is-child-card-tracking-enabled="false"  parent-attribute='\{"APId":"{APId}"}'  object-api-name={objectApiName}  theme="slds"   onupdateparent={updateParentData}></c-cf-treasury-company-a-p-f-a-lignting>
+    </div><div data-style-id="state0element0block_element8" class="slds-col  slds-text-align_center slds-border_bottom slds-p-top_x-small  slds-size_12-of-12  condition-element" data-rindex={rindex} style="background-color:#FFFFFF;     border-bottom: #cccccc 1px solid; 
+    border-radius:4px;     "  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-0","field":"APId","operator":"!=","value":"","type":"custom","hasMergeField":false}]}' ><omnistudio-flex-action data-style-id="state0element0block_element8_child"  tracking-obj={_childCardTrackingObj}  class= "state0element0block_element8_child flexActionElement" 
+        data-action-element-class="state0element0block_element8_child" data-action-key="state0element0block_element8" onexecuteaction={performAction} data-show-spinner="false"
+        data-element-label="block1action10"   state-obj={record}  card={card}  record={record}  label="View All"  icon-name="standard-default"  action-list='\[{"stateAction":{"id":"flex-action-1708113164495","type":"Custom","targetType":"Record","openUrlIn":"New Tab/Window","Record":{"targetId":"{APId}","targetName":"Account_Product__c","targetAction":"view"}},"key":"1708022946139-11yalwhyb","label":"Action","draggable":true,"isOpen":true,"actionIndex":0}]'  hide-action-icon="true"  display-as-button="false"  flyout-details='\{}'  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-0","field":"APId","operator":"!=","value":"","type":"custom","hasMergeField":false}]}'  button-variant="outline-brand"  data-preload-conditional-element="true"  styles='\{"label":{"color":"#5679BF"}}'  theme="slds"  ></omnistudio-flex-action>
+      </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element1" class="slds-col   slds-size_12-of-12  " data-rindex={rindex} style="background-color:#FFFFFF;      
+         " ><omnistudio-output-field data-style-id="state0element1_child"   card={card}  record={record}  merge-field=""  theme="slds"  ></omnistudio-output-field>
+      </div>
+        </div>
+      </omnistudio-flex-card-state>
+                        </template>
+                      </template>
+                      <template if:false={hasRecords}>
+                            <omnistudio-flex-card-state  record={record} data-statue="false"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-card slds-m-around_none " style="background-color:#f2f2f2;      
+         ">
+          <div data-style-id="state0element0" class="slds-col   slds-theme_default slds-border_top slds-border_left slds-border_right  slds-size_12-of-12  " data-rindex={rindex} style="background-color:#f2f2f2;     border-top: #cccccc 1px solid;border-left: #cccccc 1px solid;border-right: #cccccc 1px solid; 
+    border-radius:4px;     " >
+    <omnistudio-block data-style-id="state0element0_child"  card={card}  record={record}  label=""  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0" class="slds-col  slds-p-top_small slds-m-left_small  slds-size_1-of-12  " data-rindex={rindex} style="      
+         max-width: fit-content;" ><omnistudio-flex-icon data-style-id="state0element0block_element0_child"   card={card}  record={record}  icon-type="Salesforce SVG"  icon-name="standard:product"  size="small"  extraclass="slds-icon_container slds-icon-standard-product "  variant="inverse"  imgsrc=""  theme="slds"  ></omnistudio-flex-icon>
+      </div><div data-style-id="state0element0block_element1" class="slds-col  slds-p-left_small slds-p-top_small  slds-large-size_11-of-12  slds-medium-size_3-of-12  slds-small-size_3-of-12  slds-size_3-of-12  " data-rindex={rindex} style="      
+         font-weight:700;
+flex:1;" ><omnistudio-output-field data-style-id="state0element0block_element1_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-heading_small%22%3E%7BProduct%7D%20(%7BNumberOfAccounts%7D)%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element2" class="slds-col   slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element2_child"   card={card}  record={record}  merge-field=""  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element3" class="slds-col   slds-p-left_large slds-p-bottom_x-small  slds-size_5-of-12  condition-element" data-rindex={rindex} style="      
+         "  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-0","field":"Product","operator":"==","value":"ACH","type":"custom","hasMergeField":false}]}' >
+    <omnistudio-block data-style-id="state0element0block_element3_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-0","field":"Product","operator":"==","value":"ACH","type":"custom","hasMergeField":false}]}'  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element3block_element0" class="slds-col   slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element3block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-title_caps%22%3EACH%20DEBIT%20EXPOSURE%20LIMIT%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element3block_element1" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><omnistudio-output-field data-style-id="state0element0block_element3block_element1_child"   card={card}  record={record}  placeholder="output"  type="currency"  field-name="ACHDebitExposureLimit"  locale="en-US"  currency="USD"  theme="slds"  ></omnistudio-output-field>
+      </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element0block_element4" class="slds-col   slds-p-left_large slds-p-bottom_x-small  slds-size_5-of-12  condition-element" data-rindex={rindex} style="      
+         "  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-7","field":"Product","operator":"==","value":"ACH","type":"custom","hasMergeField":false}]}' >
+    <omnistudio-block data-style-id="state0element0block_element4_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-7","field":"Product","operator":"==","value":"ACH","type":"custom","hasMergeField":false}]}'  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element4block_element0" class="slds-col   slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element4block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-title_caps%22%3EACH%20CREDIT%20EXPOSURE%20LIMIT%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element4block_element1" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><omnistudio-output-field data-style-id="state0element0block_element4block_element1_child"   card={card}  record={record}  placeholder="output"  type="currency"  field-name="ACHCreditExposureLimit"  locale="en-US"  currency="USD"  theme="slds"  ></omnistudio-output-field>
+      </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element0block_element5" class="slds-col   slds-p-left_large slds-p-bottom_x-small  slds-size_5-of-12  condition-element" data-rindex={rindex} style="      
+         "  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-14","field":"Product","operator":"==","value":"RDC","type":"custom","hasMergeField":false}]}' >
+    <omnistudio-block data-style-id="state0element0block_element5_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-14","field":"Product","operator":"==","value":"RDC","type":"custom","hasMergeField":false}]}'  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element5block_element0" class="slds-col   slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element5block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-title_caps%22%3ERDC%20LIMIT%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element5block_element1" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><omnistudio-output-field data-style-id="state0element0block_element5block_element1_child"   card={card}  record={record}  placeholder="output"  type="currency"  field-name="RDCLimit"  locale="en-US"  currency="USD"  theme="slds"  ></omnistudio-output-field>
+      </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element0block_element6" class="slds-col   slds-p-left_large slds-p-bottom_x-small  slds-size_5-of-12  condition-element" data-rindex={rindex} style="      
+         "  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-21","field":"Product","operator":"==","value":"Mobile Deposit","type":"custom","hasMergeField":false}]}' >
+    <omnistudio-block data-style-id="state0element0block_element6_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-21","field":"Product","operator":"==","value":"Mobile Deposit","type":"custom","hasMergeField":false}]}'  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element6block_element0" class="slds-col   slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element6block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%20class=%22slds-text-title_caps%22%3EMOBILE%20DEPOSIT%20LIMIT%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div><div data-style-id="state0element0block_element6block_element1" class="slds-col   slds-size_12-of-12 " data-rindex={rindex} style="" ><omnistudio-output-field data-style-id="state0element0block_element6block_element1_child"   card={card}  record={record}  placeholder="output"  type="currency"  field-name="MobileDepositLimit"  locale="en-US"  currency="USD"  theme="slds"  ></omnistudio-output-field>
+      </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element0block_element7" class="slds-col  slds-border_top slds-border_bottom  slds-large-size_12-of-12 slds-medium-size_12-of-12 slds-small-size_12-of-12 slds-size_12-of-12  " data-rindex={rindex} style="     border-top: #cccccc 1px solid;border-bottom: #cccccc 1px solid; 
+         " ><c-cf-treasury-company-a-p-f-a-lignting data-style-id="state0element0block_element7_child"  tracking-obj={_childCardTrackingObj}  is-inside-parent={insideParent} parent-uniquekey={uniqueKey}  card-node=""  parent-record={record}  records={_records}  parent-mergefields={card}  record-id={recordId}  is-child-card-tracking-enabled="false"  parent-attribute='\{"APId":"{APId}"}'  object-api-name={objectApiName}  theme="slds"   onupdateparent={updateParentData}></c-cf-treasury-company-a-p-f-a-lignting>
+    </div><div data-style-id="state0element0block_element8" class="slds-col  slds-text-align_center slds-border_bottom slds-p-top_x-small  slds-size_12-of-12  condition-element" data-rindex={rindex} style="background-color:#FFFFFF;     border-bottom: #cccccc 1px solid; 
+    border-radius:4px;     "  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-0","field":"APId","operator":"!=","value":"","type":"custom","hasMergeField":false}]}' ><omnistudio-flex-action data-style-id="state0element0block_element8_child"  tracking-obj={_childCardTrackingObj}  class= "state0element0block_element8_child flexActionElement" 
+        data-action-element-class="state0element0block_element8_child" data-action-key="state0element0block_element8" onexecuteaction={performAction} data-show-spinner="false"
+        data-element-label="block1action10"   state-obj={record}  card={card}  record={record}  label="View All"  icon-name="standard-default"  action-list='\[{"stateAction":{"id":"flex-action-1708113164495","type":"Custom","targetType":"Record","openUrlIn":"New Tab/Window","Record":{"targetId":"{APId}","targetName":"Account_Product__c","targetAction":"view"}},"key":"1708022946139-11yalwhyb","label":"Action","draggable":true,"isOpen":true,"actionIndex":0}]'  hide-action-icon="true"  display-as-button="false"  flyout-details='\{}'  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-0","field":"APId","operator":"!=","value":"","type":"custom","hasMergeField":false}]}'  button-variant="outline-brand"  data-preload-conditional-element="true"  styles='\{"label":{"color":"#5679BF"}}'  theme="slds"  ></omnistudio-flex-action>
+      </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element1" class="slds-col   slds-size_12-of-12  " data-rindex={rindex} style="background-color:#FFFFFF;      
+         " ><omnistudio-output-field data-style-id="state0element1_child"   card={card}  record={record}  merge-field=""  theme="slds"  ></omnistudio-output-field>
+      </div>
+        </div>
+      </omnistudio-flex-card-state>
+                      </template>
+            </template>
+            <template if:true={hasError}>
+            {error}
+            </template>
+            
+      <omnistudio-action action-wrapperclass="slds-hide" re-render-flyout class="action-trigger slds-col" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+      
+      </omnistudio-action>
+  
+            <omnistudio-action class="execute-action" re-render-flyout action-wrapperclass="slds-hide" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+            
+            </omnistudio-action>
+            </div>
+          </template>

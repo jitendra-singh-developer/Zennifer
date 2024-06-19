@@ -1,0 +1,25 @@
+.glider-slide {
+  padding: 0 8px;
+}
+
+.glider-dots {
+  padding-top: 10px;
+  gap: 5px;
+}
+
+.glider-next {
+  right: -35px;
+}
+
+.glider-next,
+.glider-prev {
+  top: 40%;
+}
+
+.glider-dot.active {
+  background: var(--theme-primary) !important;
+}
+
+.container {
+  margin-right: 16px;
+}

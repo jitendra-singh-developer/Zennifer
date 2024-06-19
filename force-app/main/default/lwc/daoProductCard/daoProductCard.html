@@ -1,0 +1,74 @@
+<template>
+  <div if:true={product} class={cardClass} key={product.Name}>
+    <div class="slds-text-align_center slds-m-bottom_medium dao-card-header">
+      <p class="dao-product-name slds-m-bottom_large">{product.ProductName}</p>
+      <p class="dao-product-amount" if:true={product.SubtitleValue}>
+        {product.SubtitleValue}
+      </p>
+      <p class="dao-product-fee-label" if:true={product.SubtitleLabel}>
+        {product.SubtitleLabel}
+      </p>
+    </div>
+
+    <div
+      class="product-details-container slds-m-bottom_medium slds-text-align_center"
+      if:true={product.ProductCode}
+    >
+      <p>Product Code</p>
+      <p>{product.ProductCode}</p>
+    </div>
+
+    <ul>
+      <li class="dao-product-feature" if:true={product.Benefit1}>
+        <lightning-icon
+          class="dao-bullet-point slds-m-right_x-small"
+          icon-name="utility:chevronright"
+          alternative-text="Bullet point"
+          title="Bullet point"
+          size="x-small"
+        ></lightning-icon>
+        {product.Benefit1}
+      </li>
+      <li class="dao-product-feature" if:true={product.Benefit2}>
+        <lightning-icon
+          class="dao-bullet-point slds-m-right_x-small"
+          icon-name="utility:chevronright"
+          alternative-text="Bullet point"
+          title="Bullet point"
+          size="x-small"
+        ></lightning-icon>
+        {product.Benefit2}
+      </li>
+      <li class="dao-product-feature" if:true={product.Benefit3}>
+        <lightning-icon
+          class="dao-bullet-point slds-m-right_x-small"
+          icon-name="utility:chevronright"
+          alternative-text="Bullet point"
+          title="Bullet point"
+          size="x-small"
+        ></lightning-icon>
+        {product.Benefit3}
+      </li>
+      <li class="dao-product-feature" if:true={product.Benefit4}>
+        <lightning-icon
+          class="dao-bullet-point slds-m-right_x-small"
+          icon-name="utility:chevronright"
+          alternative-text="Bullet point"
+          title="Bullet point"
+          size="x-small"
+        ></lightning-icon>
+        {product.Benefit4}
+      </li>
+    </ul>
+
+    <omnistudio-button
+      class="dao-product-toggle-button slds-m-top_medium"
+      theme="slds"
+      variant={buttonVariant}
+      label={buttonLabel}
+      onclick={handleToggle}
+      icon-name={buttonIcon}
+    >
+    </omnistudio-button>
+  </div>
+</template>

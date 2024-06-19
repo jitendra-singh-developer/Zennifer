@@ -1,0 +1,45 @@
+/*
+  Note: Please make sure that all classes that are specified for the OmniscriptBlock component are also applied to the
+  OmniscriptPreviewBlock component as well in order to align the styling architecture.
+*/
+.omni-block_children {
+  margin-left: 50px;
+}
+
+.omni-block_name {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.omni-block_content {
+  padding-left: 1.5rem;
+  padding-right: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+
+.block-container {
+  border: 1px solid rgb(201, 201, 201) !important;
+  border-radius: 4px;
+}
+
+.block-label-container {
+  background-color: rgb(243, 243, 243);
+  position: sticky;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  font-size: 16px;
+}
+
+.block-label {
+  color: #231F20;
+}
+
+.block-number {
+  color: #231F20;
+}

@@ -1,0 +1,117 @@
+<!--
+  @description       : 
+  @author            : SUMEDH WASNIK
+  @group             : GERENT
+  @last modified on  : 09-26-2023
+  @last modified by  : SUMEDH WASNIK
+  Modifications Log
+  Ver   Date         Author          Modification
+  1.0   09-25-2023   SUMEDH WASNIK   Initial Version
+-->
+<template>
+    <template if:true={showSpinner}>
+        <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+    </template>
+		<div class="slds-p-top_large">
+			<lightning-accordion active-section-name="Client Information">
+        <lightning-accordion-section label="Client Information">
+            <div if:true={recordId}>
+
+                <lightning-record-edit-form record-id={recordId} object-api-name="Account" onload={loadForm}>
+
+                    <lightning-layout multiple-rows="true">
+                        <lightning-layout-item padding="left-small" size="12">
+                            <lightning-layout multiple-rows="true">
+                                <lightning-layout-item size="12">
+                                            <lightning-layout-item size="12">
+                                                <lightning-input-field field-name="BillingStreet"
+                                                    disabled="true"></lightning-input-field>
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size="6">
+                                                <lightning-layout>
+                                                    <lightning-layout-item size="6">
+                                                        <lightning-input-field field-name="BillingCity"
+                                                            disabled="true"></lightning-input-field>
+                                                    </lightning-layout-item>
+                                                    <lightning-layout-item size="6">
+                                                        <lightning-input-field field-name="BillingState"
+                                                            disabled="true"></lightning-input-field>
+                                                    </lightning-layout-item>
+                                                </lightning-layout>
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size="6">
+                                                <lightning-layout>
+                                                    <lightning-layout-item size="6">
+                                                        <lightning-input-field field-name="BillingCountry"
+                                                            disabled="true"></lightning-input-field>
+                                                    </lightning-layout-item>
+                                                    <lightning-layout-item size="6">
+                                                        <lightning-input-field field-name="BillingPostalCode"
+                                                            disabled="true"></lightning-input-field>
+                                                    </lightning-layout-item>
+                                                </lightning-layout>
+                                            </lightning-layout-item>
+                                </lightning-layout-item>
+                            </lightning-layout>
+
+                        </lightning-layout-item>
+                        <lightning-layout-item padding="left-small" size="12">
+                            <lightning-layout multiple-rows="true">
+                                <lightning-layout-item size="6">
+                                    <lightning-input-field field-name="FinServ__RelationshipStartDate__c"
+                                        disabled="true"></lightning-input-field>
+                                </lightning-layout-item>
+                                <lightning-layout-item size="6">
+                                    <lightning-input-field field-name="WMx_Nature_of_Business__c"
+                                        disabled="true"></lightning-input-field>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </lightning-layout-item>
+                        <lightning-layout-item padding="left-small" size="12">
+                            <lightning-layout multiple-rows="true">
+                                <lightning-layout-item size="6">
+                                    <lightning-input-field field-name="LLC_BI__Tax_Identification_Number_PE__c"
+                                        disabled="true"></lightning-input-field>
+                                </lightning-layout-item>
+                                <lightning-layout-item size="6">
+                                    <lightning-record-edit-form record-id={nacisCodeId} object-api-name="NAICS__c">
+                                        <lightning-input-field field-name="Code__c"
+                                        disabled="true"></lightning-input-field>
+                                    </lightning-record-edit-form>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </lightning-layout-item>
+                        <lightning-layout-item padding="left-small" size="12">
+                            <lightning-layout multiple-rows="true">
+                                <lightning-layout-item size="6">
+                                    <lightning-input-field field-name="Treasury_Relationship_Manager__c"
+                                        disabled="true"></lightning-input-field>
+                                </lightning-layout-item>
+                                <lightning-layout-item size="6">
+                                    <lightning-input-field field-name="Portfolio_Manager__c"
+                                        disabled="true"></lightning-input-field>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </lightning-layout-item>
+                        <lightning-layout-item padding="leftS-small" size="12">
+                            <lightning-layout multiple-rows="true">
+                                <lightning-layout-item size="6">
+                                    <lightning-input-field field-name="Relationship_Manager__c"
+                                        disabled="true"></lightning-input-field>
+                                </lightning-layout-item>
+                                <lightning-layout-item size="6">
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </lightning-layout-item>
+                    </lightning-layout>
+
+                </lightning-record-edit-form>
+            </div>
+
+            <div if:false={recordId}>
+                To see the client information, please select the relationship.
+            </div>
+        </lightning-accordion-section>
+    </lightning-accordion>
+		</div>
+</template>

@@ -1,0 +1,8 @@
+<apex:page standardController="LLC_BI__Loan__c">
+<script>
+
+window.open("/apex/nFORMS__NewFormGenerator?Type=LLC_BI__Loan__c&id={!LLC_BI__Loan__c.Id}&form_purpose=General","_self");
+
+</script>
+
+</apex:page>

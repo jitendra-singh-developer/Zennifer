@@ -1,0 +1,226 @@
+<template>
+  <div class="dao-cards-container" if:true={isUnselected}>
+    <div class="dao-card">
+      <div class="dao-img">
+        <img
+          src="/sfsites/c/resource/DAOHomeImages/Image1.png"
+          alt="Savings Accounts"
+        />
+      </div>
+      <div class="dao-card-header nds-m-vertical_small">Savings Accounts</div>
+      <div class="dao-card-body">
+        Save for something special or a rainy day with the help of our flexible
+        Savings accounts and competitive rates
+      </div>
+      <div class="nds-m-vertical_small dao-button-container">
+        <omnistudio-button
+          theme="nds"
+          variant="brand"
+          label="Learn More"
+          icon-fill="#fff"
+        >
+        </omnistudio-button>
+      </div>
+    </div>
+
+    <div class="dao-card">
+      <div class="dao-img">
+        <img
+          src="/sfsites/c/resource/DAOHomeImages/Image2.png"
+          alt="Business Loans"
+        />
+      </div>
+      <div class="dao-card-header nds-m-vertical_small">Business Loans</div>
+      <div class="dao-card-body">
+        A personalized business loan from our financing experts that will help
+        support your short and long-term business goals.
+      </div>
+      <div class="nds-m-vertical_small dao-button-container">
+        <omnistudio-button
+          theme="nds"
+          variant="brand"
+          label="Learn More"
+          icon-fill="#fff"
+        >
+        </omnistudio-button>
+      </div>
+    </div>
+
+    <div class="dao-card">
+      <div class="dao-img">
+        <img
+          src="/sfsites/c/resource/DAOHomeImages/Image3.png"
+          alt={retirementAccountLabel}
+        />
+      </div>
+      <div class="dao-card-header nds-m-vertical_small">
+        {retirementAccountLabel}
+      </div>
+      <div class="dao-card-body">
+        We offer a variety of {retirementAccountAbbr} options to help you save
+        for retirement, explore our account options
+      </div>
+      <div class="nds-m-vertical_small dao-button-container">
+        <omnistudio-button
+          theme="nds"
+          variant="brand"
+          label="Learn More"
+          icon-fill="#fff"
+        >
+        </omnistudio-button>
+      </div>
+    </div>
+  </div>
+
+  <div class="dao-cards-container" if:true={isCommercial}>
+    <div class="dao-card">
+      <div class="dao-img">
+        <img
+          src="/sfsites/c/resource/DAOCommercialImage"
+          alt="Savings Accounts"
+        />
+      </div>
+      <div class="dao-card-header nds-m-vertical_small">
+        Commercial Interest Checking
+      </div>
+      <div class="dao-card-body">
+        Support your business or with the help of our flexible Business accounts
+        and competitive rates
+      </div>
+      <div class="nds-m-vertical_small dao-button-container">
+        <omnistudio-button
+          theme="nds"
+          variant="brand"
+          label="Learn More"
+          icon-fill="#fff"
+        >
+        </omnistudio-button>
+      </div>
+    </div>
+
+    <div class="dao-card">
+      <div class="dao-img">
+        <img
+          src="/sfsites/c/resource/DAOMoneyMarketImage"
+          alt="Business Loans"
+        />
+      </div>
+      <div class="dao-card-header nds-m-vertical_small">
+        Commercial Money Market
+      </div>
+      <div class="dao-card-body">
+        We offer a variety of Commercial Money Market accounts for both short
+        term and long term goals, with competitive rates to grow your money
+      </div>
+      <div class="nds-m-vertical_small dao-button-container">
+        <omnistudio-button
+          theme="nds"
+          variant="brand"
+          label="Learn More"
+          icon-fill="#fff"
+        >
+        </omnistudio-button>
+      </div>
+    </div>
+
+    <div class="dao-card">
+      <div class="dao-img">
+        <img
+          src="/sfsites/c/resource/DAONonProfitImage"
+          alt={retirementAccountLabel}
+        />
+      </div>
+      <div class="dao-card-header nds-m-vertical_small">
+        Non-Profit Packages
+      </div>
+      <div class="dao-card-body">
+        We offer a variety of non-profit options to help your business, explore
+        our account options
+      </div>
+      <div class="nds-m-vertical_small dao-button-container">
+        <omnistudio-button
+          theme="nds"
+          variant="brand"
+          label="Learn More"
+          icon-fill="#fff"
+        >
+        </omnistudio-button>
+      </div>
+    </div>
+  </div>
+
+  <div class="dao-cards-container" if:true={isConsumer}>
+    <div class="dao-card">
+      <div class="dao-img">
+        <img
+          src="/sfsites/c/resource/DAOHomeImages/Image1.png"
+          alt="Savings Accounts"
+        />
+      </div>
+      <div class="dao-card-header nds-m-vertical_small">Savings Accounts</div>
+      <div class="dao-card-body">
+        Save for something special or a rainy day with the help of our flexible
+        Savings accounts and competitive rates
+      </div>
+      <div class="nds-m-vertical_small dao-button-container">
+        <omnistudio-button
+          theme="nds"
+          variant="brand"
+          label="Learn More"
+          icon-fill="#fff"
+        >
+        </omnistudio-button>
+      </div>
+    </div>
+
+    <div class="dao-card">
+      <div class="dao-img">
+        <img
+          src="/sfsites/c/resource/DAOHomeImages/Image2.png"
+          alt="Business Loans"
+        />
+      </div>
+      <div class="dao-card-header nds-m-vertical_small">
+        {certificateAccountLabel} Accounts
+      </div>
+      <div class="dao-card-body">
+        We offer a variety of {certificateAccountAbbr} accounts for both short
+        term and long term goals, with competitive rates to grow your money
+      </div>
+      <div class="nds-m-vertical_small dao-button-container">
+        <omnistudio-button
+          theme="nds"
+          variant="brand"
+          label="Learn More"
+          icon-fill="#fff"
+        >
+        </omnistudio-button>
+      </div>
+    </div>
+
+    <div class="dao-card">
+      <div class="dao-img">
+        <img
+          src="/sfsites/c/resource/DAOHomeImages/Image3.png"
+          alt={retirementAccountLabel}
+        />
+      </div>
+      <div class="dao-card-header nds-m-vertical_small">
+        {retirementAccountLabel}
+      </div>
+      <div class="dao-card-body">
+        We offer a variety of {retirementAccountAbbr} options to help you save
+        for retirement, explore our account options
+      </div>
+      <div class="nds-m-vertical_small dao-button-container">
+        <omnistudio-button
+          theme="nds"
+          variant="brand"
+          label="Learn More"
+          icon-fill="#fff"
+        >
+        </omnistudio-button>
+      </div>
+    </div>
+  </div>
+</template>

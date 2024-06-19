@@ -1,0 +1,8 @@
+<template>
+    <template lwc:if={buttonIconName}>
+        <lightning-icon alternative-text={buttonLabel} icon-name={buttonIconName} class="icon"
+            onclick={handleInvokeGlobalAction} size="small" variant="standard">
+        </lightning-icon>
+    </template>
+    <span onclick={handleInvokeGlobalAction} class={buttonClassList}>{buttonLabel}</span>
+</template>

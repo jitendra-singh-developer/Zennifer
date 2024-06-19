@@ -1,0 +1,64 @@
+<!--
+  @description       : 
+  @author            : SUMEDH WASNIK
+  @group             : GERENT
+  @last modified on  : 09-15-2023
+  @last modified by  : SUMEDH WASNIK
+  Modifications Log
+  Ver   Date         Author          Modification
+  1.0   09-14-2023   SUMEDH WASNIK   Initial Version
+-->
+<template>
+    <div class="slds-p-around_small">
+        <lightning-file-upload label={label} name="fileUploader" onuploadfinished={handleUploadFinished} multiple>
+        </lightning-file-upload>
+        
+        <template if:true={showFiles}>
+          <div class="slds-p-top_small">
+            <div class="slds-p-around_small">
+              <div class="slds-grid slds-gutters slds-wrap">
+                  <div class="slds-col slds-size_2-of-7">
+                      <div class="slds-align_absolute-center">
+                          <span style="font-size:18px;font-weight:500">SR No.</span>
+                      </div>
+                  </div>
+                  <div class="slds-col slds-size_2-of-7">
+                      <div class="slds-align_absolute-center">
+                          <span style="font-size:18px;font-weight:500">Title</span>
+                      </div>
+                  </div>
+                  <div class="slds-col slds-size_2-of-7">
+                      <div class="slds-align_absolute-center">
+                          <span style="font-size:18px;font-weight:500">Type</span>
+                      </div>
+                  </div>
+                  <div class="slds-col slds-size_1-of-7">
+                       
+                  </div>
+              </div>
+              <template for:each={files} for:item="file">
+                  <div key={file.Id}>
+                      <div class="slds-grid slds-wrap slds-gutters">
+                          <div class="slds-col slds-size_2-of-7">
+                              <lightning-formatted-number value={value.Number}></lightning-formatted-number>
+                          </div>
+                          <div class="slds-col slds-size_2-of-7">
+                              <lightning-formatted-text value={value.Name}></lightning-formatted-text>
+                          </div>
+                          <div class="slds-col slds-size_2-of-7">
+                              <lightning-formatted-text value={value.type}></lightning-formatted-text>
+                          </div>
+                          <div class="slds-col slds-size_1-of-7">
+                              <div class="slds-p-top_small" style="display: flex;flex-direction: row;justify-content: flex-end;align-items: center;">
+                                  <lightning-button-icon icon-name="utility:delete" alternative-text="Delete File" title="Delete File" key={file.Id} access-key={file.Id} onclick={deleteFile}>
+                                  </lightning-button-icon>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </template>
+          </div>
+          </div>
+        </template>
+    </div>
+</template>

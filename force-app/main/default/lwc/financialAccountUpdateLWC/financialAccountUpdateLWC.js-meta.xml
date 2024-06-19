@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>Financial Account Update LWC</masterLabel>
+    <description>Callout to an external system to update the record.</description>
+    <apiVersion>58.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__RecordPage</target>
+        <target>lightning__FlowScreen</target>
+        <target>lightning__RecordAction</target>
+    </targets>
+    <targetConfigs>  
+        <targetConfig targets="lightning__RecordPage">
+            <property name="showUI" type="Boolean" default="false" label="Show UI" description="Reveals UI to allow users to manually call the system to make the balance update" />
+            <property name="title" type="String" label="Component Title" description="Component header" />
+            <property name="apiFieldNames" type="String" label="API Field Names" description="Semi-colon seperated string of api name fields" />
+            <property name="recordId" type="String" label="Record Id"/>
+        </targetConfig>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="recordId" type="String" label="Record Id"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

@@ -1,0 +1,9 @@
+.dao-terms-card {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.iq-disclosure-checkbox {
+  visibility: hidden;
+  display: none;
+}

@@ -1,0 +1,37 @@
+<template>
+  <omnistudio-modal size="medium" theme="nds">
+    <div slot="header"><h2 class="dao-modal-title">{name}</h2></div>
+    <div class="dao-modal-content-container" slot="content">
+      <div class="dao-modal-content">
+        <omnistudio-omniscript-formatted-rich-text
+          value={body}
+        ></omnistudio-omniscript-formatted-rich-text>
+      </div>
+      <div class="dao-modal-content-end"></div>
+    </div>
+    <div slot="footer">
+      <omnistudio-button
+        class="nds-m-right_x-small slds-float_left"
+        theme="nds"
+        icon-name="utility:print"
+        variant="neutral"
+        onclick={handlePrint}
+        label="Print"
+      ></omnistudio-button>
+      <omnistudio-button
+        class="nds-m-right_x-small"
+        theme="nds"
+        variant="neutral"
+        onclick={close}
+        label="Exit"
+      ></omnistudio-button>
+      <omnistudio-button
+        theme="nds"
+        variant="brand"
+        onclick={handleRead}
+        label="I Accept"
+        disabled={isDisabled}
+      ></omnistudio-button>
+    </div>
+  </omnistudio-modal>
+</template>

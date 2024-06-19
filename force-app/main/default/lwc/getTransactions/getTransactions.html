@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="Account Transactions">
+        <div class="slds-m-around_medium">
+            <lightning-button label="Get Transactions" onclick={handleGetTransactions}></lightning-button>
+            <template if:true={isLoading}>
+                <lightning-spinner variant="brand" alternative-text="Loading"></lightning-spinner>
+              </template>
+        </div>
+        <template if:true={error}>
+            <div class="slds-m-around_medium">
+                <p class="slds-text-color_error">{error}</p>
+            </div>
+        </template>
+        <template if:true={transactionData}>
+            <lightning-datatable
+                key-field="SequenceNumber"
+                data={transactionData}
+                show-row-number-column
+                row-number-offset={rowOffset}
+                hide-checkbox-column
+                columns={tableColumns}>
+        </lightning-datatable>
+        </template>
+    </lightning-card>
+</template>

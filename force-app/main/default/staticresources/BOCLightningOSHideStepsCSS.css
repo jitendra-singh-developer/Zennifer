@@ -1,0 +1,70 @@
+/* Set Brand Colors */
+:root {
+  --theme-brand: #001B2C;
+  --theme-primary: #007DB6;
+  --theme-primary-hover: #fff;
+  --theme-primary-text: #fff;
+  --theme-primary-text-hover: #007DB6;
+  --theme-secondary: #5b6770;
+  --theme-secondary-hover: #fff;
+  --theme-secondary-text: #fff;
+  --theme-secondary-text-hover: #5b6770;
+  --theme-tertiary: #CFB36D;
+  --theme-text: #000;
+  --theme-text-light: #4E5356;
+  --theme-footer: #001B2C;
+  --theme-success: #45634F;
+  --theme-error: #9E2432;
+}
+
+.omniscript-article {
+  /* Set Lightning Design Tokens  */
+  --slds-c-button-brand-color-background: var(--theme-primary);
+  --slds-c-button-brand-color-border: var(--theme-primary);
+  --slds-c-button-brand-color-background-hover: var(--theme-primary-hover);
+  --slds-c-button-brand-color-border-hover: var(--theme-primary-hover);
+  --slds-c-button-brand-text-color-hover: #fff;
+  --slds-c-button-text-color: var(--theme-primary);
+  --slds-c-button-text-color-hover: #001B2C;
+
+  /* Remove vertical padding from any block elements whose name starts with FormBlock */
+  [data-omni-key^="FormBlock"] .slds-accordion__section {
+    padding: 0;
+  }
+
+  /* Remove empty accordion header */
+  [data-omni-key^="FormBlock"] .slds-accordion__summary {
+    display: none;
+  }
+
+  [data-omni-key^="FormBlock"] .omni-block_content,
+  [data-omni-key="CaseCommonFields"] .omni-block_content {
+    padding: 0;
+  }
+
+  /* Add padding around button images */
+  .slds-img-item {
+    padding: 10px;
+  }
+}
+
+/* Aligns Prev/Next CTAs to center */
+.omniscript-button-position {
+  justify-content: flex-start !important;
+}
+
+/* Aligns Cancel/Save for Later actions to center */
+.omniscript-sfl-actions {
+  text-align: right;
+}
+
+/* Hides underline under step header */
+.vlc-separator[omnistudio-omniscriptStep_omniscriptStep] {
+  display: none;
+}
+
+/* Hide Step Chart */
+.slds-progress-not-touched .omni-stepchart-heading,
+.slds-progress {
+  display: none;
+}

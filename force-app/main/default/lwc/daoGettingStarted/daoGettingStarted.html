@@ -1,0 +1,45 @@
+<template>
+  <div
+    class="dao-card nds-p-top_x-large nds-p-horizontal_large slds-text-align_center"
+  >
+    <div class="dao-card-header-container slds-grid slds-grid_align-center">
+      <h2 class="dao-card-header nds-p-bottom_small">Getting Started</h2>
+    </div>
+    <div class="slds-grid slds-wrap slds-grid_vertical-align-end">
+      <div
+        class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-p-horizontal_small nds-p-bottom_x-large nds-p-top_large dao-getting-started-option"
+      >
+        <p class="dao-card-option nds-m-bottom_small">Need Help?</p>
+        <omnistudio-navigate-action
+          target-type="Community Named Page"
+          target-name={recommendationsPage}
+          target-params={recommendationsParams}
+          use-href="true"
+        >
+          <omnistudio-button
+            theme="nds"
+            label="Get Recommendations"
+            variant="brand"
+          ></omnistudio-button>
+        </omnistudio-navigate-action>
+      </div>
+      <div
+        class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-p-horizontal_small nds-p-bottom_x-large nds-p-top_large dao-getting-started-option"
+      >
+        <p class="dao-card-option nds-m-bottom_small">Know what you want?</p>
+        <omnistudio-navigate-action
+          target-type="Community Named Page"
+          target-name={productsPage}
+          target-params={productsParams}
+          use-href="true"
+        >
+          <omnistudio-button
+            theme="nds"
+            label="See All Products"
+            variant="brand"
+          ></omnistudio-button>
+        </omnistudio-navigate-action>
+      </div>
+    </div>
+  </div>
+</template>

@@ -1,0 +1,39 @@
+<template>
+  <div if:true={showMessage}>
+    <template if:true={messageText}>
+      <div class={wrapperClass} if:false={_isDesignMode}>
+        <div
+          class="nds-form-element__control nds-form-element__control-animated-label nds-grid dao-messaging-container"
+        >
+          <div msg={messageType} class="nds-faux-animate">
+            <span
+              class="nds-icon_container nds-icon_container_circle nds-m-right_small"
+              title={messageType}
+            >
+              <omnistudio-icon
+                theme={_theme}
+                icon-name={iconName}
+                variant={iconVariant}
+              ></omnistudio-icon>
+            </span>
+          </div>
+          <div>
+            <span role="alert" class="iq-omniscript-messaging-text"
+              >{messageText}</span
+            >
+          </div>
+          <label
+            if:true={_showLabel}
+            class="nds-form-element__label"
+            style="top: 0rem"
+          >
+            <span>{_propSetMap.label}</span>
+          </label>
+        </div>
+      </div>
+      <span if:true={_isDesignMode} class="slds-text-font_monospace">
+        &lt;{_elementId} /&gt;</span
+      >
+    </template>
+  </div>
+</template>

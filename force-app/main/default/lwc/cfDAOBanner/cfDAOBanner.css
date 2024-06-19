@@ -1,0 +1,5 @@
+@media(max-width: 768px) {
+    .dao-home-banner {
+        background-position: 175% center !important;
+    }
+}

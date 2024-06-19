@@ -1,0 +1,8 @@
+<template>
+<lightning-card  variant="Narrow"  title="Verify Identity" icon-name="standard:account">
+   <lightning-flow if:true={inputVariables}
+									 	flow-api-name='BoC_Caller_Verification'
+									 	flow-input-variables={inputVariables}>
+    </lightning-flow>
+</lightning-card>
+</template>

@@ -1,0 +1,6 @@
+.boc-flexcard-datatable .slds-data-table-row.tableRow:hover {
+    cursor: pointer;
+}
+.slds-grid.slds-grid_align-end.slds-m-around_x-small{
+    display:none;
+}

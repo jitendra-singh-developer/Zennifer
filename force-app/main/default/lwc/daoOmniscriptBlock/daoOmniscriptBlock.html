@@ -1,0 +1,111 @@
+<template>
+  <div class="slds-size_1-of-1">
+    
+    <div class="block-container slds-card slds-m-bottom_medium">
+      <div class="slds-form-element__control slds-block_container">
+        <label
+          class="slds-form-element__label slds-clearfix block-label-container slds-p-around_medium"
+          role="button"
+          tabindex="0"
+        >
+          <template if:true={canToggleContent}>
+            <template if:true={_propSetMap.repeat}>
+              <div
+                if:true={blockLabel}
+                class="slds-grid slds-size_1-of-1"
+                onclick={toggleContent}
+              >
+                <omnistudio-icon
+                  extraclass="slds-block__action-icon slds-button__icon slds-button__icon-left"
+                  icon-name="utility:switch"
+                  theme="slds"
+                  alternative-text="Toggle Content"
+                  size="small"
+                >
+                </omnistudio-icon>
+                <div class="block-header slds-form-element__label_toggle-text">
+                  {blockLabel}
+                  <div if:true={showValidation} class="slds-has-error">
+                    <div
+                      class="slds-form-element__help slds-form-element__help_text-transform__none"
+                    >
+                      <span class="slds-text-link_faux" onclick={toggleContent}>
+                        {allCustomLabelsUtil.OmniBlockError}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="slds-control-action__container"></div>
+              </div>
+            </template>
+            <template if:false={_propSetMap.repeat}>
+              <div
+                if:true={blockLabel}
+                class="slds-grid slds-size_1-of-1"
+                onclick={toggleContent}
+              >
+                <omnistudio-icon
+                  extraclass="slds-block__action-icon slds-button__icon slds-button__icon-left"
+                  icon-name="utility:switch"
+                  theme="slds"
+                  alternative-text="Toggle Content"
+                  size="small"
+                >
+                </omnistudio-icon>
+                <div class="block-header slds-form-element__label_toggle-text">
+                  {blockLabel}
+                  <div if:true={showErrorMessage} class="slds-has-error">
+                    <div
+                      class="slds-form-element__help slds-form-element__help_text-transform__none"
+                    >
+                      {allCustomLabelsUtil.OmniBlockError}
+                    </div>
+                  </div>
+                </div>
+                <div class="slds-control-action__container"></div>
+              </div>
+            </template>
+          </template>
+          <template if:false={canToggleContent}>
+            <span class="block-number slds-p-right_x-small"
+              >{blockNumber}.</span
+            >
+            <span class="slds-truncate block-label" title={blockLabel}
+              >{blockLabel}</span
+            >
+          </template>
+        </label>
+        <!-- <template if:true={_propSetMap.repeat}>
+          <div class="slds-is-absolute slds-button-group" role="group">
+            <omnistudio-button
+              if:true={canAdd}
+              variant="base"
+              onclick={handleAdd}
+              label={allCustomLabelsUtil.OmniAdd}
+              theme={_theme}
+            >
+            </omnistudio-button>
+            <omnistudio-button
+              if:true={canRemove}
+              variant="base"
+              onclick={handleRemove}
+              label={allCustomLabelsUtil.OmniDelete}
+              class="slds-m-left_x-small"
+              theme={_theme}
+            >
+            </omnistudio-button>
+          </div>
+        </template> -->
+        <div
+          class="slds-size_1-of-1 slds-block_body slds-p-horizontal_x-large"
+          aria-hidden="false"
+          aria-expanded={expandContent}
+        >
+          <div class="slds-grid slds-wrap slds-grid_pull-padded">
+            <slot></slot>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

@@ -1,0 +1,27 @@
+<template>
+		<template for:each={financialAccountsIds} for:item="finAccId">
+				<div key={finAccId} class="slds-p-bottom_small">
+						<div class="slds-box">
+								<lightning-record-view-form object-api-name="FinServ__FinancialAccount__c" record-id={finAccId}>
+										<lightning-layout multiple-rows="true">
+												<lightning-layout-item size="12" padding="slds-p-Bottom_small">
+														<lightning-output-field variant="label-hidden" field-name="Name" style="font-weight:600;"></lightning-output-field>
+												</lightning-layout-item>
+												<lightning-layout-item size="12">
+														<lightning-layout>
+																<lightning-layout-item size="4">
+																	Balance :
+																</lightning-layout-item>
+																<lightning-layout-item size="8">
+																		<b>
+																				<lightning-output-field variant="label-hidden" field-name="FinServ__Balance__c"></lightning-output-field>
+																		</b>
+																</lightning-layout-item>
+														</lightning-layout>
+												</lightning-layout-item>
+										</lightning-layout>
+								</lightning-record-view-form>
+						</div>
+				</div>
+		</template>
+</template>

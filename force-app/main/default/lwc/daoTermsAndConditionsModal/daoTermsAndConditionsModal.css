@@ -1,0 +1,9 @@
+.dao-modal-content-container {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.dao-file {
+  height: 65vh;
+  width: 100%;
+}

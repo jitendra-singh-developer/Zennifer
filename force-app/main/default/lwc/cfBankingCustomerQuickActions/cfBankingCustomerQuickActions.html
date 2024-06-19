@@ -1,0 +1,403 @@
+<template>
+            <div class="slds-grid slds-wrap slds-is-relative ">
+            <div style="position: fixed;z-index: 999999;top: 0;right: 0;">
+  <omnistudio-toast class="flexcard-toast-element" theme="slds" title="" message="" styletype=""> </omnistudio-toast>
+</div>
+            <div if:true={showLoader} class="slds-is-absolute vloc-loader_override" style="height: 100%; width: 100%; min-height:50px; background: transparent; z-index: 99;">
+  <div>
+   <omnistudio-spinner
+      variant="brand"
+      alternative-text="Loading content..."
+      size="medium"
+      theme="slds"
+      ></omnistudio-spinner>
+  </div>
+</div>
+            <template if:false={hasPermission}>
+              You don't have required permissions to view this card.
+            </template>
+            <template if:true={hasPermission}>
+              <template if:true={hasRecords}>
+                        <template for:each={_records} for:item="record" for:index="rindex">
+                            <omnistudio-flex-card-state if:true={record}  key={record._flex.uniqueKey} data-recordid={record.Id} record={record} data-statue="true"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-border_top slds-border_right slds-border_bottom slds-border_left slds-p-around_small " style="background-color:#fff; background-image:url(/sfc/servlet.shepherd/version/download/068760000017xgIAAQ); background-repeat:no-repeat; background-size:100% 20%; background-position:top; border-top: #cccccc 1px solid;border-right: #cccccc 1px solid;border-bottom: #cccccc 1px solid;border-left: #cccccc 1px solid; 
+    border-radius:10px;     ">
+          <div data-style-id="state0element0" class="slds-col   slds-m-bottom_x-small  slds-size_12-of-12  " data-rindex={rindex} style="      
+    border-radius:10px;     " >
+    <omnistudio-block data-style-id="state0element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0" class="slds-col   slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%3E%3Cspan%20style=%22font-size:%2012pt;%20color:%20#181818;%22%3E%3Cstrong%3EQuick%20Actions%3C/strong%3E%3C/span%3E%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element1" class="slds-col   slds-p-around_x-small  slds-size_6-of-12  " data-rindex={rindex} style="      
+         " >
+    <omnistudio-block data-style-id="state0element1_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element1block_element0" class="slds-col   slds-theme_default slds-border_top slds-border_right slds-border_bottom slds-border_left slds-m-bottom_x-small  slds-size_12-of-12  condition-element" data-rindex={rindex} style="     border-top: #cccccc 1px solid;border-right: #cccccc 1px solid;border-bottom: #cccccc 1px solid;border-left: #cccccc 1px solid; 
+    border-radius:15px;     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-0","field":"objectApiName","operator":"!=","value":"FinServ__FinancialAccount__c","type":"custom","hasMergeField":false}]}' >
+    <omnistudio-block data-style-id="state0element1block_element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-0","field":"objectApiName","operator":"!=","value":"FinServ__FinancialAccount__c","type":"custom","hasMergeField":false}]}'  data-preload-conditional-element="false"  theme="slds" if:true={record._flex.state0element1block_element0_child} ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element1block_element0block_element0" class="slds-col   slds-p-around_x-small  slds-size_12-of-12  " data-rindex={rindex} style="      
+         " >
+    <omnistudio-block data-style-id="state0element1block_element0block_element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element1block_element0block_element0block_element0" class="slds-col  slds-text-align_center  slds-size_2-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-flex-icon data-style-id="state0element1block_element0block_element0block_element0_child"   record={record}  color="#FFFFFF"  extraclass="slds-icon_container slds-icon-standard-case "  icon-name="standard:contact"  icon-type="Salesforce SVG"  imgsrc=""  size="small"  variant="inverse"  theme="slds"  ></omnistudio-flex-icon>
+      </div><div data-style-id="state0element1block_element0block_element0block_element1" class="slds-col  slds-p-left_small  slds-size_9-of-12  " data-rindex={rindex} style="      
+     height:20px;    font-weight: 600;
+padding-top: 2px;" ><omnistudio-flex-action data-style-id="state0element1block_element0block_element0block_element1_child"  tracking-obj={_childCardTrackingObj}  class= "state0element1block_element0block_element0block_element1_child flexActionElement" 
+        data-action-element-class="state0element1block_element0block_element0block_element1_child" data-action-key="state0element1block_element0block_element0block_element1" onexecuteaction={performAction} data-show-spinner="false"
+        data-element-label="pa_actionbuttonnav1"   state-obj={record}  card={card}  record={record}  label="Caller Verification"  icon-name="standard-default"  action-list='\[{"stateAction":{"id":"flex-action-1701446590686","type":"Flyout","openUrlIn":"New Tab/Window","layoutType":"lightning","hasExtraParams":true,"flyoutType":"childCard","openFlyoutIn":"Modal","channelName":"close_modal","cardName":"VerifyIdentity","flyoutLwc":"VerifyIdentity","flyoutParams":{"record-id":"{recordId}"},"cardNode":""},"key":"1685411544698-w7igae8wg","label":"Launch Verify Id Flow PA","draggable":false,"isOpen":true,"actionIndex":0,"contextId":"\\{Id}","preloadFlyout":true,"reRenderFlyout":true}]'  hide-action-icon="true"  flyout-details='\{"openFlyoutIn":"Modal"}'  styles='\{"label":{"fontFamily":"","color":"#747474","fontSize":"12px"}}'  flyout-channel="close_modal"  preload-flyout="true"  re-render-flyout="true"  display-as-button="false"  button-variant="neutral"  theme="slds"  ><div slot="modalflyout" class="pa_actionbuttonnav1action0 " > <c-cf-verify-identity data-style-id="state0element1block_element0block_element0block_element1_child"  parent-record={record}  records={_records}  parent-mergefields={card}  record-id={recordId}  object-api-name={objectApiName}  parent-attribute='\{"record-id":"{recordId}"}'  ></c-cf-verify-identity></div></omnistudio-flex-action>
+      </div>
+        </div></omnistudio-block>
+    </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element1block_element1" class="slds-col   slds-theme_default slds-border_top slds-border_right slds-border_bottom slds-border_left slds-m-bottom_x-small  slds-size_12-of-12  " data-rindex={rindex} style="     border-top: #cccccc 1px solid;border-right: #cccccc 1px solid;border-bottom: #cccccc 1px solid;border-left: #cccccc 1px solid; 
+    border-radius:15px;     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);" >
+    <omnistudio-block data-style-id="state0element1block_element1_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element1block_element1block_element0" class="slds-col   slds-p-around_x-small  slds-size_12-of-12  " data-rindex={rindex} style="      
+         " >
+    <omnistudio-block data-style-id="state0element1block_element1block_element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element1block_element1block_element0block_element0" class="slds-col  slds-text-align_center  slds-size_2-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-flex-icon data-style-id="state0element1block_element1block_element0block_element0_child"   record={record}  color="#FFFFFF"  extraclass="slds-icon_container slds-icon-standard-case "  icon-name="standard:case"  icon-type="Salesforce SVG"  imgsrc=""  size="small"  variant="inverse"  theme="slds"  ></omnistudio-flex-icon>
+      </div><div data-style-id="state0element1block_element1block_element0block_element1" class="slds-col  slds-p-left_small  slds-size_9-of-12  " data-rindex={rindex} style="      
+     height:20px;    font-weight: 600;
+padding-top: 2px;" ><omnistudio-flex-action data-style-id="state0element1block_element1block_element0block_element1_child"  tracking-obj={_childCardTrackingObj}  class= "state0element1block_element1block_element0block_element1_child flexActionElement" 
+        data-action-element-class="state0element1block_element1block_element0block_element1_child" data-action-key="state0element1block_element1block_element0block_element1" onexecuteaction={performAction} data-show-spinner="false"
+        data-element-label="pa_actionbuttonnav2"   state-obj={record}  card={card}  record={record}  label="Create Case"  icon-name="standard-default"  action-list='\[{"stateAction":{"id":"flex-action-1711754004548","type":"OmniScript","openUrlIn":"New Tab/Window","hasExtraParams":false,"layoutType":"lightning","omniType":{"Name":"Case/Create2/English","Id":"0jNVG0000000c0T2AQ","isLwcOs":true},"isLwcOS":true},"key":"1685411544698-w7igae8wg","label":"Launch Create Case PA","draggable":true,"isOpen":true,"actionIndex":0,"contextId":"\\{Id}","preloadFlyout":true,"reRenderFlyout":true}]'  hide-action-icon="true"  flyout-details='\{}'  styles='\{"label":{"fontFamily":"","color":"#747474","fontSize":"12px"}}'  flyout-channel="close_modal"  preload-flyout="true"  re-render-flyout="true"  theme="slds"  ></omnistudio-flex-action>
+      </div>
+        </div></omnistudio-block>
+    </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element1block_element2" class="slds-col   slds-theme_default slds-border_top slds-border_right slds-border_bottom slds-border_left slds-m-bottom_x-small  slds-size_12-of-12  condition-element" data-rindex={rindex} style="     border-top: #cccccc 1px solid;border-right: #cccccc 1px solid;border-bottom: #cccccc 1px solid;border-left: #cccccc 1px solid; 
+    border-radius:15px;     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-0","field":"ObjectApiName","operator":"==","value":"Account","type":"custom","hasMergeField":false},{"id":"state-new-condition-7","field":"IsPersonAccount","operator":"==","value":"true","type":"custom","hasMergeField":false,"logicalOperator":"&&"}]}' >
+    <omnistudio-block data-style-id="state0element1block_element2_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-0","field":"ObjectApiName","operator":"==","value":"Account","type":"custom","hasMergeField":false},{"id":"state-new-condition-7","field":"IsPersonAccount","operator":"==","value":"true","type":"custom","hasMergeField":false,"logicalOperator":"&&"}]}'  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element1block_element2block_element0" class="slds-col   slds-p-around_x-small  slds-size_12-of-12  condition-element" data-rindex={rindex} style="      
+         "  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[]}' >
+    <omnistudio-block data-style-id="state0element1block_element2block_element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[]}'  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element1block_element2block_element0block_element0" class="slds-col  slds-text-align_center  slds-size_2-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-flex-icon data-style-id="state0element1block_element2block_element0block_element0_child"   record={record}  color="#FFFFFF"  extraclass="slds-icon_container slds-icon-custom-custom17 "  icon-name="custom:custom17"  icon-type="Salesforce SVG"  imgsrc=""  size="small"  variant="default"  theme="slds"  ></omnistudio-flex-icon>
+      </div><div data-style-id="state0element1block_element2block_element0block_element1" class="slds-col  slds-p-left_small  slds-size_9-of-12  " data-rindex={rindex} style="      
+     height:20px;    font-weight: 600;
+padding-top: 2px;" ><omnistudio-flex-action data-style-id="state0element1block_element2block_element0block_element1_child"  tracking-obj={_childCardTrackingObj}  class= "state0element1block_element2block_element0block_element1_child flexActionElement" 
+        data-action-element-class="state0element1block_element2block_element0block_element1_child" data-action-key="state0element1block_element2block_element0block_element1" onexecuteaction={performAction} data-show-spinner="false"
+        data-element-label="pa_actionbuttonnav3"   state-obj={record}  card={card}  record={record}  label="Treasury Case"  icon-name="utility:moneybag"  action-list='\[{"stateAction":{"id":"flex-action-1707763045098","type":"OmniScript","openUrlIn":"New Tab/Window","layoutType":"lightning","hasExtraParams":true,"omniType":{"Name":"Case/CreateTreasury2/English","Id":"0jN780000004GgkEAE","isLwcOs":true},"isLwcOS":true,"tabLabel":"Treasury Case","tabIcon":"utility:moneybag"},"key":"1685411544698-w7igae8wg","label":"Launch Create Case PA","draggable":false,"isOpen":true,"actionIndex":0,"contextId":"\\{Id}","preloadFlyout":true,"reRenderFlyout":true}]'  hide-action-icon="true"  flyout-details='\{}'  styles='\{"label":{"fontFamily":"","color":"#747474","fontSize":"12px"}}'  flyout-channel="close_modal"  preload-flyout="true"  re-render-flyout="true"  icon-only="false"  display-as-button="false"  theme="slds"  ></omnistudio-flex-action>
+      </div>
+        </div></omnistudio-block>
+    </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element1block_element3" class="slds-col   slds-theme_default slds-border_top slds-border_right slds-border_bottom slds-border_left slds-m-bottom_x-small  slds-size_12-of-12  condition-element" data-rindex={rindex} style="     border-top: #cccccc 1px solid;border-right: #cccccc 1px solid;border-bottom: #cccccc 1px solid;border-left: #cccccc 1px solid; 
+    border-radius:15px;     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-0","field":"objectApiName","operator":"!=","value":"FinServ__FinancialAccount__c","type":"custom","hasMergeField":false}]}' >
+    <omnistudio-block data-style-id="state0element1block_element3_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-0","field":"objectApiName","operator":"!=","value":"FinServ__FinancialAccount__c","type":"custom","hasMergeField":false}]}'  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element1block_element3block_element0" class="slds-col   slds-p-horizontal_x-small  slds-size_12-of-12  " data-rindex={rindex} style="      
+         " >
+    <omnistudio-block data-style-id="state0element1block_element3block_element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element1block_element3block_element0block_element0" class="slds-col  slds-text-align_center slds-p-vertical_x-small  slds-size_2-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-flex-icon data-style-id="state0element1block_element3block_element0block_element0_child"   record={record}  color="#FFFFFF"  extraclass="slds-icon_container slds-icon-standard-account "  icon-name="standard:account"  icon-type="Salesforce SVG"  imgsrc=""  size="small"  variant="default"  theme="slds"  ></omnistudio-flex-icon>
+      </div><div data-style-id="state0element1block_element3block_element0block_element1" class="slds-col  boc-menu slds-size_10-of-12  condition-element" data-rindex={rindex} style="      
+         font-weight: 600;
+padding-top: 2px;"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-18","field":"objectApiName","operator":"==","value":"undefined","type":"custom","hasMergeField":false}]}' >
+    <omnistudio-flex-menu data-style-id="state0element1block_element3block_element0block_element1_child" 
+    onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction}  card={card}  record={record}  type="action"  size="large"  variant=""  icon-name="utility:down"  overflow="true"  label="Open Deposit Account"  icon-position="right"  styles='\{"label":{"color":"#747474"}}'  icon-color="#747474"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-18","field":"objectApiName","operator":"==","value":"undefined","type":"custom","hasMergeField":false}]}'  data-preload-conditional-element="false" 
+    theme="slds" if:true={record._flex.state0element1block_element3block_element0block_element1_child}> 
+     <omnistudio-flex-menu-item 
+    name="menu-item-1706128155852-1"
+    theme="slds"
+    data-style-id="state0element1block_element3block_element0block_element1_menuitem_0"
+     data-conditions='\{"id":"state-condition-object","isParent":true,"group":[]}' 
+    class="condition-element"
+    >
+    <omnistudio-flex-action record={record} card={card}  action-list='\[{"key":"1706128155866-jdnkn3me7","label":"Action","draggable":false,"isOpen":true,"card":"{card}","stateAction":{"id":"flex-action-1707826395647","type":"Custom","displayName":"Action","vlocityIcon":"standard-default","targetType":"Navigation Item","openUrlIn":"Current Window","Navigation Item":{"targetName":"DAOPersonal_ProductSelectionTab"},"hasExtraParams":true,"targetParams":{"c__ContextId":"{recordId}"}},"actionIndex":0,"isTrackingDisabled":false}]'  label="Open Personal Account"  icon-name="standard:person_account"  re-render-flyout="undefined"  preload-flyout="undefined"  flyout-details='\{}'  flyout-channel="undefined"  class="state0element1block_element3block_element0block_element1_menuitem_0 flexActionElement" onexecuteaction={performAction} 
+    data-action-element-class="state0element1block_element3block_element0block_element1_menuitem_0" data-action-key="state0element1block_element3block_element0block_element1_menuitem_0" data-show-spinner="false" 
+    data-element-label="pa_actionbutton7menu1menuitem0" 
+    theme="slds" extra-class="slds-dropdown__item" 
+      action-wrapperclass=""
+      action-labelclass="slds-truncate menu-item-label"
+      menu-item-data="%7B%22iconPosition%22%3A%22%22%7D"
+      icon-size="x-small"
+      icon-extraclass="slds-icon-text-default slds-m-right_x-small" >
+     </omnistudio-flex-action>
+    </omnistudio-flex-menu-item><omnistudio-flex-menu-item 
+    name="menu-item-1707826837725-0"
+    theme="slds"
+    data-style-id="state0element1block_element3block_element0block_element1_menuitem_1"
+    
+    class=""
+    >
+    <omnistudio-flex-action record={record} card={card}  action-list='\[{"key":"1707826837733-xkt5neu3o","label":"Open Business Application","draggable":false,"isOpen":true,"card":"{card}","stateAction":{"id":"flex-action-1707826900801","type":"Custom","displayName":"Action","vlocityIcon":"standard-default","targetType":"Navigation Item","openUrlIn":"New Tab/Window","Navigation Item":{"targetName":"DAOBusiness_ProductSelectionTab"},"hasExtraParams":true,"targetParams":{"c__ContextId":"{recordId}"}},"actionIndex":0}]'  label="Open Business Account"  icon-name="standard:account"  re-render-flyout="undefined"  preload-flyout="undefined"  flyout-details='\{}'  flyout-channel="undefined"  class="state0element1block_element3block_element0block_element1_menuitem_1 flexActionElement" onexecuteaction={performAction} 
+    data-action-element-class="state0element1block_element3block_element0block_element1_menuitem_1" data-action-key="state0element1block_element3block_element0block_element1_menuitem_1" data-show-spinner="false" 
+    data-element-label="pa_actionbutton7menu1menuitem1" 
+    theme="slds" extra-class="slds-dropdown__item" 
+      action-wrapperclass=""
+      action-labelclass="slds-truncate menu-item-label"
+      menu-item-data="%7B%22iconPosition%22%3A%22%22%7D"
+      icon-size="x-small"
+      icon-extraclass="slds-icon-text-default slds-m-right_x-small" >
+     </omnistudio-flex-action>
+    </omnistudio-flex-menu-item>
+    </omnistudio-flex-menu>
+    </div><div data-style-id="state0element1block_element3block_element0block_element2" class="slds-col  slds-m-top_x-small  slds-size_10-of-12  condition-element" data-rindex={rindex} style="      
+         "  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-25","field":"ObjectApiName","operator":"==","value":"Account","type":"custom","hasMergeField":false},{"id":"state-new-condition-32","field":"IsPersonAccount","operator":"==","value":"true","type":"custom","hasMergeField":false,"logicalOperator":"&&"}]}' ><omnistudio-flex-action data-style-id="state0element1block_element3block_element0block_element2_child"  tracking-obj={_childCardTrackingObj}  class= "state0element1block_element3block_element0block_element2_child flexActionElement" 
+        data-action-element-class="state0element1block_element3block_element0block_element2_child" data-action-key="state0element1block_element3block_element0block_element2" onexecuteaction={performAction} data-show-spinner="false"
+        data-element-label="pa_actionbutton7action2"   state-obj={record}  card={card}  record={record}  label="Open Personal Deposit Account"  icon-name="standard-default"  action-list='\[{"stateAction":{"id":"flex-action-1712310592757","type":"Custom","openUrlIn":"New Tab/Window","hasExtraParams":true,"targetType":"Navigation Item","Navigation Item":{"targetName":"DAOPersonal_ProductSelectionTab"},"targetParams":{"c__ContextId":"{recordId}"}},"key":"1707826967627-9oi4tb184","label":"Open Personal Application Nav Actions","draggable":true,"isOpen":true,"actionIndex":0,"contextId":"\\{Id}"}]'  hide-action-icon="true"  flyout-details='\{}'  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-25","field":"ObjectApiName","operator":"==","value":"Account","type":"custom","hasMergeField":false},{"id":"state-new-condition-32","field":"IsPersonAccount","operator":"==","value":"true","type":"custom","hasMergeField":false,"logicalOperator":"&&"}]}'  theme="slds"  ></omnistudio-flex-action>
+      </div><div data-style-id="state0element1block_element3block_element0block_element3" class="slds-col  slds-m-top_x-small  slds-size_10-of-12  condition-element" data-rindex={rindex} style="      
+     height:20px;    "  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-25","field":"ObjectApiName","operator":"==","value":"Account","type":"custom","hasMergeField":false},{"id":"state-new-condition-32","field":"IsPersonAccount","operator":"==","value":"false","type":"custom","hasMergeField":false,"logicalOperator":"&&"}]}' ><omnistudio-flex-action data-style-id="state0element1block_element3block_element0block_element3_child"  tracking-obj={_childCardTrackingObj}  class= "state0element1block_element3block_element0block_element3_child flexActionElement" 
+        data-action-element-class="state0element1block_element3block_element0block_element3_child" data-action-key="state0element1block_element3block_element0block_element3" onexecuteaction={performAction} data-show-spinner="false"
+        data-element-label="pa_actionbutton7action2clone0"   state-obj={record}  card={card}  record={record}  label="Open Business Deposit Account"  icon-name="standard-default"  action-list='\[{"stateAction":{"id":"flex-action-1712310553327","type":"Custom","openUrlIn":"New Tab/Window","hasExtraParams":true,"targetType":"Navigation Item","Navigation Item":{"targetName":"DAOBusiness_ProductSelectionTab"},"targetParams":{"c__ContextId":"{recordId}"}},"key":"1707826967627-9oi4tb184","label":"Open Business Application Nav Actions","draggable":true,"isOpen":true,"actionIndex":0,"contextId":"\\{Id}"}]'  hide-action-icon="true"  flyout-details='\{}'  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-25","field":"ObjectApiName","operator":"==","value":"Account","type":"custom","hasMergeField":false},{"id":"state-new-condition-32","field":"IsPersonAccount","operator":"==","value":"false","type":"custom","hasMergeField":false,"logicalOperator":"&&"}]}'  aria-label="Open Business Deposit Account"  styles='\{"label":{"color":"#747474"}}'  theme="slds"  ></omnistudio-flex-action>
+      </div>
+        </div></omnistudio-block>
+    </div>
+        </div></omnistudio-block>
+    </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element2" class="slds-col   slds-p-around_x-small slds-size_6-of-12  " data-rindex={rindex} style="" >
+    <omnistudio-block data-style-id="state0element2_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element2block_element0" class="slds-col   slds-theme_default slds-border_top slds-border_right slds-border_bottom slds-border_left slds-m-bottom_x-small  slds-size_12-of-12  condition-element" data-rindex={rindex} style="     border-top: #cccccc 1px solid;border-right: #cccccc 1px solid;border-bottom: #cccccc 1px solid;border-left: #cccccc 1px solid; 
+    border-radius:15px;     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-9","field":"objectApiName","operator":"!=","value":"FinServ__FinancialAccount__c","type":"custom","hasMergeField":false}]}' >
+    <omnistudio-block data-style-id="state0element2block_element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-9","field":"objectApiName","operator":"!=","value":"FinServ__FinancialAccount__c","type":"custom","hasMergeField":false}]}'  data-preload-conditional-element="false"  theme="slds" if:true={record._flex.state0element2block_element0_child} ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element2block_element0block_element0" class="slds-col   slds-p-around_x-small  slds-size_12-of-12  " data-rindex={rindex} style="      
+         " >
+    <omnistudio-block data-style-id="state0element2block_element0block_element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element2block_element0block_element0block_element0" class="slds-col  slds-text-align_center  slds-size_2-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-flex-icon data-style-id="state0element2block_element0block_element0block_element0_child"   record={record}  color="#FFFFFF"  alternative-text="Log A Call"  extraclass="slds-icon_container slds-icon-standard-log-a-call"  icon-name="standard:call"  icon-type="Salesforce SVG"  imgsrc=""  size="small"  variant="inverse"  theme="slds"  ></omnistudio-flex-icon>
+      </div><div data-style-id="state0element2block_element0block_element0block_element1" class="slds-col  slds-p-left_small  slds-size_9-of-12  " data-rindex={rindex} style="      
+     height:20px;    font-weight: 600;
+padding-top: 2px;" ><omnistudio-flex-action data-style-id="state0element2block_element0block_element0block_element1_child"  tracking-obj={_childCardTrackingObj}  class= "state0element2block_element0block_element0block_element1_child flexActionElement" 
+        data-action-element-class="state0element2block_element0block_element0block_element1_child" data-action-key="state0element2block_element0block_element0block_element1" onexecuteaction={performAction} data-show-spinner="false"
+        data-element-label="pa_actionbuttonnav4"   state-obj={record}  card={card}  record={record}  label="Log A Call"  icon-name="standard-default"  action-list='\[{"stateAction":{"id":"flex-action-1707927878303","type":"OmniScript","openUrlIn":"New Tab/Window","layoutType":"lightning","hasExtraParams":true,"omniType":{"Name":"QuickAction/ActivityCreate/English","Id":"0jN6s00000005tEEAQ","isLwcOs":true},"isLwcOS":true,"tabLabel":"Log A Call","tabIcon":"utility:log_a_call","extraParams":{"c__ObjectApiName":"{objectApiName}","c__ActionType":"LogACall"}},"key":"1685411544698-w7igae8wg","label":"Launch Log A Call PA","draggable":true,"isOpen":true,"actionIndex":0,"contextId":"\\{recordId}","preloadFlyout":true,"reRenderFlyout":true}]'  hide-action-icon="true"  flyout-details='\{}'  styles='\{"label":{"fontFamily":"","color":"#747474","fontSize":"12px"}}'  flyout-channel="close_modal"  preload-flyout="true"  re-render-flyout="true"  theme="slds"  ></omnistudio-flex-action>
+      </div>
+        </div></omnistudio-block>
+    </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element2block_element1" class="slds-col   slds-theme_default slds-border_top slds-border_right slds-border_bottom slds-border_left slds-m-bottom_x-small  slds-size_12-of-12  " data-rindex={rindex} style="     border-top: #cccccc 1px solid;border-right: #cccccc 1px solid;border-bottom: #cccccc 1px solid;border-left: #cccccc 1px solid; 
+    border-radius:15px;     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);" >
+    <omnistudio-block data-style-id="state0element2block_element1_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element2block_element1block_element0" class="slds-col   slds-p-around_x-small  slds-size_12-of-12  " data-rindex={rindex} style="      
+         " >
+    <omnistudio-block data-style-id="state0element2block_element1block_element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element2block_element1block_element0block_element0" class="slds-col  slds-text-align_center  slds-size_2-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-flex-icon data-style-id="state0element2block_element1block_element0block_element0_child"   record={record}  color="#FFFFFF"  alternative-text="Log A Call"  extraclass="slds-icon_container slds-icon-standard-task"  icon-name="standard:task"  icon-type="Salesforce SVG"  imgsrc=""  size="small"  variant="inverse"  theme="slds"  ></omnistudio-flex-icon>
+      </div><div data-style-id="state0element2block_element1block_element0block_element1" class="slds-col  slds-p-left_small  slds-size_9-of-12  " data-rindex={rindex} style="      
+     height:20px;    font-weight: 600;
+padding-top: 2px;" ><omnistudio-flex-action data-style-id="state0element2block_element1block_element0block_element1_child"  tracking-obj={_childCardTrackingObj}  class= "state0element2block_element1block_element0block_element1_child flexActionElement" 
+        data-action-element-class="state0element2block_element1block_element0block_element1_child" data-action-key="state0element2block_element1block_element0block_element1" onexecuteaction={performAction} data-show-spinner="false"
+        data-element-label="pa_actionbuttonnav5"   state-obj={record}  card={card}  record={record}  label="New Task"  icon-name="standard-default"  action-list='\[{"stateAction":{"id":"flex-action-1707927938165","type":"OmniScript","openUrlIn":"New Tab/Window","layoutType":"lightning","hasExtraParams":true,"omniType":{"Name":"QuickAction/ActivityCreate/English","Id":"0jN6s00000005tEEAQ","isLwcOs":true},"isLwcOS":true,"tabLabel":"New Task","tabIcon":"utility:task","extraParams":{"c__ObjectApiName":"{objectApiName}","c__ActionType":"NewTask"}},"key":"1685411544698-w7igae8wg","label":"Launch New Task PA","draggable":true,"isOpen":true,"actionIndex":0,"contextId":"\\{recordId}","preloadFlyout":true,"reRenderFlyout":true}]'  hide-action-icon="true"  flyout-details='\{}'  styles='\{"label":{"fontFamily":"","color":"#747474","fontSize":"12px"}}'  flyout-channel="close_modal"  preload-flyout="true"  re-render-flyout="true"  theme="slds"  ></omnistudio-flex-action>
+      </div>
+        </div></omnistudio-block>
+    </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element2block_element2" class="slds-col   slds-border_top slds-border_right slds-border_bottom slds-border_left slds-p-around_x-small  slds-size_12-of-12  " data-rindex={rindex} style="     border-top: #cccccc 1px solid;border-right: #cccccc 1px solid;border-bottom: #cccccc 1px solid;border-left: #cccccc 1px solid; 
+    border-radius:15px;     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);" >
+    <omnistudio-block data-style-id="state0element2block_element2_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element2block_element2block_element0" class="slds-col  slds-text-align_center  slds-size_2-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-flex-icon data-style-id="state0element2block_element2block_element0_child"   record={record}  color="#FFFFFF"  alternative-text="New Event"  extraclass="slds-icon_container slds-icon-standard-event"  icon-name="standard:event"  icon-type="Salesforce SVG"  imgsrc=""  size="small"  variant="inverse"  theme="slds"  ></omnistudio-flex-icon>
+      </div><div data-style-id="state0element2block_element2block_element1" class="slds-col  slds-p-left_small  slds-size_9-of-12  " data-rindex={rindex} style="      
+     height:20px;    font-weight: 600;
+padding-top: 2px;" ><omnistudio-flex-action data-style-id="state0element2block_element2block_element1_child"  tracking-obj={_childCardTrackingObj}  class= "state0element2block_element2block_element1_child flexActionElement" 
+        data-action-element-class="state0element2block_element2block_element1_child" data-action-key="state0element2block_element2block_element1" onexecuteaction={performAction} data-show-spinner="false"
+        data-element-label="pa_actionbuttonnav6"   state-obj={record}  card={card}  record={record}  label="New Event"  icon-name="standard-default"  action-list='\[{"stateAction":{"id":"flex-action-1707928008665","type":"OmniScript","openUrlIn":"New Tab/Window","layoutType":"lightning","hasExtraParams":true,"omniType":{"Name":"QuickAction/ActivityCreate/English","Id":"0jN6s00000005tEEAQ","isLwcOs":true},"isLwcOS":true,"tabLabel":"New Event","tabIcon":"utility:event","extraParams":{"c__ObjectApiName":"{objectApiName}","c__ActionType":"NewEvent"}},"key":"1685411544698-w7igae8wg","label":"Launch New Event PA","draggable":true,"isOpen":true,"actionIndex":0,"contextId":"\\{recordId}","preloadFlyout":true,"reRenderFlyout":true}]'  hide-action-icon="true"  flyout-details='\{}'  styles='\{"label":{"fontFamily":"","color":"#747474","fontSize":"12px"}}'  flyout-channel="close_modal"  preload-flyout="true"  re-render-flyout="true"  theme="slds"  ></omnistudio-flex-action>
+      </div>
+        </div></omnistudio-block>
+    </div>
+        </div></omnistudio-block>
+    </div>
+        </div>
+      </omnistudio-flex-card-state>
+                        </template>
+                      </template>
+                      <template if:false={hasRecords}>
+                            <omnistudio-flex-card-state  record={record} data-statue="false"  data-index="0" data-rindex={rindex} class="cf-vlocity-state-0 cf-vlocity-state slds-size_12-of-12 "  tracking-obj={_childCardTrackingObj} >
+      <div if:true={cardLoaded} class="slds-grid slds-wrap slds-border_top slds-border_right slds-border_bottom slds-border_left slds-p-around_small " style="background-color:#fff; background-image:url(/sfc/servlet.shepherd/version/download/068760000017xgIAAQ); background-repeat:no-repeat; background-size:100% 20%; background-position:top; border-top: #cccccc 1px solid;border-right: #cccccc 1px solid;border-bottom: #cccccc 1px solid;border-left: #cccccc 1px solid; 
+    border-radius:10px;     ">
+          <div data-style-id="state0element0" class="slds-col   slds-m-bottom_x-small  slds-size_12-of-12  " data-rindex={rindex} style="      
+    border-radius:10px;     " >
+    <omnistudio-block data-style-id="state0element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element0block_element0" class="slds-col   slds-size_12-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-output-field data-style-id="state0element0block_element0_child"   card={card}  record={record}  merge-field="%3Cdiv%3E%3Cspan%20style=%22font-size:%2012pt;%20color:%20#181818;%22%3E%3Cstrong%3EQuick%20Actions%3C/strong%3E%3C/span%3E%3C/div%3E"  theme="slds"  ></omnistudio-output-field>
+      </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element1" class="slds-col   slds-p-around_x-small  slds-size_6-of-12  " data-rindex={rindex} style="      
+         " >
+    <omnistudio-block data-style-id="state0element1_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element1block_element0" class="slds-col   slds-theme_default slds-border_top slds-border_right slds-border_bottom slds-border_left slds-m-bottom_x-small  slds-size_12-of-12  condition-element" data-rindex={rindex} style="     border-top: #cccccc 1px solid;border-right: #cccccc 1px solid;border-bottom: #cccccc 1px solid;border-left: #cccccc 1px solid; 
+    border-radius:15px;     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-0","field":"objectApiName","operator":"!=","value":"FinServ__FinancialAccount__c","type":"custom","hasMergeField":false}]}' >
+    <omnistudio-block data-style-id="state0element1block_element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-0","field":"objectApiName","operator":"!=","value":"FinServ__FinancialAccount__c","type":"custom","hasMergeField":false}]}'  data-preload-conditional-element="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element1block_element0block_element0" class="slds-col   slds-p-around_x-small  slds-size_12-of-12  " data-rindex={rindex} style="      
+         " >
+    <omnistudio-block data-style-id="state0element1block_element0block_element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element1block_element0block_element0block_element0" class="slds-col  slds-text-align_center  slds-size_2-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-flex-icon data-style-id="state0element1block_element0block_element0block_element0_child"   record={record}  color="#FFFFFF"  extraclass="slds-icon_container slds-icon-standard-case "  icon-name="standard:contact"  icon-type="Salesforce SVG"  imgsrc=""  size="small"  variant="inverse"  theme="slds"  ></omnistudio-flex-icon>
+      </div><div data-style-id="state0element1block_element0block_element0block_element1" class="slds-col  slds-p-left_small  slds-size_9-of-12  " data-rindex={rindex} style="      
+     height:20px;    font-weight: 600;
+padding-top: 2px;" ><omnistudio-flex-action data-style-id="state0element1block_element0block_element0block_element1_child"  tracking-obj={_childCardTrackingObj}  class= "state0element1block_element0block_element0block_element1_child flexActionElement" 
+        data-action-element-class="state0element1block_element0block_element0block_element1_child" data-action-key="state0element1block_element0block_element0block_element1" onexecuteaction={performAction} data-show-spinner="false"
+        data-element-label="pa_actionbuttonnav1"   state-obj={record}  card={card}  record={record}  label="Caller Verification"  icon-name="standard-default"  action-list='\[{"stateAction":{"id":"flex-action-1701446590686","type":"Flyout","openUrlIn":"New Tab/Window","layoutType":"lightning","hasExtraParams":true,"flyoutType":"childCard","openFlyoutIn":"Modal","channelName":"close_modal","cardName":"VerifyIdentity","flyoutLwc":"VerifyIdentity","flyoutParams":{"record-id":"{recordId}"},"cardNode":""},"key":"1685411544698-w7igae8wg","label":"Launch Verify Id Flow PA","draggable":false,"isOpen":true,"actionIndex":0,"contextId":"\\{Id}","preloadFlyout":true,"reRenderFlyout":true}]'  hide-action-icon="true"  flyout-details='\{"openFlyoutIn":"Modal"}'  styles='\{"label":{"fontFamily":"","color":"#747474","fontSize":"12px"}}'  flyout-channel="close_modal"  preload-flyout="true"  re-render-flyout="true"  display-as-button="false"  button-variant="neutral"  theme="slds"  ><div slot="modalflyout" class="pa_actionbuttonnav1action0 " > <c-cf-verify-identity data-style-id="state0element1block_element0block_element0block_element1_child"  parent-record={record}  records={_records}  parent-mergefields={card}  record-id={recordId}  object-api-name={objectApiName}  parent-attribute='\{"record-id":"{recordId}"}'  ></c-cf-verify-identity></div></omnistudio-flex-action>
+      </div>
+        </div></omnistudio-block>
+    </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element1block_element1" class="slds-col   slds-theme_default slds-border_top slds-border_right slds-border_bottom slds-border_left slds-m-bottom_x-small  slds-size_12-of-12  " data-rindex={rindex} style="     border-top: #cccccc 1px solid;border-right: #cccccc 1px solid;border-bottom: #cccccc 1px solid;border-left: #cccccc 1px solid; 
+    border-radius:15px;     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);" >
+    <omnistudio-block data-style-id="state0element1block_element1_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element1block_element1block_element0" class="slds-col   slds-p-around_x-small  slds-size_12-of-12  " data-rindex={rindex} style="      
+         " >
+    <omnistudio-block data-style-id="state0element1block_element1block_element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element1block_element1block_element0block_element0" class="slds-col  slds-text-align_center  slds-size_2-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-flex-icon data-style-id="state0element1block_element1block_element0block_element0_child"   record={record}  color="#FFFFFF"  extraclass="slds-icon_container slds-icon-standard-case "  icon-name="standard:case"  icon-type="Salesforce SVG"  imgsrc=""  size="small"  variant="inverse"  theme="slds"  ></omnistudio-flex-icon>
+      </div><div data-style-id="state0element1block_element1block_element0block_element1" class="slds-col  slds-p-left_small  slds-size_9-of-12  " data-rindex={rindex} style="      
+     height:20px;    font-weight: 600;
+padding-top: 2px;" ><omnistudio-flex-action data-style-id="state0element1block_element1block_element0block_element1_child"  tracking-obj={_childCardTrackingObj}  class= "state0element1block_element1block_element0block_element1_child flexActionElement" 
+        data-action-element-class="state0element1block_element1block_element0block_element1_child" data-action-key="state0element1block_element1block_element0block_element1" onexecuteaction={performAction} data-show-spinner="false"
+        data-element-label="pa_actionbuttonnav2"   state-obj={record}  card={card}  record={record}  label="Create Case"  icon-name="standard-default"  action-list='\[{"stateAction":{"id":"flex-action-1711754004548","type":"OmniScript","openUrlIn":"New Tab/Window","hasExtraParams":false,"layoutType":"lightning","omniType":{"Name":"Case/Create2/English","Id":"0jNVG0000000c0T2AQ","isLwcOs":true},"isLwcOS":true},"key":"1685411544698-w7igae8wg","label":"Launch Create Case PA","draggable":true,"isOpen":true,"actionIndex":0,"contextId":"\\{Id}","preloadFlyout":true,"reRenderFlyout":true}]'  hide-action-icon="true"  flyout-details='\{}'  styles='\{"label":{"fontFamily":"","color":"#747474","fontSize":"12px"}}'  flyout-channel="close_modal"  preload-flyout="true"  re-render-flyout="true"  theme="slds"  ></omnistudio-flex-action>
+      </div>
+        </div></omnistudio-block>
+    </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element1block_element2" class="slds-col   slds-theme_default slds-border_top slds-border_right slds-border_bottom slds-border_left slds-m-bottom_x-small  slds-size_12-of-12  condition-element" data-rindex={rindex} style="     border-top: #cccccc 1px solid;border-right: #cccccc 1px solid;border-bottom: #cccccc 1px solid;border-left: #cccccc 1px solid; 
+    border-radius:15px;     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-0","field":"ObjectApiName","operator":"==","value":"Account","type":"custom","hasMergeField":false},{"id":"state-new-condition-7","field":"IsPersonAccount","operator":"==","value":"true","type":"custom","hasMergeField":false,"logicalOperator":"&&"}]}' >
+    <omnistudio-block data-style-id="state0element1block_element2_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-0","field":"ObjectApiName","operator":"==","value":"Account","type":"custom","hasMergeField":false},{"id":"state-new-condition-7","field":"IsPersonAccount","operator":"==","value":"true","type":"custom","hasMergeField":false,"logicalOperator":"&&"}]}'  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element1block_element2block_element0" class="slds-col   slds-p-around_x-small  slds-size_12-of-12  condition-element" data-rindex={rindex} style="      
+         "  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[]}' >
+    <omnistudio-block data-style-id="state0element1block_element2block_element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[]}'  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element1block_element2block_element0block_element0" class="slds-col  slds-text-align_center  slds-size_2-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-flex-icon data-style-id="state0element1block_element2block_element0block_element0_child"   record={record}  color="#FFFFFF"  extraclass="slds-icon_container slds-icon-custom-custom17 "  icon-name="custom:custom17"  icon-type="Salesforce SVG"  imgsrc=""  size="small"  variant="default"  theme="slds"  ></omnistudio-flex-icon>
+      </div><div data-style-id="state0element1block_element2block_element0block_element1" class="slds-col  slds-p-left_small  slds-size_9-of-12  " data-rindex={rindex} style="      
+     height:20px;    font-weight: 600;
+padding-top: 2px;" ><omnistudio-flex-action data-style-id="state0element1block_element2block_element0block_element1_child"  tracking-obj={_childCardTrackingObj}  class= "state0element1block_element2block_element0block_element1_child flexActionElement" 
+        data-action-element-class="state0element1block_element2block_element0block_element1_child" data-action-key="state0element1block_element2block_element0block_element1" onexecuteaction={performAction} data-show-spinner="false"
+        data-element-label="pa_actionbuttonnav3"   state-obj={record}  card={card}  record={record}  label="Treasury Case"  icon-name="utility:moneybag"  action-list='\[{"stateAction":{"id":"flex-action-1707763045098","type":"OmniScript","openUrlIn":"New Tab/Window","layoutType":"lightning","hasExtraParams":true,"omniType":{"Name":"Case/CreateTreasury2/English","Id":"0jN780000004GgkEAE","isLwcOs":true},"isLwcOS":true,"tabLabel":"Treasury Case","tabIcon":"utility:moneybag"},"key":"1685411544698-w7igae8wg","label":"Launch Create Case PA","draggable":false,"isOpen":true,"actionIndex":0,"contextId":"\\{Id}","preloadFlyout":true,"reRenderFlyout":true}]'  hide-action-icon="true"  flyout-details='\{}'  styles='\{"label":{"fontFamily":"","color":"#747474","fontSize":"12px"}}'  flyout-channel="close_modal"  preload-flyout="true"  re-render-flyout="true"  icon-only="false"  display-as-button="false"  theme="slds"  ></omnistudio-flex-action>
+      </div>
+        </div></omnistudio-block>
+    </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element1block_element3" class="slds-col   slds-theme_default slds-border_top slds-border_right slds-border_bottom slds-border_left slds-m-bottom_x-small  slds-size_12-of-12  condition-element" data-rindex={rindex} style="     border-top: #cccccc 1px solid;border-right: #cccccc 1px solid;border-bottom: #cccccc 1px solid;border-left: #cccccc 1px solid; 
+    border-radius:15px;     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-0","field":"objectApiName","operator":"!=","value":"FinServ__FinancialAccount__c","type":"custom","hasMergeField":false}]}' >
+    <omnistudio-block data-style-id="state0element1block_element3_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-0","field":"objectApiName","operator":"!=","value":"FinServ__FinancialAccount__c","type":"custom","hasMergeField":false}]}'  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element1block_element3block_element0" class="slds-col   slds-p-horizontal_x-small  slds-size_12-of-12  " data-rindex={rindex} style="      
+         " >
+    <omnistudio-block data-style-id="state0element1block_element3block_element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element1block_element3block_element0block_element0" class="slds-col  slds-text-align_center slds-p-vertical_x-small  slds-size_2-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-flex-icon data-style-id="state0element1block_element3block_element0block_element0_child"   record={record}  color="#FFFFFF"  extraclass="slds-icon_container slds-icon-standard-account "  icon-name="standard:account"  icon-type="Salesforce SVG"  imgsrc=""  size="small"  variant="default"  theme="slds"  ></omnistudio-flex-icon>
+      </div><div data-style-id="state0element1block_element3block_element0block_element1" class="slds-col  boc-menu slds-size_10-of-12  condition-element" data-rindex={rindex} style="      
+         font-weight: 600;
+padding-top: 2px;"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-18","field":"objectApiName","operator":"==","value":"undefined","type":"custom","hasMergeField":false}]}' >
+    <omnistudio-flex-menu data-style-id="state0element1block_element3block_element0block_element1_child" 
+    onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction}  card={card}  record={record}  type="action"  size="large"  variant=""  icon-name="utility:down"  overflow="true"  label="Open Deposit Account"  icon-position="right"  styles='\{"label":{"color":"#747474"}}'  icon-color="#747474"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-18","field":"objectApiName","operator":"==","value":"undefined","type":"custom","hasMergeField":false}]}'  data-preload-conditional-element="false" 
+    theme="slds" > 
+     <omnistudio-flex-menu-item 
+    name="menu-item-1706128155852-1"
+    theme="slds"
+    data-style-id="state0element1block_element3block_element0block_element1_menuitem_0"
+     data-conditions='\{"id":"state-condition-object","isParent":true,"group":[]}' 
+    class="condition-element"
+    >
+    <omnistudio-flex-action record={record} card={card}  action-list='\[{"key":"1706128155866-jdnkn3me7","label":"Action","draggable":false,"isOpen":true,"card":"{card}","stateAction":{"id":"flex-action-1707826395647","type":"Custom","displayName":"Action","vlocityIcon":"standard-default","targetType":"Navigation Item","openUrlIn":"Current Window","Navigation Item":{"targetName":"DAOPersonal_ProductSelectionTab"},"hasExtraParams":true,"targetParams":{"c__ContextId":"{recordId}"}},"actionIndex":0,"isTrackingDisabled":false}]'  label="Open Personal Account"  icon-name="standard:person_account"  re-render-flyout="undefined"  preload-flyout="undefined"  flyout-details='\{}'  flyout-channel="undefined"  class="state0element1block_element3block_element0block_element1_menuitem_0 flexActionElement" onexecuteaction={performAction} 
+    data-action-element-class="state0element1block_element3block_element0block_element1_menuitem_0" data-action-key="state0element1block_element3block_element0block_element1_menuitem_0" data-show-spinner="false" 
+    data-element-label="pa_actionbutton7menu1menuitem0" 
+    theme="slds" extra-class="slds-dropdown__item" 
+      action-wrapperclass=""
+      action-labelclass="slds-truncate menu-item-label"
+      menu-item-data="%7B%22iconPosition%22%3A%22%22%7D"
+      icon-size="x-small"
+      icon-extraclass="slds-icon-text-default slds-m-right_x-small" >
+     </omnistudio-flex-action>
+    </omnistudio-flex-menu-item><omnistudio-flex-menu-item 
+    name="menu-item-1707826837725-0"
+    theme="slds"
+    data-style-id="state0element1block_element3block_element0block_element1_menuitem_1"
+    
+    class=""
+    >
+    <omnistudio-flex-action record={record} card={card}  action-list='\[{"key":"1707826837733-xkt5neu3o","label":"Open Business Application","draggable":false,"isOpen":true,"card":"{card}","stateAction":{"id":"flex-action-1707826900801","type":"Custom","displayName":"Action","vlocityIcon":"standard-default","targetType":"Navigation Item","openUrlIn":"New Tab/Window","Navigation Item":{"targetName":"DAOBusiness_ProductSelectionTab"},"hasExtraParams":true,"targetParams":{"c__ContextId":"{recordId}"}},"actionIndex":0}]'  label="Open Business Account"  icon-name="standard:account"  re-render-flyout="undefined"  preload-flyout="undefined"  flyout-details='\{}'  flyout-channel="undefined"  class="state0element1block_element3block_element0block_element1_menuitem_1 flexActionElement" onexecuteaction={performAction} 
+    data-action-element-class="state0element1block_element3block_element0block_element1_menuitem_1" data-action-key="state0element1block_element3block_element0block_element1_menuitem_1" data-show-spinner="false" 
+    data-element-label="pa_actionbutton7menu1menuitem1" 
+    theme="slds" extra-class="slds-dropdown__item" 
+      action-wrapperclass=""
+      action-labelclass="slds-truncate menu-item-label"
+      menu-item-data="%7B%22iconPosition%22%3A%22%22%7D"
+      icon-size="x-small"
+      icon-extraclass="slds-icon-text-default slds-m-right_x-small" >
+     </omnistudio-flex-action>
+    </omnistudio-flex-menu-item>
+    </omnistudio-flex-menu>
+    </div><div data-style-id="state0element1block_element3block_element0block_element2" class="slds-col  slds-m-top_x-small  slds-size_10-of-12  condition-element" data-rindex={rindex} style="      
+         "  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-25","field":"ObjectApiName","operator":"==","value":"Account","type":"custom","hasMergeField":false},{"id":"state-new-condition-32","field":"IsPersonAccount","operator":"==","value":"true","type":"custom","hasMergeField":false,"logicalOperator":"&&"}]}' ><omnistudio-flex-action data-style-id="state0element1block_element3block_element0block_element2_child"  tracking-obj={_childCardTrackingObj}  class= "state0element1block_element3block_element0block_element2_child flexActionElement" 
+        data-action-element-class="state0element1block_element3block_element0block_element2_child" data-action-key="state0element1block_element3block_element0block_element2" onexecuteaction={performAction} data-show-spinner="false"
+        data-element-label="pa_actionbutton7action2"   state-obj={record}  card={card}  record={record}  label="Open Personal Deposit Account"  icon-name="standard-default"  action-list='\[{"stateAction":{"id":"flex-action-1712310592757","type":"Custom","openUrlIn":"New Tab/Window","hasExtraParams":true,"targetType":"Navigation Item","Navigation Item":{"targetName":"DAOPersonal_ProductSelectionTab"},"targetParams":{"c__ContextId":"{recordId}"}},"key":"1707826967627-9oi4tb184","label":"Open Personal Application Nav Actions","draggable":true,"isOpen":true,"actionIndex":0,"contextId":"\\{Id}"}]'  hide-action-icon="true"  flyout-details='\{}'  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-25","field":"ObjectApiName","operator":"==","value":"Account","type":"custom","hasMergeField":false},{"id":"state-new-condition-32","field":"IsPersonAccount","operator":"==","value":"true","type":"custom","hasMergeField":false,"logicalOperator":"&&"}]}'  theme="slds"  ></omnistudio-flex-action>
+      </div><div data-style-id="state0element1block_element3block_element0block_element3" class="slds-col  slds-m-top_x-small  slds-size_10-of-12  condition-element" data-rindex={rindex} style="      
+     height:20px;    "  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-25","field":"ObjectApiName","operator":"==","value":"Account","type":"custom","hasMergeField":false},{"id":"state-new-condition-32","field":"IsPersonAccount","operator":"==","value":"false","type":"custom","hasMergeField":false,"logicalOperator":"&&"}]}' ><omnistudio-flex-action data-style-id="state0element1block_element3block_element0block_element3_child"  tracking-obj={_childCardTrackingObj}  class= "state0element1block_element3block_element0block_element3_child flexActionElement" 
+        data-action-element-class="state0element1block_element3block_element0block_element3_child" data-action-key="state0element1block_element3block_element0block_element3" onexecuteaction={performAction} data-show-spinner="false"
+        data-element-label="pa_actionbutton7action2clone0"   state-obj={record}  card={card}  record={record}  label="Open Business Deposit Account"  icon-name="standard-default"  action-list='\[{"stateAction":{"id":"flex-action-1712310553327","type":"Custom","openUrlIn":"New Tab/Window","hasExtraParams":true,"targetType":"Navigation Item","Navigation Item":{"targetName":"DAOBusiness_ProductSelectionTab"},"targetParams":{"c__ContextId":"{recordId}"}},"key":"1707826967627-9oi4tb184","label":"Open Business Application Nav Actions","draggable":true,"isOpen":true,"actionIndex":0,"contextId":"\\{Id}"}]'  hide-action-icon="true"  flyout-details='\{}'  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-25","field":"ObjectApiName","operator":"==","value":"Account","type":"custom","hasMergeField":false},{"id":"state-new-condition-32","field":"IsPersonAccount","operator":"==","value":"false","type":"custom","hasMergeField":false,"logicalOperator":"&&"}]}'  aria-label="Open Business Deposit Account"  styles='\{"label":{"color":"#747474"}}'  theme="slds"  ></omnistudio-flex-action>
+      </div>
+        </div></omnistudio-block>
+    </div>
+        </div></omnistudio-block>
+    </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element2" class="slds-col   slds-p-around_x-small slds-size_6-of-12  " data-rindex={rindex} style="" >
+    <omnistudio-block data-style-id="state0element2_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element2block_element0" class="slds-col   slds-theme_default slds-border_top slds-border_right slds-border_bottom slds-border_left slds-m-bottom_x-small  slds-size_12-of-12  condition-element" data-rindex={rindex} style="     border-top: #cccccc 1px solid;border-right: #cccccc 1px solid;border-bottom: #cccccc 1px solid;border-left: #cccccc 1px solid; 
+    border-radius:15px;     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-9","field":"objectApiName","operator":"!=","value":"FinServ__FinancialAccount__c","type":"custom","hasMergeField":false}]}' >
+    <omnistudio-block data-style-id="state0element2block_element0_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  data-conditions='\{"id":"state-condition-object","isParent":true,"group":[{"id":"state-new-condition-9","field":"objectApiName","operator":"!=","value":"FinServ__FinancialAccount__c","type":"custom","hasMergeField":false}]}'  data-preload-conditional-element="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element2block_element0block_element0" class="slds-col   slds-p-around_x-small  slds-size_12-of-12  " data-rindex={rindex} style="      
+         " >
+    <omnistudio-block data-style-id="state0element2block_element0block_element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element2block_element0block_element0block_element0" class="slds-col  slds-text-align_center  slds-size_2-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-flex-icon data-style-id="state0element2block_element0block_element0block_element0_child"   record={record}  color="#FFFFFF"  alternative-text="Log A Call"  extraclass="slds-icon_container slds-icon-standard-log-a-call"  icon-name="standard:call"  icon-type="Salesforce SVG"  imgsrc=""  size="small"  variant="inverse"  theme="slds"  ></omnistudio-flex-icon>
+      </div><div data-style-id="state0element2block_element0block_element0block_element1" class="slds-col  slds-p-left_small  slds-size_9-of-12  " data-rindex={rindex} style="      
+     height:20px;    font-weight: 600;
+padding-top: 2px;" ><omnistudio-flex-action data-style-id="state0element2block_element0block_element0block_element1_child"  tracking-obj={_childCardTrackingObj}  class= "state0element2block_element0block_element0block_element1_child flexActionElement" 
+        data-action-element-class="state0element2block_element0block_element0block_element1_child" data-action-key="state0element2block_element0block_element0block_element1" onexecuteaction={performAction} data-show-spinner="false"
+        data-element-label="pa_actionbuttonnav4"   state-obj={record}  card={card}  record={record}  label="Log A Call"  icon-name="standard-default"  action-list='\[{"stateAction":{"id":"flex-action-1707927878303","type":"OmniScript","openUrlIn":"New Tab/Window","layoutType":"lightning","hasExtraParams":true,"omniType":{"Name":"QuickAction/ActivityCreate/English","Id":"0jN6s00000005tEEAQ","isLwcOs":true},"isLwcOS":true,"tabLabel":"Log A Call","tabIcon":"utility:log_a_call","extraParams":{"c__ObjectApiName":"{objectApiName}","c__ActionType":"LogACall"}},"key":"1685411544698-w7igae8wg","label":"Launch Log A Call PA","draggable":true,"isOpen":true,"actionIndex":0,"contextId":"\\{recordId}","preloadFlyout":true,"reRenderFlyout":true}]'  hide-action-icon="true"  flyout-details='\{}'  styles='\{"label":{"fontFamily":"","color":"#747474","fontSize":"12px"}}'  flyout-channel="close_modal"  preload-flyout="true"  re-render-flyout="true"  theme="slds"  ></omnistudio-flex-action>
+      </div>
+        </div></omnistudio-block>
+    </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element2block_element1" class="slds-col   slds-theme_default slds-border_top slds-border_right slds-border_bottom slds-border_left slds-m-bottom_x-small  slds-size_12-of-12  " data-rindex={rindex} style="     border-top: #cccccc 1px solid;border-right: #cccccc 1px solid;border-bottom: #cccccc 1px solid;border-left: #cccccc 1px solid; 
+    border-radius:15px;     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);" >
+    <omnistudio-block data-style-id="state0element2block_element1_child"  record={record}  card={card}  collapsed-by-default="false"  collapsible="false"  label="Block"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element2block_element1block_element0" class="slds-col   slds-p-around_x-small  slds-size_12-of-12  " data-rindex={rindex} style="      
+         " >
+    <omnistudio-block data-style-id="state0element2block_element1block_element0_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element2block_element1block_element0block_element0" class="slds-col  slds-text-align_center  slds-size_2-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-flex-icon data-style-id="state0element2block_element1block_element0block_element0_child"   record={record}  color="#FFFFFF"  alternative-text="Log A Call"  extraclass="slds-icon_container slds-icon-standard-task"  icon-name="standard:task"  icon-type="Salesforce SVG"  imgsrc=""  size="small"  variant="inverse"  theme="slds"  ></omnistudio-flex-icon>
+      </div><div data-style-id="state0element2block_element1block_element0block_element1" class="slds-col  slds-p-left_small  slds-size_9-of-12  " data-rindex={rindex} style="      
+     height:20px;    font-weight: 600;
+padding-top: 2px;" ><omnistudio-flex-action data-style-id="state0element2block_element1block_element0block_element1_child"  tracking-obj={_childCardTrackingObj}  class= "state0element2block_element1block_element0block_element1_child flexActionElement" 
+        data-action-element-class="state0element2block_element1block_element0block_element1_child" data-action-key="state0element2block_element1block_element0block_element1" onexecuteaction={performAction} data-show-spinner="false"
+        data-element-label="pa_actionbuttonnav5"   state-obj={record}  card={card}  record={record}  label="New Task"  icon-name="standard-default"  action-list='\[{"stateAction":{"id":"flex-action-1707927938165","type":"OmniScript","openUrlIn":"New Tab/Window","layoutType":"lightning","hasExtraParams":true,"omniType":{"Name":"QuickAction/ActivityCreate/English","Id":"0jN6s00000005tEEAQ","isLwcOs":true},"isLwcOS":true,"tabLabel":"New Task","tabIcon":"utility:task","extraParams":{"c__ObjectApiName":"{objectApiName}","c__ActionType":"NewTask"}},"key":"1685411544698-w7igae8wg","label":"Launch New Task PA","draggable":true,"isOpen":true,"actionIndex":0,"contextId":"\\{recordId}","preloadFlyout":true,"reRenderFlyout":true}]'  hide-action-icon="true"  flyout-details='\{}'  styles='\{"label":{"fontFamily":"","color":"#747474","fontSize":"12px"}}'  flyout-channel="close_modal"  preload-flyout="true"  re-render-flyout="true"  theme="slds"  ></omnistudio-flex-action>
+      </div>
+        </div></omnistudio-block>
+    </div>
+        </div></omnistudio-block>
+    </div><div data-style-id="state0element2block_element2" class="slds-col   slds-border_top slds-border_right slds-border_bottom slds-border_left slds-p-around_x-small  slds-size_12-of-12  " data-rindex={rindex} style="     border-top: #cccccc 1px solid;border-right: #cccccc 1px solid;border-bottom: #cccccc 1px solid;border-left: #cccccc 1px solid; 
+    border-radius:15px;     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);" >
+    <omnistudio-block data-style-id="state0element2block_element2_child"  card={card}  record={record}  label="Block"  collapsible="false"  collapsed-by-default="false"  theme="slds"  ><div class="slds-grid slds-wrap">
+          <div data-style-id="state0element2block_element2block_element0" class="slds-col  slds-text-align_center  slds-size_2-of-12  " data-rindex={rindex} style="      
+         " ><omnistudio-flex-icon data-style-id="state0element2block_element2block_element0_child"   record={record}  color="#FFFFFF"  alternative-text="New Event"  extraclass="slds-icon_container slds-icon-standard-event"  icon-name="standard:event"  icon-type="Salesforce SVG"  imgsrc=""  size="small"  variant="inverse"  theme="slds"  ></omnistudio-flex-icon>
+      </div><div data-style-id="state0element2block_element2block_element1" class="slds-col  slds-p-left_small  slds-size_9-of-12  " data-rindex={rindex} style="      
+     height:20px;    font-weight: 600;
+padding-top: 2px;" ><omnistudio-flex-action data-style-id="state0element2block_element2block_element1_child"  tracking-obj={_childCardTrackingObj}  class= "state0element2block_element2block_element1_child flexActionElement" 
+        data-action-element-class="state0element2block_element2block_element1_child" data-action-key="state0element2block_element2block_element1" onexecuteaction={performAction} data-show-spinner="false"
+        data-element-label="pa_actionbuttonnav6"   state-obj={record}  card={card}  record={record}  label="New Event"  icon-name="standard-default"  action-list='\[{"stateAction":{"id":"flex-action-1707928008665","type":"OmniScript","openUrlIn":"New Tab/Window","layoutType":"lightning","hasExtraParams":true,"omniType":{"Name":"QuickAction/ActivityCreate/English","Id":"0jN6s00000005tEEAQ","isLwcOs":true},"isLwcOS":true,"tabLabel":"New Event","tabIcon":"utility:event","extraParams":{"c__ObjectApiName":"{objectApiName}","c__ActionType":"NewEvent"}},"key":"1685411544698-w7igae8wg","label":"Launch New Event PA","draggable":true,"isOpen":true,"actionIndex":0,"contextId":"\\{recordId}","preloadFlyout":true,"reRenderFlyout":true}]'  hide-action-icon="true"  flyout-details='\{}'  styles='\{"label":{"fontFamily":"","color":"#747474","fontSize":"12px"}}'  flyout-channel="close_modal"  preload-flyout="true"  re-render-flyout="true"  theme="slds"  ></omnistudio-flex-action>
+      </div>
+        </div></omnistudio-block>
+    </div>
+        </div></omnistudio-block>
+    </div>
+        </div>
+      </omnistudio-flex-card-state>
+                      </template>
+            </template>
+            <template if:true={hasError}>
+            {error}
+            </template>
+            
+      <omnistudio-action action-wrapperclass="slds-hide" re-render-flyout class="action-trigger slds-col" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+      
+      </omnistudio-action>
+  
+            <omnistudio-action class="execute-action" re-render-flyout action-wrapperclass="slds-hide" onupdateos={updateOmniscript} onselectcards={updateSelectedCards} onsetvalue={updateAction} onfireactionevent={actionEvtHandler}>
+            
+            </omnistudio-action>
+            </div>
+          </template>

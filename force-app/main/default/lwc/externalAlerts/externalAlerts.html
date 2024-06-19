@@ -1,0 +1,36 @@
+<template>
+    <template if:true={error}>
+        Error: {error}
+    </template>
+    <template if:true={displayList}>
+        <div class="alertPanel">
+            <template for:each={displayList} for:item="alert">
+                <div key={alert.id} class="slds-p-bottom_x-small">
+                    <lightning-layout class="warning">
+                        <lightning-layout-item size="1" padding="horizontal-small">
+                            <lightning-icon variant="warning" icon-name="utility:warning" size="x-small"></lightning-icon>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="10" padding="horizontal-small">
+
+                            <template for:each={alert.fields} for:item="field">
+                                <span key={field.label}>
+                                    <template lwc:if={field.isFirst}>
+                                        <p class="slds-text-heading_small">{field.value}</p>
+                                    </template>
+                                    <template lwc:else>
+                                        {field.label}: {field.value}
+                                    </template>
+                                </span>
+                            </template>
+                            
+                        </lightning-layout-item>
+                        <lightning-layout-item size="1" padding="horizontal-small">
+                            <lightning-button-icon class="utilitybutton" variant="bare" icon-name="utility:close" size="medium"
+                                alternative-text="Hide" name="close" value={i} onclick={hideAlert}></lightning-button-icon>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </div>
+            </template>
+        </div>
+    </template>
+</template>

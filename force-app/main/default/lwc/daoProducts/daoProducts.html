@@ -1,0 +1,17 @@
+<template>
+  <div class="dao-products-container slds-m-bottom_large" if:true={products}>
+    <template for:each={products} for:item="product">
+      <c-dao-product-card
+        key={product.ProductName}
+        product={product}
+        ontoggle={handleToggle}
+      ></c-dao-product-card>
+    </template>
+
+    <p if:true={showValidation} class="dao-required-message nds-has-error">
+      <span class="nds-form-element__help nds-p-vertical_small"
+        >Error: Please select at least one product above to continue.</span
+      >
+    </p>
+  </div>
+</template>

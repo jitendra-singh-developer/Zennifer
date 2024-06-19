@@ -1,0 +1,24 @@
+<template>
+  <slot>
+    <omnistudio-combobox
+      label={_propSetMap.label}
+      name={_propSetMap.label}
+      theme={_theme}
+      value={elementValue}
+      onchange={handleChange}
+      tab-index={tabIndex}
+      options={_realtimeOptions}
+      required={_propSetMap.required}
+      required-label={allCustomLabelsUtil.OmniRequired}
+      message-when-value-missing={_messageWhenValueMissing}
+      field-level-help={_handleHelpText}
+      field-level-help-position={_propSetMap.helpTextPos}
+      label-classes={labelClasses}
+      searchable={_propSetMap.searchable}
+      multiple={_propSetMap.multiple}
+      is-display-flex={_propSetMap.multiple}
+      delete-multiple={_propSetMap.multiple}
+      max-count={maxCount}
+    ></omnistudio-combobox>
+  </slot>
+</template>

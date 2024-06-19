@@ -1,0 +1,87 @@
+.dao-product-card {
+  position: relative;
+  border: 2px solid #d8dde6;
+  border-radius: .5rem;
+  padding: 40px 28px 28px 28px;
+  display: grid;
+  height: 100%;
+}
+
+.dao-product-card p {
+  font-weight: bold;
+}
+
+.dao-product-name {
+  position: relative;
+  color: var(--theme-primary);
+  font-size: 20px;
+}
+
+.dao-product-amount {
+  font-size: 32px;
+}
+
+.dao-product-fee-label {
+  font-size: 16px;
+}
+
+.dao-product-name:after {
+  position: absolute;
+  content: "";
+  height: 3px;
+  bottom: -10px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  width: 50px;
+  background: var(--theme-primary);
+}
+
+.dao-product-toggle-button {
+  align-self: flex-end;
+  justify-self: center;
+}
+
+.dao-product-card-selected,
+.dao-product-card-popular {
+  border-color: var(--theme-primary);
+}
+
+.dao-bullet-point {
+  --sds-c-icon-color-foreground-default: var(--theme-primary);
+  margin-top: 3px;
+}
+
+.dao-product-feature {
+  font-weight: bold;
+  font-size: 14px;
+  display: flex;
+}
+
+.dao-selected-product-check,
+.dao-popular-product {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--theme-primary);
+  color: var(--theme-primary-text);
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  border-top-left-radius: 23px;
+  border-top-right-radius: 23px;
+}
+
+.dao-card-header {
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  height: 60px;
+  justify-content: flex-end;
+}
+
+.product-details-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
